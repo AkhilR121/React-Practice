@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint .",
     "dev": "tsx watch src/index.ts",
-    "test": "vitest",
+    "test:dev": "vitest",
+    "test": "vitest run",
     "types": "tsc --noEmit -p .",
     "types:dev": "tsc --noEmit -p . --watch"
   },
