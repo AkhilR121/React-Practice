@@ -1,4 +1,9 @@
 {
+  "editor.fontFamily": "'Cascadia Mono', Consolas, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontFamily": "Cascadia Mono",
+  "terminal.integrated.fontSize": 16,
+
   "editor.bracketPairColorization.enabled": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -8,12 +13,10 @@
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": true,
-
   "[typescript][javascript][typescriptreact][javascriptreact][json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
-  "terminal.integrated.fontFamily": "Cascadia Mono",
+  "eslint.enable": true,
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
@@ -21,7 +24,6 @@
   "emmet.syntaxProfiles": {
     "javascript": "html"
   },
-
   "search.exclude": {
     "**/.build": true,
     "**/.cache": true,
@@ -38,15 +40,23 @@
   "javascript.suggest.completeFunctionCalls": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
-
   "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.format.semicolons": "remove",
   "typescript.suggest.completeFunctionCalls": false,
   "typescript.surveys.enabled": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.updateImportsOnFileMove.enabled": "always",
-
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "USE_GITIGNORE": true
+  }
 }
