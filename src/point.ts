@@ -1,10 +1,16 @@
-export function Point(x = 0, y = 0) {
+export function point(_x = 0, _y = 0) {
   const moveBy = (dx: number, dy: number) => {
-    x += dx
-    y += dy
+    _x += dx
+    _y += dy
   }
 
-  const distanceFromOrigin = () => Math.sqrt(x * x + y * y)
+  const distanceFromOrigin = () =>
+    Math.sqrt(_x * _x + _y * _y)
 
-  return { moveBy, distanceFromOrigin }
+  return {
+    moveBy,
+    distanceFromOrigin,
+    x: () => _x,
+    y: () => _y,
+  }
 }
