@@ -11,5 +11,5 @@ export function max(
   }
 
   const [fst, ...rst] = rest
-  return max(fst, ...rst)
+  return max2(first, max(fst, ...rst))
 }
