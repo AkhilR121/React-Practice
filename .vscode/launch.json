@@ -1,33 +1,27 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug App",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "dbg"],
+      "runtimeExecutable": "pnpm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
       "type": "node",
       "request": "launch",
-      "name": "vitest",
+      "name": "Debug Test",
       "autoAttachChildProcesses": true,
-      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
       "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
       "args": ["run", "${relativeFile}"],
       "smartStep": true,
       "console": "integratedTerminal"
-    },
-    {
-      "name": "Launch Chrome",
-      "request": "launch",
-      "type": "chrome",
-      "url": "http://localhost:5173",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "Launch Edge",
-      "request": "launch",
-      "type": "msedge",
-      "url": "http://localhost:5173",
-      "webRoot": "${workspaceFolder}"
     }
   ]
 }
