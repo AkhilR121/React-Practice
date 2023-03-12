@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/hello.js",
   "scripts": {
-    "lint": "eslint src",
+    "lint": "eslint --ext .ts,.tsx src",
     "dev": "vite-node -w src/index.ts",
     "start": "vite-node src/index.ts",
     "test:dev": "vitest",
