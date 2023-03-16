@@ -2,10 +2,7 @@ export function max2(x: number, y: number): number {
   return x > y ? x : y
 }
 
-export function max(
-  first: number,
-  ...rest: number[]
-): number {
+export function max(first: number, ...rest: number[]): number {
   if (rest.length === 0) {
     return first
   }
