@@ -1,9 +1,10 @@
 import { expect, test } from 'vitest'
+import { filter } from './filter'
+import { map } from './map'
+import { isOdd, plus, squared } from './operators'
 import { range } from './range'
 import { reduce } from './reduce'
-import { map } from './map'
-import { filter } from './filter'
-import { isOdd, plus, squared } from './operators'
+import { pipe } from './pipe'
 
 test('range', () => {
   expect(range(1, 1)).toEqual([])
@@ -11,23 +12,56 @@ test('range', () => {
 })
 
 test('map', () => {
-  expect(map([], x => x * x)).toEqual([])
-  expect(map([1, 2, 3], x => x * x)).toEqual([1, 4, 9])
+  expect(
+    pipe(
+      [],
+      map(x => x * x),
+    ),
+  ).toEqual([])
+  expect(
+    pipe(
+      [1, 2, 3],
+      map(x => x * x),
+    ),
+  ).toEqual([1, 4, 9])
 })
 
 test('filter', () => {
-  expect(filter([], x => x % 2 !== 0)).toEqual([])
-  expect(filter([1, 2, 3, 4, 5], x => x % 2 !== 0)).toEqual([1, 3, 5])
+  expect(
+    pipe(
+      [],
+      filter(x => x % 2 !== 0),
+    ),
+  ).toEqual([])
+  expect(
+    pipe(
+      [1, 2, 3, 4, 5],
+      filter(x => x % 2 !== 0),
+    ),
+  ).toEqual([1, 3, 5])
 })
 
 test('reduce', () => {
-  expect(reduce([], (acc, x) => acc + x, 0)).toEqual(0)
-  expect(reduce([1, 2, 3, 4, 5], (acc, x) => acc + x, 0)).toEqual(15)
+  expect(
+    pipe(
+      [],
+      reduce((acc, x) => acc + x, 0),
+    ),
+  ).toEqual(0)
+  expect(
+    pipe(
+      [1, 2, 3, 4, 5],
+      reduce((acc, x) => acc + x, 0),
+    ),
+  ).toEqual(15)
 })
 
 test('array: basic', () => {
   const factorial = (n: number): number => {
-    return reduce(range(1, n + 1), (acc, x) => acc * x, 1)
+    return pipe(
+      range(1, n + 1),
+      reduce((acc, x) => acc * x, 1),
+    )
   }
   expect(factorial(0)).toEqual(1)
   expect(factorial(1)).toEqual(1)
@@ -37,9 +71,7 @@ test('array: basic', () => {
 test('array: advanced', () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-  const filtered = filter(arr, isOdd)
-  const mapped = map(filtered, squared)
-  const result = reduce(mapped, plus, 0)
+  const result = pipe(arr, filter(isOdd), map(squared), reduce(plus, 0))
 
   expect(result).toBe(165)
 })
