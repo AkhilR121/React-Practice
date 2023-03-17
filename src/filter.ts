@@ -1,12 +1,12 @@
-export const filter = (
-  arr: readonly number[],
-  pred: (x: number) => boolean,
-): number[] => {
-  const result = []
-  for (let i = 0; i < arr.length; i++) {
-    if (pred(arr[i])) {
-      result.push(arr[i])
+export function filter<T>(pred: (v: T) => boolean) {
+  return (arr: T[]): T[] => {
+    const result = []
+    for (const e of arr) {
+      if (pred(e)) {
+        result.push(e)
+      }
     }
+
+    return result
   }
-  return result
 }

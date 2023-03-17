@@ -1,10 +1,10 @@
-export const reduce = (
-  arr: readonly number[],
-  f: (acc: number, x: number) => number,
-  acc: number,
-): number => {
-  for (let i = 0; i < arr.length; i++) {
-    acc = f(acc, arr[i])
+export function reduce<T1, T2>(f: (x: T1, acc: T2) => T2, init: T2) {
+  return (arr: T1[]): T2 => {
+    let result = init
+    for (const e of arr) {
+      result = f(e, result)
+    }
+
+    return result
   }
-  return acc
 }
