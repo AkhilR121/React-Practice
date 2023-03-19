@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug App",
+      "name": "Server Debug",
       "request": "launch",
       "runtimeArgs": ["run-script", "start"],
       "runtimeExecutable": "pnpm",
@@ -10,14 +10,18 @@
       "type": "node"
     },
     {
+      "name": "Client Debug",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Test Debug",
       "type": "node",
       "request": "launch",
-      "name": "Debug Test",
       "autoAttachChildProcesses": true,
-      "skipFiles": [
-        "<node_internals>/**",
-        "**/node_modules/**"
-      ],
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
       "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
       "args": ["run", "${relativeFile}"],
       "smartStep": true,
