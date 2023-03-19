@@ -59,5 +59,6 @@
     "**/Thumbs.db": true,
     "USE_GITIGNORE": true
   },
-  "coverage-gutters.coverageReportFileName": "coverage/**/lcov.info"
+  "coverage-gutters.coverageReportFileName": "coverage/**/lcov.info",
+  "testing.automaticallyOpenPeekView": "failureAnywhere"
 }
