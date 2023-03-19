@@ -58,5 +58,6 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "USE_GITIGNORE": true
-  }
+  },
+  "coverage-gutters.coverageReportFileName": "coverage/**/lcov.info"
 }
