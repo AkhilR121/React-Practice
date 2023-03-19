@@ -1,48 +1,15 @@
 {
-  "editor.fontFamily": "'Cascadia Mono', Consolas, 'Courier New', monospace",
-  "editor.fontSize": 16,
-  "terminal.integrated.fontFamily": "Cascadia Mono",
-  "terminal.integrated.fontSize": 16,
-
-  "editor.bracketPairColorization.enabled": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "editor.guides.bracketPairs": true,
-  "editor.matchBrackets": "always",
-  "editor.renderWhitespace": "boundary",
-  "editor.tabSize": 2,
-  "editor.trimAutoWhitespace": true,
+
   "[typescript][javascript][typescriptreact][javascriptreact][json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "eslint.enable": true,
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  },
-  "emmet.syntaxProfiles": {
-    "javascript": "html"
-  },
-  "search.exclude": {
-    "**/.build": true,
-    "**/.cache": true,
-    "**/.gh-pages": true,
-    "**/.next": true,
-    "**/common/temp": true,
-    "**/coverage": true,
-    "**/dist": true,
-    "**/node_modules": true,
-    "**/.history": true
-  },
 
-  "javascript.format.semicolons": "remove",
-  "javascript.suggest.completeFunctionCalls": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.validate.enable": false,
+  "eslint.enable": true,
+
   "typescript.disableAutomaticTypeAcquisition": true,
-  "typescript.format.semicolons": "remove",
-  "typescript.suggest.completeFunctionCalls": false,
   "typescript.surveys.enabled": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -52,13 +19,22 @@
 
   "files.exclude": {
     "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "USE_GITIGNORE": true
   },
+
+  "search.exclude": {
+    "**/.build": true,
+    "**/.cache": true,
+    "**/.next": true,
+    "**/common/temp": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/.history": true
+  },
+
   "coverage-gutters.coverageReportFileName": "coverage/**/lcov.info",
   "testing.automaticallyOpenPeekView": "failureAnywhere"
 }
