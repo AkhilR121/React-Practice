@@ -36,5 +36,5 @@
   },
 
   "coverage-gutters.coverageReportFileName": "coverage/**/lcov.info",
-  "testing.automaticallyOpenPeekView": "failureAnywhere"
+  "testing.automaticallyOpenPeekView": "never"
 }
