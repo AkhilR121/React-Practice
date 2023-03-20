@@ -2,9 +2,9 @@
   "name": "fullstack-training",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/hello.js",
+  "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint --ext .ts,.tsx src",
+    "lint": "eslint --cache --ext .ts,.tsx src",
     "dev": "vite",
     "test:dev": "vitest",
     "test": "vitest run",
