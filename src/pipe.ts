@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable @typescript-eslint/ban-types */
 import invariant from 'tiny-invariant'
+
+type Fun = (...args: unknown[]) => unknown
 
 export function pipe<A>(a: A): A
 export function pipe<A, B>(a: A, ab: (a: A) => B): B
@@ -20,10 +21,10 @@ export function pipe<A, B, C, D, E>(
 ): E
 export function pipe(
   a: unknown,
-  ab?: Function,
-  bc?: Function,
-  cd?: Function,
-  de?: Function,
+  ab?: Fun,
+  bc?: Fun,
+  cd?: Fun,
+  de?: Fun,
 ): unknown {
   switch (arguments.length) {
     case 1:
