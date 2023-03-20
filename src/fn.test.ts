@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { expect, test } from 'vitest'
 import { chunks } from './chunks'
 import { deepFlatten } from './deepFlatten'
