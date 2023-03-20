@@ -1,6 +1,9 @@
+import { checked } from './checked'
 import { isPrime } from './isPrime'
 import { plus } from './operators'
 import { range } from './range'
+import { Natural } from './specs'
 
-export const sumOfPrimes = (n: number): number =>
-  range(n).filter(isPrime).reduce(plus, 0)
+export const sumOfPrimes = checked(Natural)(n =>
+  range(n).filter(isPrime).reduce(plus, 0),
+)

@@ -1,4 +1,4 @@
-export function isLeap(year: number) {
+export function isLeap(year: number): boolean {
   return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)
 }
 
@@ -18,7 +18,7 @@ export function daysInMonth(month: number, year: number): number {
   }
 }
 
-function isMonthValid(month: number) {
+function isMonthValid(month: number): boolean {
   return month >= 1 && month <= 12
 }
 

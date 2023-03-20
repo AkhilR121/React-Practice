@@ -10,5 +10,6 @@ export function maxBy<T extends object>(arr: readonly T[], by: keyof T): T {
       max = e
     }
   }
+
   return max
 }

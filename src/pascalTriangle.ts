@@ -1,7 +1,8 @@
+import { mul } from './operators'
 import { range } from './range'
 
 export function factorial(n: number): number {
-  return range(1, n + 1).reduce((acc, x) => acc * x, 1)
+  return range(1, n + 1).reduce(mul, 1)
 }
 
 function ncr(n: number, r: number): number {
@@ -11,9 +12,9 @@ function ncr(n: number, r: number): number {
 type PascalLine = number[]
 
 function pascalLine(line: number): PascalLine {
-  return range(0, line + 1).map(i => ncr(line, i))
+  return range(line + 1).map(i => ncr(line, i))
 }
 
 export function pascalTriangle(n: number): PascalLine[] {
-  return range(0, n + 1).map(pascalLine)
+  return range(n + 1).map(pascalLine)
 }

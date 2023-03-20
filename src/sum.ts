@@ -1,8 +1,5 @@
+import { checked } from './checked'
 import { range } from './range'
-import { Int, verify } from './specs'
+import { Natural } from './specs'
 
-export function sum(n: number): number {
-  verify(Int, n)
-
-  return range(n).reduce((a, b) => a + b, 0)
-}
+export const sum = checked(Natural)(n => range(n).reduce((a, b) => a + b, 0))

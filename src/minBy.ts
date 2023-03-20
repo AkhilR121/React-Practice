@@ -10,5 +10,6 @@ export function minBy<T extends object>(arr: readonly T[], by: keyof T): T {
       min = e
     }
   }
+
   return min
 }

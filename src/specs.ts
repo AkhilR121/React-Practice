@@ -21,3 +21,5 @@ export function verify<T>(
 export function is<T>(schema: z.ZodSchema<T>, value: unknown): value is T {
   return schema.safeParse(value).success
 }
+
+export type Comparable = string | number | Date

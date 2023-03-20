@@ -5,5 +5,3 @@ export const tap =
     console.log(`tap(${msg ?? ''}): ${x}`)
     return x
   }
-
-export const bool = (e: any) => !!e

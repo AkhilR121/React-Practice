@@ -1,8 +1,10 @@
-export function max2(x: number, y: number): number {
+import { Comparable } from './specs'
+
+export function max2<T extends Comparable>(x: T, y: T): T {
   return x > y ? x : y
 }
 
-export function max(first: number, ...rest: number[]): number {
+export function max<T extends Comparable>(first: T, ...rest: T[]): T {
   if (rest.length === 0) {
     return first
   }

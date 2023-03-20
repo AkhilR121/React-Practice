@@ -1,15 +1,22 @@
 import invariant from 'tiny-invariant'
 import { Natural, Positive, verify } from './specs'
 
-export function range(start: number, stop?: Natural, step?: number): number[] {
+export function range(
+  start: Natural,
+  stop?: Natural,
+  step?: Natural,
+): number[] {
   if (stop === undefined) {
     stop = start
     start = 0
   }
+
   if (step === undefined) {
     step = 1
   }
 
+  verify(Natural, start)
+  verify(Natural, stop)
   verify(Positive, step)
   invariant(start <= stop, `start(${start}) must be less than stop(${stop})`)
 
