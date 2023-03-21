@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitest/config'
 import checker from 'vite-plugin-checker'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [
@@ -10,11 +10,4 @@ export default defineConfig({
       },
     }),
   ],
-  test: {
-    coverage: {
-      provider: 'c8',
-      reporter: ['lcov', 'text'],
-    },
-    includeSource: ['src/**/*.{tsx,ts}'],
-  },
 })
