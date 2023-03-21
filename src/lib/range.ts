@@ -20,7 +20,7 @@ export function range(
   verify(Positive, step)
   invariant(start <= stop, `start(${start}) must be less than stop(${stop})`)
 
-  const result = []
+  const result: number[] = []
   for (let i = start; i < stop; i += step) {
     result.push(i)
   }

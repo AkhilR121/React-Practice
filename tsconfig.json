@@ -8,7 +8,7 @@
     ] /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@lib": ["src/lib"]
     },
     "useDefineForClassFields": true /* Emit ECMAScript-standard-compliant class fields. */,
     "module": "ESNext" /* Specify what module code is generated. */,

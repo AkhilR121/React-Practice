@@ -1,5 +1,4 @@
-import { mul } from './operators'
-import { range } from './range'
+import { mul, range } from '@lib'
 
 export function factorial(n: number): number {
   return range(1, n + 1).reduce(mul, 1)

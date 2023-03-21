@@ -1,4 +1,4 @@
-import { Comparable } from './specs'
+import { Comparable } from '@lib'
 
 export function max2<T extends Comparable>(x: T, y: T): T {
   return x > y ? x : y

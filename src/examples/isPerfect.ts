@@ -1,6 +1,4 @@
-import { checked } from './checked'
-import { range } from './range'
-import { Natural } from './specs'
+import { checked, Natural, range } from '@lib'
 
 export const isPerfect = checked(Natural)(
   n =>

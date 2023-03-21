@@ -1,7 +1,7 @@
 import { verify } from './specs'
 import { Natural } from './specs'
 
-export function chunks<T>(arr: readonly T[], size: Natural): T[][] {
+export function chunk<T>(arr: readonly T[], size: Natural): T[][] {
   verify(Natural, size)
 
   const result: T[][] = []

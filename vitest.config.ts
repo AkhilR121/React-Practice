@@ -8,4 +8,9 @@ export default defineConfig({
     },
     includeSource: ['src/**/*.{tsx,ts}'],
   },
+  resolve: {
+    alias: {
+      '@lib': '/src/lib',
+    },
+  },
 })
