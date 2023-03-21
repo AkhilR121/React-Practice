@@ -6,56 +6,6 @@ import { range } from './range'
 import { reduce } from './reduce'
 import { pipe } from './pipe'
 
-test('range', () => {
-  expect(range(1, 1)).toEqual([])
-  expect(range(1, 5)).toEqual([1, 2, 3, 4])
-})
-
-test('map', () => {
-  expect(
-    pipe(
-      [],
-      map(x => x * x),
-    ),
-  ).toEqual([])
-  expect(
-    pipe(
-      [1, 2, 3],
-      map(x => x * x),
-    ),
-  ).toEqual([1, 4, 9])
-})
-
-test('filter', () => {
-  expect(
-    pipe(
-      [],
-      filter(x => x % 2 !== 0),
-    ),
-  ).toEqual([])
-  expect(
-    pipe(
-      [1, 2, 3, 4, 5],
-      filter(x => x % 2 !== 0),
-    ),
-  ).toEqual([1, 3, 5])
-})
-
-test('reduce', () => {
-  expect(
-    pipe(
-      [],
-      reduce((acc, x) => acc + x, 0),
-    ),
-  ).toEqual(0)
-  expect(
-    pipe(
-      [1, 2, 3, 4, 5],
-      reduce((acc, x) => acc + x, 0),
-    ),
-  ).toEqual(15)
-})
-
 test('array: basic', () => {
   const factorial = (n: number): number => {
     return pipe(

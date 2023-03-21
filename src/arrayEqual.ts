@@ -1,4 +1,4 @@
-import { all } from './all'
+import { every } from './every'
 import { range } from './range'
 
 export function arrayEqual<T>(fst: readonly T[], snd: readonly T[]): boolean {
@@ -6,5 +6,5 @@ export function arrayEqual<T>(fst: readonly T[], snd: readonly T[]): boolean {
     return false
   }
 
-  return all(range(fst.length), i => fst[i] === snd[i])
+  return every(range(fst.length), i => fst[i] === snd[i])
 }
