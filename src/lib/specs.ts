@@ -18,6 +18,13 @@ export function safeCast<T>(
   return result.success ? result.data : msg ? new Error(msg) : result.error
 }
 
+export function cast<T>(
+  schema: z.ZodSchema<T>,
+  value: unknown,
+): z.infer<typeof schema> {
+  return schema.parse(value)
+}
+
 export function verify<T>(
   schema: z.ZodSchema<T>,
   value: unknown,
