@@ -9,6 +9,11 @@
 
   "eslint.enable": true,
 
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+
   "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.surveys.enabled": false,
   "typescript.tsdk": "node_modules/typescript/lib",
