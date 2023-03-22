@@ -9,4 +9,5 @@
 
 ## For Beginners(optional)
 
-1. [Typescript tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI)
+1. [Beginner's TypeScript - Matt Pocock](https://www.totaltypescript.com/tutorials/beginners-typescript)
+2. [Typescript tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI)
