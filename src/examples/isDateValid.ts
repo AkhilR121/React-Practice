@@ -1,3 +1,4 @@
+import { z } from 'zod'
 export function isLeap(year: number): boolean {
   return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)
 }
@@ -26,6 +27,13 @@ function isDayValid(year: number, month: number, day: number): boolean {
   return day >= 1 && day <= daysInMonth(month, year)
 }
 
-export function isDateValid(year: number, month: number, day: number): boolean {
+const DateOnly = z.object({
+  year: z.number(),
+  month: z.number(),
+  day: z.number(),
+})
+type DateOnly = z.infer<typeof DateOnly>
+
+export function isDateValid({ year, month, day }: DateOnly): boolean {
   return year >= 1642 && isMonthValid(month) && isDayValid(year, month, day)
 }
