@@ -1,5 +1,4 @@
 export * from './arrayEqual'
-export * from './checked'
 export * from './chunk'
 export * from './deepEqual'
 export * from './groupBy'

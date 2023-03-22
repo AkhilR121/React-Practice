@@ -1,6 +1,5 @@
 import { expect, test } from 'vitest'
-import { checked } from './checked'
-import { Natural } from './specs'
+import { Natural, checked } from './specs'
 
 const add = checked([Natural, Natural], (a, b) => a + b)
 
