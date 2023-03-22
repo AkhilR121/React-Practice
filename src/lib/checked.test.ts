@@ -2,7 +2,7 @@ import { expect, test } from 'vitest'
 import { checked } from './checked'
 import { Natural } from './specs'
 
-const add = checked(Natural, Natural)((a, b) => a + b)
+const add = checked([Natural, Natural], (a, b) => a + b)
 
 test('checked', () => {
   expect(() => add('hello' as any, 10)).toThrow()

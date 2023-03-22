@@ -1,15 +1,19 @@
 import { z } from 'zod'
-import { zip } from './zip'
 
-type Args<Specs extends z.ZodTypeAny[]> = {
-  [K in keyof Specs]: z.infer<Specs[K]>
+// checked: z.function + z.tuple + z.implement
+// checkedReturn: z.function + z.tuple + z.implement + z.return
+
+export function checked<
+  Args extends [] | [z.ZodTypeAny, ...z.ZodTypeAny[]],
+  F extends (...args: z.infer<Args[number]>[]) => unknown,
+>(specs: Args, f: F) {
+  return z.function(z.tuple(specs)).implement(f)
 }
 
-export function checked<Specs extends z.ZodTypeAny[]>(...specs: Specs) {
-  return <R>(fn: (...args: Args<Specs>) => R) => {
-    return (...args: Args<Specs>): R => {
-      zip(specs, args).forEach(([spec, value]) => spec.parse(value))
-      return fn(...args)
-    }
-  }
+export function checkedReturn<
+  Args extends [] | [z.ZodTypeAny, ...z.ZodTypeAny[]],
+  F extends (...args: z.infer<Args[number]>[]) => unknown,
+  R extends z.ZodTypeAny,
+>(specs: Args, ret: R, f: F) {
+  return z.function(z.tuple(specs), ret).implement(f)
 }
