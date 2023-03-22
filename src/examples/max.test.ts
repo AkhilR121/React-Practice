@@ -1,5 +1,5 @@
+import { expect, test } from 'vitest'
 import { max } from './max'
-import { test, expect } from 'vitest'
 
 test('max', () => {
   expect(max(1, 2, 3)).toBe(3)

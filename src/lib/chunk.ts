@@ -1,5 +1,4 @@
-import { verify } from './specs'
-import { Natural } from './specs'
+import { Natural, verify } from './specs'
 
 export function chunk<T>(arr: readonly T[], size: Natural): T[][] {
   verify(Natural, size)

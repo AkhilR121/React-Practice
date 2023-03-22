@@ -1,4 +1,4 @@
-import { isObject, isArray } from './is'
+import { isArray, isObject } from './is'
 
 function isEquitable(x: unknown): x is { equals(other: unknown): boolean } {
   return isObject(x) && 'equals' in x

@@ -1,3 +1,4 @@
+import { isEven, isOdd, pipe, plus, range, squared } from '@lib'
 import { expect, test } from 'vitest'
 import {
   deepFlatten,
@@ -11,7 +12,6 @@ import {
   some,
   takeWhile,
 } from './array'
-import { isEven, isOdd, pipe, plus, range, squared } from '@lib'
 
 test('map', () => {
   expect(
