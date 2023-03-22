@@ -32,6 +32,12 @@ export function verify<T>(
   schema.parse(value)
 }
 
+export function verifyArray(arr: unknown[]): asserts arr is unknown[] {
+  if (!Array.isArray(arr)) {
+    throw new Error('Expected an array')
+  }
+}
+
 export function is<T>(schema: z.ZodSchema<T>, value: unknown): value is T {
   return schema.safeParse(value).success
 }
