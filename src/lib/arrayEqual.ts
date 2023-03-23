@@ -1,15 +1,11 @@
 import { range } from './range'
 
-function defaultEq<T>(fst: T, snd: T): boolean {
-  return fst === snd
-}
-
 export function arrayEqual<T>(
   fst: readonly T[],
   snd: readonly T[],
-  eq = defaultEq,
+  eq = (fst: T, snd: T): boolean => fst === snd,
 ): boolean {
-  if (!eq(fst.length, snd.length)) {
+  if (fst.length === snd.length) {
     return false
   }
 
