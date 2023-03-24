@@ -31,5 +31,5 @@ sure the guidelines are followed.
 
 Teams Leads code will be reviewed by me.
 
-If you have type errors, please consult your team first. If you can't figure it,
-team lead can let me know.
+If you have type errors, please consult your team first. If you can't figure it
+out, team lead can let me know.
