@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { is } from './specs'
+import { is } from './spec'
 
 export function isNumber(x: unknown): x is number {
   return is(z.number(), x)

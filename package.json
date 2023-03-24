@@ -7,7 +7,7 @@
     "lint": "eslint --fix --cache --ext .ts,.tsx src",
     "dev": "vite",
     "test:dev": "vitest",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "cov": "vitest run --coverage",
     "types": "tsc --noEmit -p .",
     "types:dev": "tsc --noEmit -p . --watch",
