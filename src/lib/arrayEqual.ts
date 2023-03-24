@@ -5,7 +5,7 @@ export function arrayEqual<T>(
   snd: readonly T[],
   eq = (fst: T, snd: T): boolean => fst === snd,
 ): boolean {
-  if (fst.length === snd.length) {
+  if (fst.length !== snd.length) {
     return false
   }
 
