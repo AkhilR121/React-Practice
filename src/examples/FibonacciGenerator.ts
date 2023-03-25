@@ -5,7 +5,7 @@ export class FibonacciGenerator {
   private snd = 1;
   private cnt = 0;
 
-  public constructor(private n: number) {
+  public constructor(private readonly n: number) {
     invariant(n >= 0);
   }
 

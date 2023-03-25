@@ -12,11 +12,13 @@ module.exports = {
   overrides: [],
   parser: "@typescript-eslint/parser",
   parserOptions: {
+    project: "./tsconfig.json",
     ecmaVersion: "latest",
     sourceType: "module",
   },
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
+    "@typescript-eslint/prefer-readonly": "error",
     "no-console": "warn",
     "@typescript-eslint/no-explicit-any": "off",
     "prettier/prettier": "error",
