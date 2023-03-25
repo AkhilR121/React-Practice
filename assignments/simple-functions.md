@@ -17,8 +17,8 @@
    each element to a value using the provided function.
 
 ```js
-maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], x => x.n) // { n: 8}
-maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n') // { n: 8 }
+maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], x => x.n); // { n: 8}
+maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], "n"); // { n: 8 }
 ```
 
 9. 13. Write a function `isSorted` to check if the passed in array is sorted.

@@ -1,5 +1,5 @@
-import checker from 'vite-plugin-checker'
-import { defineConfig } from 'vitest/config'
+import checker from "vite-plugin-checker";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   plugins: [
@@ -12,7 +12,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@lib': '/src/lib',
+      "@lib": "/src/lib",
     },
   },
-})
+});

@@ -1,30 +1,30 @@
-import { z } from 'zod'
-import { is } from './spec'
+import { z } from "zod";
+import { is } from "./spec";
 
 export function isNumber(x: unknown): x is number {
-  return is(z.number(), x)
+  return is(z.number(), x);
 }
 
 export function isString(x: unknown): x is string {
-  return is(z.string(), x)
+  return is(z.string(), x);
 }
 
 export function isDate(x: unknown): x is Date {
-  return is(z.date(), x)
+  return is(z.date(), x);
 }
 
 export function isBoolean(x: unknown): x is boolean {
-  return is(z.boolean(), x)
+  return is(z.boolean(), x);
 }
 
 export function isNil(x: unknown): x is null | undefined {
-  return is(z.null(), x) || is(z.undefined(), x)
+  return is(z.null(), x) || is(z.undefined(), x);
 }
 
 export function isArray(x: unknown): x is readonly unknown[] {
-  return is(z.array(z.unknown()), x)
+  return is(z.array(z.unknown()), x);
 }
 
 export function isObject(x: unknown): x is Record<string, unknown> {
-  return is(z.record(z.any()), x)
+  return is(z.record(z.any()), x);
 }

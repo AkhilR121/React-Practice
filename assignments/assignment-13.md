@@ -9,8 +9,8 @@ function join<Table1 extends object, Table2 extends object>(
   primary: readonly Table1[],
   foreign: readonly Table2[],
   primaryKey: keyof Table1,
-  foreignKey: keyof Table2,
-): readonly (Table1 & Table2)[]
+  foreignKey: keyof Table2
+): readonly (Table1 & Table2)[];
 ```
 
 2. `leftJoin` - returns the left join of two arrays
@@ -20,8 +20,8 @@ function leftJoin<Table1 extends object, Table2 extends object>(
   primary: readonly Table1[],
   foreign: readonly Table2[],
   primaryKey: keyof Table1,
-  foreignKey: keyof Table2,
-): readonly (Table1 & Table2)[]
+  foreignKey: keyof Table2
+): readonly (Table1 & Table2)[];
 ```
 
 3. `orderBy` - returns the ordered array(only one key)
@@ -30,8 +30,8 @@ function leftJoin<Table1 extends object, Table2 extends object>(
 function orderBy<T extends object>(
   arr: readonly T[],
   key: keyof T,
-  order: 'asc' | 'desc',
-): readonly T[]
+  order: "asc" | "desc"
+): readonly T[];
 ```
 
 4. `difference` - returns the difference of two arrays
@@ -40,8 +40,8 @@ function orderBy<T extends object>(
 function difference<T extends object>(
   arr1: readonly T[],
   arr2: readonly T[],
-  key: keyof T,
-): readonly T[]
+  key: keyof T
+): readonly T[];
 ```
 
 5. `union` - returns the union of two arrays
@@ -50,8 +50,8 @@ function difference<T extends object>(
 function union<T extends object>(
   arr1: readonly T[],
   arr2: readonly T[],
-  key: keyof T,
-): readonly T[]
+  key: keyof T
+): readonly T[];
 ```
 
 6. `intersection` - returns the intersection of two arrays
@@ -60,6 +60,6 @@ function union<T extends object>(
 function intersection<T extends object>(
   arr1: readonly T[],
   arr2: readonly T[],
-  key: keyof T,
-): readonly T[]
+  key: keyof T
+): readonly T[];
 ```
