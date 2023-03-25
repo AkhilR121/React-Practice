@@ -38,6 +38,7 @@
     "vitest": "0.29.7"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown",
+    "**/*.{ts,tsx}": "eslint --fix --cache --ext .ts,.tsx src"
   }
 }
