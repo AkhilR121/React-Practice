@@ -10,6 +10,7 @@
     "test": "vitest run --passWithNoTests",
     "cov": "vitest run --coverage",
     "types": "tsc --noEmit -p .",
+    "format": "pnpm prettier --write --ignore-unknown .",
     "types:dev": "tsc --noEmit -p . --watch",
     "prepare": "husky install",
     "ci": "turbo types lint test"
@@ -38,7 +39,7 @@
     "vitest": "0.29.7"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
+    "**/*": "pnpm format",
     "**/*.{ts,tsx}": "eslint --fix --cache --ext .ts,.tsx src"
   }
 }
