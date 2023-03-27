@@ -5,42 +5,42 @@ export class Rational {
     invariant(denominator !== 0);
   }
 
-  add(other: Rational): Rational {
+  add(other: Readonly<Rational>): Rational {
     return new Rational(
       this.numerator * other.denominator + other.numerator * this.denominator,
       this.denominator * other.denominator
     );
   }
 
-  sub(other: Rational): Rational {
+  sub(other: Readonly<Rational>): Rational {
     return new Rational(
       this.numerator * other.denominator - other.numerator * this.denominator,
       this.denominator * other.denominator
     );
   }
 
-  mul(other: Rational): Rational {
+  mul(other: Readonly<Rational>): Rational {
     return new Rational(
       this.numerator * other.numerator,
       this.denominator * other.denominator
     );
   }
 
-  div(other: Rational): Rational {
+  div(other: Readonly<Rational>): Rational {
     return new Rational(
       this.numerator * other.denominator,
       this.denominator * other.numerator
     );
   }
 
-  equals(other: Rational): boolean {
+  equals(other: Readonly<Rational>): boolean {
     invariant(other instanceof Rational);
     return (
       this.numerator * other.denominator === other.numerator * this.denominator
     );
   }
 
-  compare(other: Rational): number {
+  compare(other: Readonly<Rational>): number {
     invariant(other instanceof Rational);
     return (
       this.numerator * other.denominator - other.numerator * this.denominator

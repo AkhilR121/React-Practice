@@ -1,7 +1,11 @@
 import invariant from "tiny-invariant";
 import { Natural, Positive, verify } from "./spec";
 
-export function* range(start: Natural, stop?: Natural, step?: Natural) {
+export function* range(
+  start: Natural,
+  stop?: Natural,
+  step?: Natural
+): IterableIterator<number> {
   if (stop === undefined) {
     stop = start;
     start = 0;

@@ -6,7 +6,7 @@ export class FiboIterable {
 
   [Symbol.iterator](): Iterator<number> {
     return {
-      next: () => {
+      next: (): IteratorResult<number> => {
         if (this.n === 0) {
           return { done: true, value: undefined };
         }

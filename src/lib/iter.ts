@@ -1,5 +1,5 @@
-export function map<T1, T2>(f: (x: T1) => T2) {
-  return function* (arr: Iterable<T1>) {
+export function map<T, U>(f: (x: T) => U) {
+  return function* (arr: Iterable<T>): IterableIterator<U> {
     for (const e of arr) {
       yield f(e);
     }
@@ -7,7 +7,7 @@ export function map<T1, T2>(f: (x: T1) => T2) {
 }
 
 export function filter<T>(pred: (v: T) => boolean) {
-  return function* (arr: Iterable<T>) {
+  return function* (arr: Iterable<T>): IterableIterator<T> {
     for (const e of arr) {
       if (pred(e)) {
         yield e;
@@ -16,8 +16,8 @@ export function filter<T>(pred: (v: T) => boolean) {
   };
 }
 
-export function reduce<T1, T2>(f: (x: T1, acc: T2) => T2, init: T2) {
-  return function (arr: Iterable<T1>) {
+export function reduce<T, U>(f: (x: T, acc: U) => U, init: U) {
+  return function (arr: Iterable<T>): U {
     let result = init;
     for (const e of arr) {
       result = f(e, result);
@@ -77,7 +77,7 @@ export function some<T>(f: (v: T) => boolean) {
 }
 
 export function takeWhile<T>(f: (x: T) => boolean) {
-  return function* (arr: Iterable<T>) {
+  return function* (arr: Iterable<T>): IterableIterator<T> {
     for (const e of arr) {
       if (!f(e)) {
         break;
@@ -89,7 +89,7 @@ export function takeWhile<T>(f: (x: T) => boolean) {
 }
 
 export function skipWhile<T>(f: (x: T) => boolean) {
-  return function* (arr: Iterable<T>) {
+  return function* (arr: Iterable<T>): IterableIterator<T> {
     let skip = true;
     for (const e of arr) {
       if (skip && f(e)) {

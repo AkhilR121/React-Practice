@@ -15,7 +15,11 @@ export function safeCast<T>(
   msg?: string
 ): T | Error {
   const result = schema.safeParse(value);
-  return result.success ? result.data : msg ? new Error(msg) : result.error;
+  return result.success
+    ? result.data
+    : msg === undefined
+    ? new Error(msg)
+    : result.error;
 }
 
 export function cast<T>(
@@ -44,16 +48,18 @@ export function is<T>(schema: z.ZodSchema<T>, value: unknown): value is T {
 
 export type Comparable = string | number | Date;
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function checked<
   Args extends [] | [z.ZodTypeAny, ...z.ZodTypeAny[]],
-  F extends (...args: z.infer<Args[number]>[]) => unknown
+  F extends (...args: Array<z.infer<Args[number]>>) => unknown
 >(specs: Args, f: F) {
   return z.function(z.tuple(specs)).implement(f);
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function checkedReturn<
   Args extends [] | [z.ZodTypeAny, ...z.ZodTypeAny[]],
-  F extends (...args: z.infer<Args[number]>[]) => unknown,
+  F extends (...args: Array<z.infer<Args[number]>>) => unknown,
   R extends z.ZodTypeAny
 >(specs: Args, ret: R, f: F) {
   return z.function(z.tuple(specs), ret).implement(f);
