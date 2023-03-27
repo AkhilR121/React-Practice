@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import invariant from "tiny-invariant";
 
+// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 type Fun = (...args: unknown[]) => unknown;
 
 export function pipe<A>(a: A): A;

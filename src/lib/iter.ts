@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 export function map<T, U>(f: (x: T) => U) {
   return function* (arr: Iterable<T>): IterableIterator<U> {
     for (const e of arr) {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import { z } from "zod";
 
 export const Natural = z.number().int().nonnegative();
