@@ -41,7 +41,18 @@ pnpm test
 6. Always write test cases for boundary conditions. Some examples are empty
    arrays or empty objects, 0, '', and where needed null, undefined, etc.
 
-7. Strongly prefer `Iterable` to arrays where possible.
+7. Prefer `Iterable` to arrays.
 
-8. Strongly prefer using higher order functions like `map`, `filter`, `reduce`
+8. Prefer using higher order functions like `map`, `filter`, `reduce`
    over for loops.
+
+9. Prefer `Iterable` to arrays.
+
+10. Prefer using higher order functions like `map`, `filter`, `reduce`
+    over for loops.
+
+11. Prefer for-of loop to iterate over iterables including arrays.
+
+12. Prefer to for-of over Object.keys to for-in loop. Avoid for-in loop.
+
+13. Prefer readonly arrays and readonly objects
