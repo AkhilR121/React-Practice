@@ -57,3 +57,13 @@ WHERE deadline < NOW()
 ```
 
 In english, set all the todos to completed where the deadline is in the past.
+
+4. Write a function to return uses with most incomplete todos
+
+```typescript
+type Result = {
+  username: string;
+  incompleteCount: number;
+}[];
+function getMostIncompleteUsers(n: number): Result;
+```
