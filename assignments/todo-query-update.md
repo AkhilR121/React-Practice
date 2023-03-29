@@ -1,20 +1,20 @@
 ```typescript
-type User = {
+type User = Readonly<{
   id: number;
   name: string;
   email: string;
-};
+}>;
 
-type Todo = {
+type Task = Readonly<{
   deadline: Date;
   id: number;
   title: string;
   completed: boolean;
   userId: number;
-};
+}>;
 
-const users: User[] = getAllUsers();
-const todos: Todo[] = getAllTodos(users);
+let users: readonly User[] = getAllUsers();
+let todos: readonly Todo[] = getAllTodos(users);
 ```
 
 1. Learn [fakers](https://fakerjs.dev/guide/). Use this library to implement the above functions `getUsers` and `getTodos` in a way that the data is generated randomly.
@@ -22,12 +22,12 @@ const todos: Todo[] = getAllTodos(users);
 2. Write the following function
 
 ```typescript
-type Result = {
+type CompletedTodoListResult = Iterable<{
   username: string;
-  todos: { title: string; deadline: Date }[];
-}[];
+  todoList: Array<{ title: string; deadline: Date }>;
+}>;
 
-function getCompletedTodosFor(...userIds: number[]): Result;
+function getCompletedTodosFor(...userIds: number[]): CompletedTodoListResult;
 ```
 
 Above function is similar to the following pseudo sql query
@@ -45,7 +45,7 @@ In english, get all the todos for the given users, where the todos are completed
 3. Write the following function
 
 ```typescript
-function setCompletedAboveDeadline(): void;
+function setCompletedAboveDeadline(userId: number): void;
 ```
 
 Above function is similar to the following pseudo sql query
@@ -53,17 +53,16 @@ Above function is similar to the following pseudo sql query
 ```sql
 UPDATE todos
 SET completed = true
-WHERE deadline < NOW()
+WHERE userId = $x and deadline < now()
 ```
 
-In english, set all the todos to completed where the deadline is in the past.
+In english, set all the todos of a specific user to completed where the deadline is in the past.
 
 4. Write a function to return uses with most incomplete todos
 
 ```typescript
-type Result = {
-  username: string;
-  incompleteCount: number;
-}[];
-function getMostIncompleteUsers(n: number): Result;
+type MostIncompleteUsersResult = IterableIterator<
+  Readonly<{ username: string; count: number }>
+>;
+function getMostIncompleteUsers(n: number): MostIncompleteUsersResult;
 ```
