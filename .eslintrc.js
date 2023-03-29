@@ -20,6 +20,8 @@ module.exports = {
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
     // "@typescript-eslint/prefer-readonly-parameter-types": "warn",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
     "@typescript-eslint/array-type": ["warn", { default: "array-simple" }],
     "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
     "@typescript-eslint/consistent-type-exports": "warn",
