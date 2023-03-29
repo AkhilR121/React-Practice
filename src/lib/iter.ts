@@ -102,3 +102,59 @@ export function skipWhile<T>(f: (x: T) => boolean) {
     }
   };
 }
+
+export function take<T>(n: number) {
+  return function* (arr: Iterable<T>): IterableIterator<T> {
+    let i = 0;
+    for (const e of arr) {
+      if (i >= n) {
+        break;
+      }
+
+      i += 1;
+      yield e;
+    }
+  };
+}
+
+export function skip<T>(n: number) {
+  return function* (arr: Iterable<T>): IterableIterator<T> {
+    let i = 0;
+    for (const e of arr) {
+      if (i >= n) {
+        yield e;
+      }
+
+      i += 1;
+    }
+  };
+}
+
+function defaultCmp<T>(a: T, b: T): number {
+  if (a < b) return -1;
+  if (a > b) return 1;
+  return 0;
+}
+
+export function orderBy<T, U>(
+  f: (x: T) => U,
+  cmp: (a: U, b: U) => number = defaultCmp
+) {
+  return function (arr: Iterable<T>): T[] {
+    return [...arr].sort((a, b) => cmp(f(a), f(b)));
+  };
+}
+
+export function groupBy<T, U>(f: (x: T) => U) {
+  return function (arr: Iterable<T>): Map<U, T[]> {
+    const result = new Map<U, T[]>();
+    for (const e of arr) {
+      const key = f(e);
+      const group = result.get(key) || [];
+      group.push(e);
+      result.set(key, group);
+    }
+
+    return result;
+  };
+}
