@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import invariant from "tiny-invariant";
 import { z } from "zod";
 
-export const Natural = z.number().int().nonnegative();
-export type Natural = z.infer<typeof Natural>;
+export const WholeNumber = z.number().int().nonnegative();
+export type WholeNumber = z.infer<typeof WholeNumber>;
 
-export const Positive = z.number().int().nonnegative();
+export const Positive = z.number().int().positive();
 export type Positive = z.infer<typeof Positive>;
 
 export const Int = z.number().int();
@@ -38,9 +40,7 @@ export function verify<T>(
 }
 
 export function verifyArray(arr: unknown[]): asserts arr is unknown[] {
-  if (!Array.isArray(arr)) {
-    throw new Error("Expected an array");
-  }
+  invariant(Array.isArray(arr), "Expected an array");
 }
 
 export function is<T>(schema: z.ZodSchema<T>, value: unknown): value is T {

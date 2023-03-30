@@ -55,5 +55,20 @@ module.exports = {
     "prettier/prettier": "warn",
 
     eqeqeq: "error",
+
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { selector: "typeLike", format: ["PascalCase"] },
+      {
+        selector: "variableLike",
+        format: ["camelCase"],
+        leadingUnderscore: "allow",
+      },
+      {
+        selector: "memberLike",
+        format: ["camelCase"],
+        leadingUnderscore: "allow",
+      },
+    ],
   },
 };
