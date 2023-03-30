@@ -66,3 +66,15 @@ type MostIncompleteUsersResult = IterableIterator<
 >;
 function getMostIncompleteUsers(n: number): MostIncompleteUsersResult;
 ```
+
+Equivalent SQL query
+
+```sql
+SELECT users.name, count(todos.id)
+FROM users
+INNER JOIN todos ON users.id = todos.userId
+WHERE todos.completed = false
+GROUP BY users.id
+ORDER BY count(todos.id) DESC
+LIMIT $n
+```
