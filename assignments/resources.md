@@ -22,3 +22,8 @@
 4. [git tips](https://www.integralist.co.uk/posts/git-tips)
 5. [git reflog](https://dangitgit.com)
 6. [Git merge strategies](https://www.integralist.co.uk/posts/git-merge-strategies)
+
+## Functional Programming
+
+1. [Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992/)
+2. [Boundaries](https://www.youtube.com/watch?v=yTkzNHF6rMs)

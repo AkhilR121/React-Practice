@@ -16,8 +16,3 @@
 ## Zod
 
 1. [Zod](https://www.totaltypescript.com/tutorials/zod) course
-
-## Functional Programming
-
-1. [Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992/)
-2. [Boundaries](https://www.youtube.com/watch?v=yTkzNHF6rMs)
