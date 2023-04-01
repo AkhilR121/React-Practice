@@ -14,7 +14,7 @@
     "format": "pnpm prettier --write --ignore-unknown .",
     "types:dev": "tsc --noEmit -p . --watch",
     "prepare": "husky install",
-    "ci": "turbo types lint test"
+    "cd": "turbo types lint test"
   },
   "dependencies": {
     "immer": "9.0.21",
