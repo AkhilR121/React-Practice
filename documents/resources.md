@@ -27,3 +27,18 @@
 
 1. [Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992/)
 2. [Boundaries](https://www.youtube.com/watch?v=yTkzNHF6rMs)
+
+## HTML/CSS
+
+1. [Learning Web Design](https://www.amazon.com/Learning-Web-Design-Beginners-JavaScript/dp/1491960205)
+2. [HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189)
+
+## SQL
+
+1. [T-SQL Fundamentals](https://www.amazon.com/T-SQL-Fundamentals-Developer-Reference-Ben-Gan/dp/0138102104)
+2. [Learning SQL](https://www.amazon.com/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614)
+
+## Node
+
+1. [Nodejs offical guides](https://nodejs.org/en/docs/guides)
+2. [libuv Design](http://docs.libuv.org/en/v1.x/design.html)
