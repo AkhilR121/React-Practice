@@ -6,7 +6,6 @@ export const mod = (x: number, y: number): number => x % y;
 export const pow = (x: number, y: number): number => x ** y;
 
 export const not = (x: boolean): boolean => !x;
-// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 export const bool = (x: unknown): boolean => !!x;
 export const inc = (x: number): number => x + 1;
 export const dec = (x: number): number => x - 1;

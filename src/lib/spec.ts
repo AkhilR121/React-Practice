@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+
 import invariant from "tiny-invariant";
 import { z } from "zod";
 
