@@ -1,3 +1,5 @@
+import { pipe } from "./pipe";
+
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 export function map<T, U>(f: (x: T) => U) {
   return function* (arr: Iterable<T>): IterableIterator<U> {
@@ -167,10 +169,37 @@ export function each<T>(f: (x: T) => void) {
   };
 }
 
+export function concat<T>(...arrs: Array<Iterable<T>>) {
+  return function* (first: Iterable<T>): IterableIterator<T> {
+    yield* first;
+    for (const arr of arrs) {
+      yield* arr;
+    }
+  };
+}
+
 export function iterator<T>(arr: Iterable<T>): Iterator<T> {
   return arr[Symbol.iterator]();
 }
 
 export function toIterable<T>(list: Iterator<T>): Iterable<T> {
   return { [Symbol.iterator]: () => list };
+}
+
+export function includes<T>(value: T) {
+  return (arr: Iterable<T>): boolean =>
+    pipe(
+      arr,
+      some(v => v === value)
+    );
+}
+
+export const of = Array.of;
+
+export function flatMap<T, U>(f: (x: T) => Iterable<U>) {
+  return function* (arr: Iterable<T>): IterableIterator<U> {
+    for (const e of arr) {
+      yield* f(e);
+    }
+  };
 }
