@@ -11,7 +11,7 @@ export function pick<T extends object, K extends keyof T>(keys: readonly K[]) {
 
 export function omit<T extends object, K extends keyof T>(keys: K[]) {
   return (obj: T): Omit<T, K> => {
-    const result: any = {} as Omit<T, K>;
+    const result: any = {};
     for (const key of Object.keys(obj)) {
       const k = key as K;
       if (!keys.includes(k)) {
