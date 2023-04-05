@@ -158,3 +158,19 @@ export function groupBy<T, U>(f: (x: T) => U) {
     return result;
   };
 }
+
+export function each<T>(f: (x: T) => void) {
+  return (arr: Iterable<T>): void => {
+    for (const e of arr) {
+      f(e);
+    }
+  };
+}
+
+export function iterator<T>(arr: Iterable<T>): Iterator<T> {
+  return arr[Symbol.iterator]();
+}
+
+export function toIterable<T>(list: Iterator<T>): Iterable<T> {
+  return { [Symbol.iterator]: () => list };
+}
