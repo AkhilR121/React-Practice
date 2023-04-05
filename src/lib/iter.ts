@@ -1,6 +1,3 @@
-import { pipe } from "./pipe";
-
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 export function map<T, U>(f: (x: T) => U) {
   return function* (arr: Iterable<T>): IterableIterator<U> {
     for (const e of arr) {
@@ -19,39 +16,14 @@ export function filter<T>(pred: (v: T) => boolean) {
   };
 }
 
-export function reduce<T, U>(f: (x: T, acc: U) => U, init: U) {
+export function reduce<T, U>(f: (acc: U, x: T) => U, init: U) {
   return function (arr: Iterable<T>): U {
     let result = init;
     for (const e of arr) {
-      result = f(e, result);
+      result = f(result, e);
     }
 
     return result;
-  };
-}
-
-export function find<T>(f: (x: T) => boolean) {
-  return (arr: Iterable<T>): T | undefined => {
-    for (const e of arr) {
-      if (f(e)) {
-        return e;
-      }
-    }
-
-    return undefined;
-  };
-}
-
-export function findIndex<T>(f: (x: T) => boolean) {
-  return (arr: Iterable<T>): number => {
-    let i = 0;
-    for (const e of arr) {
-      if (f(e)) {
-        return i;
-      }
-      i += 1;
-    }
-    return -1;
   };
 }
 
@@ -161,14 +133,6 @@ export function groupBy<T, U>(f: (x: T) => U) {
   };
 }
 
-export function each<T>(f: (x: T) => void) {
-  return (arr: Iterable<T>): void => {
-    for (const e of arr) {
-      f(e);
-    }
-  };
-}
-
 export function concat<T>(...arrs: Array<Iterable<T>>) {
   return function* (first: Iterable<T>): IterableIterator<T> {
     yield* first;
@@ -184,14 +148,6 @@ export function iterator<T>(arr: Iterable<T>): Iterator<T> {
 
 export function toIterable<T>(list: Iterator<T>): Iterable<T> {
   return { [Symbol.iterator]: () => list };
-}
-
-export function includes<T>(value: T) {
-  return (arr: Iterable<T>): boolean =>
-    pipe(
-      arr,
-      some(v => v === value)
-    );
 }
 
 export const of = Array.of;
