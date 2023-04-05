@@ -50,6 +50,7 @@ module.exports = {
     "@typescript-eslint/no-throw-literal": "warn",
     "@typescript-eslint/prefer-readonly": "warn",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/restrict-plus-operands": "off",
 
     "no-console": "warn",
     "prettier/prettier": "warn",
