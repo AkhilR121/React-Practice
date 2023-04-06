@@ -1,8 +1,10 @@
 ## Javascript
 
-1. Read chapters 3,4 and 5 from
-   [Eloquent Javascript](https://eloquentjavascript.net/)
-2. Read [Destructuring](https://exploringjs.com/impatient-js/ch_destructuring.html)
+1. [Eloquent Javascript](https://eloquentjavascript.net/) - chapters 3(functions), 4(objects and arrays) and 5(higher order functions)
+2. [destructuring](https://exploringjs.com/impatient-js/ch_destructuring.html)
+3. [Modern Javascript for the impatient](https://www.amazon.com/Modern-JavaScript-Impatient-Cay-Horstmann/dp/0136502148) - chapters 4(modules), 12(classes) and 13(typescript)
+4. [Understanding ECMAScript 6](https://www.amazon.com/Understanding-ECMAScript-Definitive-JavaScript-Developers/dp/1593277571) - chapter 8(generators; ignore the advanced sections)
+5. [maps](https://www.builder.io/blog/maps)
 
 ## Typescript
 
@@ -15,6 +17,7 @@
 
 ## Zod
 
+1. [When should you use Zod](https://www.totaltypescript.com/when-should-you-use-zod)
 1. [Zod](https://www.totaltypescript.com/tutorials/zod) course
 
 ## HTML/DOM
@@ -25,7 +28,9 @@
 ## CSS
 
 1. [Learn CSS](https://web.dev/learn/css/)
-2. [Learn Responsive Web Design](https://scrimba.com/learn/responsive)
+2. [Introduction to HTML and CSS](https://scrimba.com/learn/introhtmlcss)
+3. [Conquering Responsive Layouts](https://courses.kevinpowell.co/conquering-responsive-layouts)
+4. [Build a space travel website](https://scrimba.com/learn/spacetravel)
 
 ## SQL
 
