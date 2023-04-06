@@ -25,6 +25,13 @@
 1. [Learn HTML - webdev](https://web.dev/learn/html/)
 2. [HTML Essential Training](https://www.linkedin.com/learning/html-essential-training-4)
 3. [Head first javascript](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/) - chapters 6, 8 and 9
+4. [Understanding DOM events](https://egghead.io/courses/your-ultimate-guide-to-understanding-dom-events-6c0c0d23)
+
+## Asynchronous Javascript
+
+1. [Javascript for impatient programmers](https://exploringjs.com/impatient-js/toc.html) - chapters 39, 40, 41
+1. [Javascript promises in depth](https://egghead.io/courses/javascript-promises-in-depth)
+1. [async/await](https://egghead.io/courses/asynchronous-javascript-with-async-await)
 
 ## CSS
 
