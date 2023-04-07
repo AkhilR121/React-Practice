@@ -27,6 +27,14 @@ export function reduce<T, U>(f: (acc: U, x: T) => U, init: U) {
   };
 }
 
+export function* flatten<T>(
+  arr: Iterable<Iterable<T>> | Iterable<readonly T[]>
+): IterableIterator<T> {
+  for (const e of arr) {
+    yield* e;
+  }
+}
+
 export function every<T>(f: (v: T) => boolean) {
   return (arr: Iterable<T>): boolean => {
     for (const e of arr) {
