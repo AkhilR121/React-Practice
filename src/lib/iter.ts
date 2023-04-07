@@ -112,18 +112,22 @@ export function skip<T>(n: number) {
   };
 }
 
-function defaultCmp<T>(a: T, b: T): number {
-  if (a < b) return -1;
-  if (a > b) return 1;
-  return 0;
+type Order = "asc" | "desc";
+
+export function cmp<T, K extends keyof T>(key: K, order: Order) {
+  return (a: T, b: T): number => {
+    const x = a[key];
+    const y = b[key];
+
+    if (x < y) return order === "asc" ? -1 : 1;
+    if (x > y) return order === "asc" ? 1 : -1;
+    return 0;
+  };
 }
 
-export function orderBy<T, U>(
-  f: (x: T) => U,
-  cmp: (a: U, b: U) => number = defaultCmp
-) {
-  return function (arr: Iterable<T>): T[] {
-    return [...arr].sort((a, b) => cmp(f(a), f(b)));
+export function orderBy<T, K extends keyof T>(key: K, order: Order = "asc") {
+  return (arr: Iterable<T>): T[] => {
+    return [...arr].sort(cmp<T, K>(key, order));
   };
 }
 
