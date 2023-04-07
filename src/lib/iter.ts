@@ -127,14 +127,13 @@ export function orderBy<T, U>(
   };
 }
 
-export function groupBy<T, U>(f: (x: T) => U) {
-  return function (arr: Iterable<T>): Map<U, T[]> {
-    const result = new Map<U, T[]>();
-    for (const e of arr) {
-      const key = f(e);
-      const group = result.get(key) || [];
-      group.push(e);
-      result.set(key, group);
+export function groupBy<T, K extends string | number>(f: (x: T) => K) {
+  return (arr: Iterable<T>): Record<K, readonly T[]> => {
+    const result = {} as any;
+
+    for (const v of arr) {
+      const k = f(v);
+      result[k] = result[k] ? [...result[k], v] : [v];
     }
 
     return result;
