@@ -1,8 +1,5 @@
 // Copied from fp-ts
 
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable prefer-rest-params */
-
 type Fn = (...args: unknown[]) => unknown;
 
 export function pipe<A>(a: A): A;
@@ -272,42 +269,12 @@ export function pipe<
   rs: (r: R) => S,
   st: (s: S) => T
 ): T;
-export function pipe(
-  a: unknown,
-  ab?: Fn,
-  bc?: Fn,
-  cd?: Fn,
-  de?: Fn,
-  ef?: Fn,
-  fg?: Fn,
-  gh?: Fn,
-  hi?: Fn
-): unknown {
-  switch (arguments.length) {
-    case 1:
-      return a;
-    case 2:
-      return ab!(a);
-    case 3:
-      return bc!(ab!(a));
-    case 4:
-      return cd!(bc!(ab!(a)));
-    case 5:
-      return de!(cd!(bc!(ab!(a))));
-    case 6:
-      return ef!(de!(cd!(bc!(ab!(a)))));
-    case 7:
-      return fg!(ef!(de!(cd!(bc!(ab!(a))))));
-    case 8:
-      return gh!(fg!(ef!(de!(cd!(bc!(ab!(a)))))));
-    case 9:
-      return hi!(gh!(fg!(ef!(de!(cd!(bc!(ab!(a))))))));
-    default: {
-      let ret = arguments[0];
-      for (let i = 1; i < arguments.length; i++) {
-        ret = arguments[i](ret);
-      }
-      return ret;
-    }
+
+export function pipe(a: unknown, ...fns: Fn[]): unknown {
+  let result = a;
+  for (const fn of fns) {
+    result = fn(result);
   }
+
+  return result;
 }
