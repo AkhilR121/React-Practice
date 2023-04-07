@@ -133,7 +133,7 @@ export function orderBy<T, K extends keyof T>(key: K, order: Order = "asc") {
 
 export function groupBy<T, K extends string | number>(f: (x: T) => K) {
   return (arr: Iterable<T>): Record<K, readonly T[]> => {
-    const result = {} as any;
+    const result: any = {};
 
     for (const v of arr) {
       const k = f(v);
