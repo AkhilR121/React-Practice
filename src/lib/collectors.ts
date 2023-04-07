@@ -38,6 +38,5 @@ export const toMap = <K, V>(arr: Iterable<[K, V]>): Map<K, V> => new Map(arr);
 export const count = <T>(arr: Iterable<T>): number =>
   pipe(
     arr,
-
     reduce(acc => acc + 1, 0)
   );
