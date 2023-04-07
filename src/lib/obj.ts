@@ -28,3 +28,9 @@ export function merge<T1, T2>(obj2: T2) {
     return { ...obj, ...obj2 };
   };
 }
+
+export function entries<K extends string | number, V>(
+  o: Record<K, V>
+): Array<[K, V]> {
+  return Object.entries(o) as Array<[K, V]>;
+}
