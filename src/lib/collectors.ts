@@ -30,14 +30,13 @@ export const snoc = <T>(arr: Iterable<T>): [T, Iterable<T>] => {
 };
 
 export const max = (arr: Iterable<number>): number => {
-  const [first, ...rest] = arr;
-  invariant(first, "max: empty array");
+  const [first, rest] = snoc(arr);
 
   return pipe(rest, reduce(Math.max, first));
 };
 
 export const min = (arr: Iterable<number>): number => {
-  const [first, ...rest] = arr;
+  const [first, rest] = snoc(arr);
   invariant(first, "min: empty array");
 
   return pipe(rest, reduce(Math.min, first));
