@@ -1,3 +1,5 @@
+import invariant from "tiny-invariant";
+
 export function map<T, U>(f: (x: T) => U) {
   return function* (arr: Iterable<T>): IterableIterator<U> {
     for (const e of arr) {
@@ -170,3 +172,11 @@ export function flatMap<T, U>(f: (x: T) => Iterable<U>) {
     }
   };
 }
+
+export const snoc = <T>(arr: Iterable<T>): [T, Iterable<T>] => {
+  const iter = arr[Symbol.iterator]();
+  const first = iter.next();
+  invariant(!first.done, "snoc: empty array");
+
+  return [first.value, toIterable(iter)];
+};
