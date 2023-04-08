@@ -15,6 +15,20 @@ export function each<T>(f: (x: T) => void) {
 export const sum = (arr: Iterable<number>): number =>
   pipe(arr, reduce(plus, 0));
 
+export const toIterable = <T>(arr: Iterator<T>): Iterable<T> => ({
+  [Symbol.iterator]() {
+    return arr;
+  },
+});
+
+export const snoc = <T>(arr: Iterable<T>): [T, Iterable<T>] => {
+  const iter = arr[Symbol.iterator]();
+  const first = iter.next();
+  invariant(!first.done, "snoc: empty array");
+
+  return [first.value, toIterable(iter)];
+};
+
 export const max = (arr: Iterable<number>): number => {
   const [first, ...rest] = arr;
   invariant(first, "max: empty array");
