@@ -13,6 +13,8 @@ import {
   some,
   takeWhile,
 } from "./iter";
+import { mapGroupBy } from "./map";
+import { omit, pick } from "./obj";
 import { pipe } from "./pipe";
 import { find, findIndex, includes } from "./search";
 
@@ -40,3 +42,8 @@ export const ieach = uncurry(each);
 export const iincludes = uncurry(includes);
 export const ifind = uncurry(find);
 export const ifindIndex = uncurry(findIndex);
+
+export const ipick = uncurry(pick);
+export const iomit = uncurry(omit);
+
+export const imapGroupBy = uncurry(mapGroupBy);
