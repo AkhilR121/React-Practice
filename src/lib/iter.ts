@@ -183,3 +183,21 @@ export function flatMap<T, U>(f: (x: T) => Iterable<U>) {
     }
   };
 }
+
+export function slice<T>(start: number, stop?: number) {
+  return function* (iter: Iterable<T>): IterableIterator<T> {
+    invariant(start >= 0, "start must be >= 0");
+
+    let i = 0;
+    for (const e of iter) {
+      if (stop !== undefined && i >= stop) {
+        break;
+      }
+      if (i >= start) {
+        yield e;
+      }
+
+      i += 1;
+    }
+  };
+}
