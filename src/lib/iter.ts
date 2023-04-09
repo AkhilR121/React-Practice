@@ -1,5 +1,21 @@
 import invariant from "tiny-invariant";
 
+export function iterator<T>(arr: Iterable<T>): Iterator<T> {
+  return arr[Symbol.iterator]();
+}
+
+export function toIterable<T>(list: Iterator<T>): Iterable<T> {
+  return { [Symbol.iterator]: () => list };
+}
+
+export const snoc = <T>(arr: Iterable<T>): [T, Iterable<T>] => {
+  const iter = arr[Symbol.iterator]();
+  const first = iter.next();
+  invariant(!first.done, "snoc: empty array");
+
+  return [first.value, toIterable(iter)];
+};
+
 export function map<T, U>(f: (x: T) => U) {
   return function* (arr: Iterable<T>): IterableIterator<U> {
     for (const e of arr) {
@@ -134,12 +150,17 @@ export function orderBy<T, K extends keyof T>(key: K, order: Order = "asc") {
 }
 
 export function groupBy<T, K extends string | number>(f: (x: T) => K) {
-  return (arr: Iterable<T>): Record<K, readonly T[]> => {
+  return (arr: Iterable<T>): Record<K, T[]> => {
     const result: any = {};
 
     for (const v of arr) {
       const k = f(v);
-      result[k] = result[k] ? [...result[k], v] : [v];
+      const values = result[k];
+      if (!values) {
+        result[k] = [v];
+      } else {
+        values.push(v);
+      }
     }
 
     return result;
@@ -155,16 +176,6 @@ export function concat<T>(...arrs: Array<Iterable<T>>) {
   };
 }
 
-export function iterator<T>(arr: Iterable<T>): Iterator<T> {
-  return arr[Symbol.iterator]();
-}
-
-export function toIterable<T>(list: Iterator<T>): Iterable<T> {
-  return { [Symbol.iterator]: () => list };
-}
-
-export const of = Array.of;
-
 export function flatMap<T, U>(f: (x: T) => Iterable<U>) {
   return function* (arr: Iterable<T>): IterableIterator<U> {
     for (const e of arr) {
@@ -172,11 +183,3 @@ export function flatMap<T, U>(f: (x: T) => Iterable<U>) {
     }
   };
 }
-
-export const snoc = <T>(arr: Iterable<T>): [T, Iterable<T>] => {
-  const iter = arr[Symbol.iterator]();
-  const first = iter.next();
-  invariant(!first.done, "snoc: empty array");
-
-  return [first.value, toIterable(iter)];
-};

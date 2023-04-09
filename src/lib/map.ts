@@ -8,13 +8,17 @@ export function mget<K, V>(map: Map<K, V>, k: K): V {
 }
 
 export function mapGroupBy<T, K>(f: (x: T) => K) {
-  return (arr: Iterable<T>): Map<K, readonly T[]> => {
-    const result = new Map<K, readonly T[]>();
+  return (arr: Iterable<T>): Map<K, T[]> => {
+    const result = new Map<K, T[]>();
 
     for (const v of arr) {
       const k = f(v);
-      const prev = result.get(k) ?? [];
-      result.set(k, [...prev, v]);
+      const values = result.get(k);
+      if (!values) {
+        result.set(k, [v]);
+      } else {
+        values.push(v);
+      }
     }
 
     return result;
