@@ -9,3 +9,4 @@ export * from "./range";
 export * from "./search";
 export * from "./spec";
 export * from "./tap";
+export * from "./uncurried";
