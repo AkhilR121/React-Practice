@@ -3,7 +3,6 @@ import { reduce, snoc } from "./iter";
 import { plus } from "./operators";
 import { pipe } from "./pipe";
 
-// Don't use this function, if you don't know how generators work.
 export function each<T>(f: (x: T) => void) {
   return (arr: Iterable<T>): void => {
     for (const e of arr) {

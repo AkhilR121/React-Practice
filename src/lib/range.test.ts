@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { range } from "./range";
+import { range } from "./source";
 
 test("range", () => {
   expect([...range(0, 0)]).toEqual([]);
