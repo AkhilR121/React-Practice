@@ -1,35 +1,29 @@
-import { some } from "./iter";
-import { pipe } from "./pipe";
+import { isome } from "./iter";
 
-export function includes<T>(value: T) {
-  return (arr: Iterable<T>): boolean =>
-    pipe(
-      arr,
-      some(v => v === value)
-    );
+export function iincludes<T>(arr: Iterable<T>, value: T): boolean {
+  return isome(arr, v => v === value);
 }
 
-export function find<T>(f: (x: T) => boolean) {
-  return (arr: Iterable<T>): T | undefined => {
-    for (const e of arr) {
-      if (f(e)) {
-        return e;
-      }
+export function ifind<T>(
+  arr: Iterable<T>,
+  f: (x: T) => boolean
+): T | undefined {
+  for (const e of arr) {
+    if (f(e)) {
+      return e;
     }
+  }
 
-    return undefined;
-  };
+  return undefined;
 }
 
-export function findIndex<T>(f: (x: T) => boolean) {
-  return (arr: Iterable<T>): number => {
-    let i = 0;
-    for (const e of arr) {
-      if (f(e)) {
-        return i;
-      }
-      i += 1;
+export function ifindIndex<T>(arr: Iterable<T>, f: (x: T) => boolean): number {
+  let i = 0;
+  for (const e of arr) {
+    if (f(e)) {
+      return i;
     }
-    return -1;
-  };
+    i += 1;
+  }
+  return -1;
 }

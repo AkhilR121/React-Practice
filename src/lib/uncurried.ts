@@ -1,22 +1,22 @@
-import { each } from "./collectors";
+import { ieach } from "./collectors";
 import {
-  concat,
-  every,
-  filter,
-  flatMap,
-  groupBy,
-  map,
-  orderBy,
-  reduce,
-  skip,
-  skipWhile,
-  some,
-  takeWhile,
+  iconcat,
+  ievery,
+  ifilter,
+  iflatMap,
+  igroupBy,
+  imap,
+  iorderBy,
+  ireduce,
+  iskip,
+  iskipWhile,
+  isome,
+  itakeWhile,
 } from "./iter";
-import { mapGroupBy } from "./map";
-import { omit, pick } from "./obj";
+import { imapGroupBy } from "./map";
+import { iomit, ipick } from "./obj";
 import { pipe } from "./pipe";
-import { find, findIndex, includes } from "./search";
+import { ifind, ifindIndex, iincludes } from "./search";
 
 export function uncurry<Args extends any[], Src, R>(
   f: (...args: Args) => (src: Src) => R
@@ -24,26 +24,41 @@ export function uncurry<Args extends any[], Src, R>(
   return (src: Src, ...args: Args): R => pipe(src, f(...args));
 }
 
-export const imap = uncurry(map);
-export const ifilter = uncurry(filter);
-export const ireduce = uncurry(reduce);
-export const ievery = uncurry(every);
-export const isome = uncurry(some);
-export const itakeWhile = uncurry(takeWhile);
-export const iskipWhile = uncurry(skipWhile);
-export const iskip = uncurry(skip);
-export const iorderBy = uncurry(orderBy);
-export const igroupBy = uncurry(groupBy);
-export const iconcat = uncurry(concat);
-export const iflatMap = uncurry(flatMap);
+export function p<Args extends any[], Src, R>(
+  f: (src: Src, ...args: Args) => R,
+  ...args: Args
+) {
+  return (src: Src): R => f(src, ...args);
+}
 
-export const ieach = uncurry(each);
+export function curry<Args extends any[], Src, R>(
+  f: (src: Src, ...args: Args) => R
+) {
+  return (...args: Args) =>
+    (src: Src): R =>
+      f(src, ...args);
+}
 
-export const iincludes = uncurry(includes);
-export const ifind = uncurry(find);
-export const ifindIndex = uncurry(findIndex);
+export const map = curry(imap);
+export const filter = curry(ifilter);
+export const reduce = curry(ireduce);
+export const every = curry(ievery);
+export const some = curry(isome);
+export const takeWhile = curry(itakeWhile);
+export const skipWhile = curry(iskipWhile);
+export const skip = curry(iskip);
+export const orderBy = curry(iorderBy);
+export const groupBy = curry(igroupBy);
+export const concat = curry(iconcat);
+export const flatMap = curry(iflatMap);
 
-export const ipick = uncurry(pick);
-export const iomit = uncurry(omit);
+export const each = curry(ieach);
 
-export const imapGroupBy = uncurry(mapGroupBy);
+export const includes = curry(iincludes);
+export const find = curry(ifind);
+export const findIndex = curry(ifindIndex);
+
+export const pick = curry(ipick);
+export const omit = curry(iomit);
+
+export const mapGroupBy = curry(imapGroupBy);
