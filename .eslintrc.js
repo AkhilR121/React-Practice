@@ -25,7 +25,6 @@ module.exports = {
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-call": "off",
-    "@typescript-eslint/array-type": ["warn", { default: "array-simple" }],
     "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
     "@typescript-eslint/consistent-type-exports": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "warn",
