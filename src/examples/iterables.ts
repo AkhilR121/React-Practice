@@ -15,10 +15,8 @@ export function fizz(): number[] {
     .slice(0, 3);
 }
 
-export function jrange(
-  start: number,
-  stop: number
-): { hasNext(): boolean; next(): number } {
+type Iter = { hasNext(): boolean; next(): number };
+export function jrange(start: number, stop: number): Iter {
   let i = start;
 
   function hasNext(): boolean {
@@ -35,6 +33,7 @@ export function jrange(
 }
 
 const x = "foo";
+
 const pt = { [x]: 100 };
 console.log(pt);
 
