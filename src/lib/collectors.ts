@@ -27,7 +27,8 @@ export const toArray = <T>(arr: Iterable<T>): T[] => [...arr];
 
 export const toSet = <T>(arr: Iterable<T>): Set<T> => new Set(arr);
 
-export const toMap = <K, V>(arr: Iterable<[K, V]>): Map<K, V> => new Map(arr);
+export const toMap = <K, V>(arr: Iterable<readonly [K, V]>): Map<K, V> =>
+  new Map(arr);
 
 export const count = <T>(arr: Iterable<T>): number =>
   ireduce(arr, acc => acc + 1, 0);

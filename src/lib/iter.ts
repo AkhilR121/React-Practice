@@ -50,7 +50,13 @@ export function ireduce<T, U>(
 }
 
 export function* flatten<T>(
-  arr: Iterable<Iterable<T>> | Iterable<readonly T[]>
+  arr:
+    | Iterable<readonly T[]>
+    | IterableIterator<readonly T[]>
+    | Iterable<Iterable<T>>
+    | IterableIterator<IterableIterator<T>>
+    | IterableIterator<Iterable<T>>
+    | Iterable<IterableIterator<T>>
 ): IterableIterator<T> {
   for (const e of arr) {
     yield* e;
