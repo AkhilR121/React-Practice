@@ -1,3 +1,4 @@
+import invariant from "tiny-invariant";
 import { z } from "zod";
 import { is } from "./spec";
 
@@ -27,4 +28,9 @@ export function isArray(x: unknown): x is readonly unknown[] {
 
 export function isObject(x: unknown): x is Record<string, unknown> {
   return is(z.record(z.any()), x);
+}
+
+export function notNil<T>(x: T | null | undefined): T {
+  invariant(!isNil(x), "notNil: value is nil");
+  return x;
 }
