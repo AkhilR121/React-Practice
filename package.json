@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "7.6.0",
+    "@total-typescript/ts-reset": "^0.4.2",
     "@types/node": "18.15.11",
     "@typescript-eslint/eslint-plugin": "5.57.1",
     "@typescript-eslint/parser": "5.57.1",
