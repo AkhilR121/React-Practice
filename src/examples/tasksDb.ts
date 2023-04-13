@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
-import { flatten, map, pipe, range, toArray } from "@lib";
+import { flatten, ifilter, map, pipe, range, toArray } from "@lib";
+import produce from "immer";
 
 type User = Readonly<{
   id: number;
@@ -66,4 +67,19 @@ function createTasks(users: readonly User[], maxCount: number) {
 }
 
 export const users: readonly User[] = createUsers(4);
-export const tasks: readonly Task[] = createTasks(users, 10);
+export let tasks: readonly Task[] = createTasks(users, 10);
+
+// const usernames = new Map(users.map(u => [u.id, u.name]));
+
+export function setCompletedAboveDeadline(userId: number): void {
+  tasks = produce(tasks, draft => {
+    const updateTasks = ifilter(
+      draft,
+      t => t.userId === userId && t.deadline < new Date()
+    );
+
+    for (const task of updateTasks) {
+      task.completed = true;
+    }
+  });
+}
