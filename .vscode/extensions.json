@@ -7,13 +7,14 @@
     "humao.rest-client",
     "mhutchie.git-graph",
     "ms-vsliveshare.vsliveshare",
-    "Orta.vscode-twoslash-queries",
+    "orta.vscode-twoslash-queries",
     "prisma.prisma",
     "ryanluker.vscode-coverage-gutters",
     "streetsidesoftware.code-spell-checker",
     "wayou.vscode-todo-highlight",
     "zenclabs.previewjs",
     "zixuanchen.vitest-explorer",
-    "WallabyJs.console-ninja"
+    "wallabyjs.console-ninja",
+    "meganrogge.template-string-converter"
   ]
 }
