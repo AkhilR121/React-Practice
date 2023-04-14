@@ -1,0 +1,12 @@
+{
+  "extends": "@ti/tsconfig/vite.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@lib": ["packages/src/lib"]
+    },
+    "types": ["node", "vitest/importMeta"]
+  },
+  "include": ["src", "tests"],
+  "exclude": ["node_modules", "dist"]
+}

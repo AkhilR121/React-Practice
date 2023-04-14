@@ -131,3 +131,4 @@ dist
 **/.history/
 training.md
 *.excalidraw
+.turbo

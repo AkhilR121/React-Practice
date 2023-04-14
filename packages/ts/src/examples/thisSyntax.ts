@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 type MyPoint = { x: number; y: number };
 
 function print(this: MyPoint) {
