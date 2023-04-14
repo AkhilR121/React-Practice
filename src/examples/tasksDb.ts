@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
-import { flatten, ifilter, map, pipe, range, toArray } from "@lib";
 import produce from "immer";
+import _ from "remeda";
 
 type User = Readonly<{
   id: number;
@@ -41,7 +41,7 @@ function createTask(userId: number): Task {
 }
 
 function createUsers(n: number) {
-  return pipe(range(n), map(createUser), toArray);
+  return _.pipe(_.range(0, n), _.map(createUser));
 }
 
 function createTasksFor(userId: number, maxCount: number) {
@@ -50,19 +50,17 @@ function createTasksFor(userId: number, maxCount: number) {
     max: maxCount,
   });
 
-  return pipe(
-    range(taskCount),
-    map(() => createTask(userId)),
-    toArray
+  return _.pipe(
+    _.range(0, taskCount),
+    _.map(() => createTask(userId))
   );
 }
 
-function createTasks(users: readonly User[], maxCount: number) {
-  return pipe(
+function createTasks(users: readonly User[], maxCount: number): Task[] {
+  return _.pipe(
     users,
-    map(u => createTasksFor(u.id, maxCount)),
-    flatten,
-    toArray
+    _.map(u => createTasksFor(u.id, maxCount)),
+    _.flatten()
   );
 }
 
@@ -73,13 +71,10 @@ export let tasks: readonly Task[] = createTasks(users, 10);
 
 export function setCompletedAboveDeadline(userId: number): void {
   tasks = produce(tasks, draft => {
-    const updateTasks = ifilter(
-      draft,
-      t => t.userId === userId && t.deadline < new Date()
-    );
-
-    for (const task of updateTasks) {
-      task.completed = true;
+    for (const task of draft) {
+      if (task.userId === userId && task.deadline < new Date()) {
+        task.completed = true;
+      }
     }
   });
 }

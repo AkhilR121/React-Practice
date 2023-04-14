@@ -4,6 +4,9 @@ dependencies:
   immer:
     specifier: 9.0.21
     version: 9.0.21
+  remeda:
+    specifier: 1.12.0
+    version: 1.12.0
   tiny-invariant:
     specifier: 1.3.1
     version: 1.3.1
@@ -22,7 +25,7 @@ devDependencies:
     specifier: 7.6.0
     version: 7.6.0
   "@total-typescript/ts-reset":
-    specifier: ^0.4.2
+    specifier: 0.4.2
     version: 0.4.2
   "@types/node":
     specifier: 18.15.11
@@ -2613,6 +2616,13 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /remeda@1.12.0:
+    resolution:
+      {
+        integrity: sha512-IuuWrP1UEyAafKHPQ6bSRGKUxvMh/Kla5LP8ujM/BMf3ciwt5M68j0vlYOl1pIv3J2pS+BMlFKqLtHoYuzcwYQ==,
+      }
+    dev: false
 
   /require-directory@2.1.1:
     resolution:
