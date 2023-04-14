@@ -53,7 +53,7 @@ obj4.foo();
 obj4.bar();
 
 // stateful objects
-const point = {
+const pt = {
   x: 1,
   y: 2,
   distance() {
@@ -61,7 +61,7 @@ const point = {
   },
 };
 
-console.log(point.distance());
+console.log(pt.distance());
 
 class Point {
   x: number;
