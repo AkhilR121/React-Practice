@@ -5,6 +5,7 @@
       "outputs": ["dist/**"]
     },
     "lint": {},
-    "types": {}
+    "types": {},
+    "test": {}
   }
 }

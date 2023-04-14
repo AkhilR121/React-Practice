@@ -1,4 +1,5 @@
 {
+  "name": "fullstack-training",
   "devDependencies": {
     "ndb": "1.1.5",
     "npm-check-updates": "16.10.8",

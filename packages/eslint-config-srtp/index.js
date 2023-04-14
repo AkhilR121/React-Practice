@@ -27,7 +27,6 @@ module.exports = {
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
     "@typescript-eslint/consistent-type-exports": "warn",
-    "@typescript-eslint/explicit-module-boundary-types": "warn",
     "@typescript-eslint/no-confusing-void-expression": "warn",
     "@typescript-eslint/no-inferrable-types": "warn",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
@@ -58,20 +57,5 @@ module.exports = {
     "prettier/prettier": "warn",
 
     eqeqeq: "error",
-
-    "@typescript-eslint/naming-convention": [
-      "error",
-      { selector: "typeLike", format: ["PascalCase"] },
-      {
-        selector: "variableLike",
-        format: ["camelCase"],
-        leadingUnderscore: "allow",
-      },
-      {
-        selector: "memberLike",
-        format: ["camelCase"],
-        leadingUnderscore: "allow",
-      },
-    ],
   },
 };

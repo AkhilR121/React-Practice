@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import invariant from "tiny-invariant";
 import { z } from "zod";
 
@@ -49,7 +47,6 @@ export function is<T>(schema: z.ZodSchema<T>, value: unknown): value is T {
 
 export type Comparable = string | number | Date;
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function checked<
   Args extends [] | [z.ZodTypeAny, ...z.ZodTypeAny[]],
   F extends (...args: Array<z.infer<Args[number]>>) => unknown
@@ -57,7 +54,6 @@ export function checked<
   return z.function(z.tuple(specs)).implement(f);
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function checkedReturn<
   Args extends [] | [z.ZodTypeAny, ...z.ZodTypeAny[]],
   F extends (...args: Array<z.infer<Args[number]>>) => unknown,
