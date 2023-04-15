@@ -1,0 +1,13 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "e2e tests --project=chromium",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "pnpm playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.32.3",
+    "playwright": "1.32.3"
+  }
+}
