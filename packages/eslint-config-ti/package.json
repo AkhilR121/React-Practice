@@ -2,7 +2,6 @@
   "name": "eslint-config-ti",
   "version": "0.0.0",
   "main": "index.js",
-  "license": "MIT",
   "scripts": {
     "upd": "pnpm ncu -u"
   },

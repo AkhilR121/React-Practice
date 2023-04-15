@@ -9,9 +9,6 @@
   "files": [
     "dist/**"
   ],
-  "keywords": [],
-  "author": "Pervez Iqbal",
-  "license": "MIT",
   "scripts": {
     "upd": "pnpm ncu -u",
     "build": "tsup src/index.ts --format esm,cjs --dts",
