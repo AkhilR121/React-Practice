@@ -1,14 +1,14 @@
 import invariant from "tiny-invariant";
 import { z } from "zod";
 
-export const WholeNumber = z.number().int().nonnegative();
-export type WholeNumber = z.infer<typeof WholeNumber>;
+export const uint = z.number().int().nonnegative();
+export type UInt = z.infer<typeof uint>;
 
 export const Positive = z.number().int().positive();
 export type Positive = z.infer<typeof Positive>;
 
-export const Int = z.number().int();
-export type Int = z.infer<typeof Int>;
+export const int = z.number().int();
+export type Int = z.infer<typeof int>;
 
 export function safeCast<T>(
   schema: z.ZodSchema<T>,

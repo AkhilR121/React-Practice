@@ -16,7 +16,7 @@ import {
   TextInput,
   TimeInput,
   UrlInput,
-} from "./inputs";
+} from "./Inputs";
 
 interface FormProps {
   onSubmit: (formData: FormData) => void;

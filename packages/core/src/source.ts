@@ -1,11 +1,11 @@
 import invariant from "tiny-invariant";
 
-import { Positive, WholeNumber, verify } from "./spec";
+import { Positive, uint, verify, type UInt } from "./spec";
 
 export function* range(
-  start: WholeNumber,
-  stop?: WholeNumber,
-  step?: WholeNumber
+  start: UInt,
+  stop?: UInt,
+  step?: UInt
 ): IterableIterator<number> {
   if (stop === undefined) {
     stop = start;
@@ -16,8 +16,8 @@ export function* range(
     step = 1;
   }
 
-  verify(WholeNumber, start);
-  verify(WholeNumber, stop);
+  verify(uint, start);
+  verify(uint, stop);
   verify(Positive, step);
   invariant(start <= stop, `start(${start}) must be less than stop(${stop})`);
 
