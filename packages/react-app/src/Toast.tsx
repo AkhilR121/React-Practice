@@ -74,7 +74,7 @@ const Toast: React.FC<ToastProps> = ({
 
   return (
     <div
-      className={`fixed ${positionClasses} m-4 p-4 w-80 rounded-md ${bgColor} ${borderColor} ${textColor} ${
+      className={`fixed ${positionClasses} m-4 w-80 rounded-md p-4 ${bgColor} ${borderColor} ${textColor} ${
         show ? "visible" : "invisible"
       } transition-all duration-300`}
     >

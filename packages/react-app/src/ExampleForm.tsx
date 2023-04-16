@@ -57,7 +57,7 @@ export const Form: React.FC<FormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="max-w-lg mx-auto">
+    <form onSubmit={handleFormSubmit} className="mx-auto max-w-lg">
       <TextInput
         label="Name"
         id="name"
@@ -167,7 +167,7 @@ export const Form: React.FC<FormProps> = ({ onSubmit }) => {
 
       <button
         type="submit"
-        className="px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-700"
+        className="rounded-md bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
       >
         Submit
       </button>

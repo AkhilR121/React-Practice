@@ -17,7 +17,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -27,7 +27,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -50,7 +50,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -60,7 +60,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -81,7 +81,7 @@ export const TextAreaInput: React.FC<TextAreaInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <textarea
@@ -89,7 +89,7 @@ export const TextAreaInput: React.FC<TextAreaInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -116,7 +116,7 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
         name={id}
         checked={checked}
         onChange={onChange}
-        className="mr-2 leading-tight focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue mr-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
       <label htmlFor={id} className="inline font-bold text-gray-700">
         {label}
@@ -149,7 +149,7 @@ export const RadioInput: React.FC<RadioInputProps> = ({
         value={value}
         checked={checked}
         onChange={onChange}
-        className="mr-2 leading-tight appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue mr-2 appearance-none leading-tight focus:border-blue-500 focus:outline-none"
       />
       <label htmlFor={id} className="inline font-bold text-gray-700">
         {label}
@@ -173,7 +173,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -182,7 +182,7 @@ export const DateInput: React.FC<DateInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -203,7 +203,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -212,7 +212,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -233,7 +233,7 @@ export const DateTimeLocalInput: React.FC<DateTimeLocalInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -242,7 +242,7 @@ export const DateTimeLocalInput: React.FC<DateTimeLocalInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -266,7 +266,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <select
@@ -274,7 +274,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       >
         {children}
       </select>
@@ -297,7 +297,7 @@ export const ColorInput: React.FC<ColorInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -306,7 +306,7 @@ export const ColorInput: React.FC<ColorInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -327,7 +327,7 @@ export const EmailInput: React.FC<EmailInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -336,7 +336,7 @@ export const EmailInput: React.FC<EmailInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -363,7 +363,7 @@ export const RangeInput: React.FC<RangeInputProps> = ({
 }) => {
   return (
     <div className="mb-6">
-      <label htmlFor={id} className="block text-gray-700 font-bold mb-2">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <div className="relative">
@@ -376,7 +376,7 @@ export const RangeInput: React.FC<RangeInputProps> = ({
           max={max}
           step={step}
           onChange={onChange}
-          className="w-full h-4 bg-gray-300 rounded-full appearance-none outline-none"
+          className="h-4 w-full appearance-none rounded-full bg-gray-300 outline-none"
         />
         <div className="absolute right-0 top-0 -mt-2">
           <span className="text-xs font-semibold text-gray-600">{value}</span>
@@ -405,7 +405,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -414,7 +414,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -435,7 +435,7 @@ export const TelInput: React.FC<TelInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -444,7 +444,7 @@ export const TelInput: React.FC<TelInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -465,7 +465,7 @@ export const TimeInput: React.FC<TimeInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -474,7 +474,7 @@ export const TimeInput: React.FC<TimeInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -495,7 +495,7 @@ export const UrlInput: React.FC<UrlInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -504,7 +504,7 @@ export const UrlInput: React.FC<UrlInputProps> = ({
         name={id}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );
@@ -529,7 +529,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={id} className="mb-2 block font-bold text-gray-700">
         {label}
       </label>
       <input
@@ -540,7 +540,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
         min={min}
         max={max}
         onChange={onChange}
-        className="w-full px-3 py-2 leading-tight border rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="focus:shadow-outline-blue w-full appearance-none rounded-md border px-3 py-2 leading-tight focus:border-blue-500 focus:outline-none"
       />
     </div>
   );

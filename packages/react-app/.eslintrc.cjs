@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parserOptions: {
-    tsconfigRootDir: __dirname
+    tsconfigRootDir: __dirname,
   },
-  extends: ["ti", "plugin:storybook/recommended"]
+  extends: ["ti", "plugin:storybook/recommended"],
 };
