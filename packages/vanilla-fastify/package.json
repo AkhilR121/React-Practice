@@ -1,0 +1,23 @@
+{
+  "name": "@ti/vanilla-fastify",
+  "private": true,
+  "description": "basic fastify server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --watch src/index.ts"
+  },
+  "dependencies": {
+    "@fastify/type-provider-typebox": "3.0.0",
+    "@sinclair/typebox": "^0.27.8",
+    "fastify": "4.15.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "18.15.11",
+    "eslint": "8.38.0",
+    "prettier": "2.8.7",
+    "tsx": "3.12.6",
+    "typescript": "5.0.4"
+  }
+}
