@@ -16,6 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "tests", "__previewjs__/Wrapper.tsx"],
+  "include": ["src", "tests", "__previewjs__/Wrapper.tsx", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

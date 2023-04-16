@@ -5,9 +5,9 @@ import { join } from "path";
 export type AppOptions = Partial<AutoloadPluginOptions>;
 
 // Pass --options via CLI arguments in command to enable these options.
-const options: AppOptions = {};
+// const options: AppOptions = {};
 
-const app: FastifyPluginAsync<AppOptions> = async (
+export const appService: FastifyPluginAsync<AppOptions> = async (
   fastify,
   opts
 ): Promise<void> => {
@@ -30,6 +30,3 @@ const app: FastifyPluginAsync<AppOptions> = async (
     options: opts,
   });
 };
-
-export default app;
-export { app, options };

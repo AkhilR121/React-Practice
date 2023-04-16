@@ -1,4 +1,4 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "include": ["src", "test", "test/routes/app.test.ts"]
+  "include": ["src", "test", "tests"]
 }
