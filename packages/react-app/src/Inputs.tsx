@@ -116,7 +116,7 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
         name={id}
         checked={checked}
         onChange={onChange}
-        className="mr-2 leading-tight appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
+        className="mr-2 leading-tight focus:outline-none focus:shadow-outline-blue focus:border-blue-500"
       />
       <label htmlFor={id} className="inline font-bold text-gray-700">
         {label}
