@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { useState, type ChangeEvent, type FormEvent } from "react";
 import {
   CheckboxInput,
   DateInput,

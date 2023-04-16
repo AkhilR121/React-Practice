@@ -1,4 +1,4 @@
 {
-  "extends": "@ti/tsconfig/base.json",
+  "extends": ["@tsconfig/strictest/tsconfig", "@tsconfig/esm/tsconfig"],
   "include": ["src", "tests", "__previewjs__"]
 }

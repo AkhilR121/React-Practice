@@ -1,5 +1,5 @@
 import React from "react";
-
+import invariant from "tiny-invariant";
 import { Header } from "./Header";
 import "./page.css";
 
@@ -9,7 +9,7 @@ type User = {
 
 export const Page: React.FC = () => {
   const [user, setUser] = React.useState<User>();
-
+  invariant(user);
   return (
     <article>
       <Header

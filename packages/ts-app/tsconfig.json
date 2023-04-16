@@ -1,6 +1,9 @@
 {
-  "extends": "@ti/tsconfig/vite.json",
+  "extends": ["@tsconfig/esm/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "es2022",
     "baseUrl": ".",
     "paths": {
       "@lib": ["packages/src/lib"]

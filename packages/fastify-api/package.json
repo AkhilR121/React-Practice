@@ -26,7 +26,7 @@
     "eslint-config-ti": "workspace:*",
     "fastify-tsconfig": "1.0.1",
     "prettier": "2.8.7",
-    "tsx": "^3.12.6",
+    "tsx": "3.12.6",
     "typescript": "5.0.4"
   }
 }

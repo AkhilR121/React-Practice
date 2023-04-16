@@ -5,15 +5,22 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "tsx --watch src/index.ts"
+    "dev": "tsx --watch src/index.ts",
+    "types": "tsc --noEmit -p .",
+    "types:dev": "tsc --noEmit -p . --watch",
+    "lint": "eslint src --ext .ts"
   },
   "dependencies": {
     "@fastify/type-provider-typebox": "3.0.0",
-    "@sinclair/typebox": "^0.27.8",
+    "@sinclair/typebox": "0.27.8",
     "fastify": "4.15.0"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^1.0.1",
+    "eslint-config-ti": "workspace:*",
+    "@tsconfig/esm": "1.0.2",
+    "@tsconfig/node-lts": "18.12.1",
+    "@tsconfig/node18": "1.0.1",
+    "@tsconfig/strictest": "2.0.0",
     "@types/node": "18.15.11",
     "eslint": "8.38.0",
     "prettier": "2.8.7",

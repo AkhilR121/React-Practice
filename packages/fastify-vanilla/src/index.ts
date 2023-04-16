@@ -1,5 +1,7 @@
-import { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
-import { Static, Type } from "@sinclair/typebox";
+/* eslint-disable no-console */
+import type { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
+import type { Static } from "@sinclair/typebox";
+import { Type } from "@sinclair/typebox";
 import fastify from "fastify";
 import { ping } from "./routes";
 

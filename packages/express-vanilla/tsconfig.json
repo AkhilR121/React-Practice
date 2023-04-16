@@ -1,28 +1,13 @@
 {
+  "extends": [
+    "@tsconfig/strictest/tsconfig",
+    "@tsconfig/esm/tsconfig",
+    "@tsconfig/node-lts/tsconfig"
+  ],
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "es2022",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "declaration": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "build",
-    "lib": ["ES2022"],
-    "noEmit": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "useUnknownInCatchVariables": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "skipLibCheck": true
+    "moduleResolution": "node"
   },
   "include": ["src", "tests"]
 }

@@ -1,5 +1,5 @@
+import type { Routing } from "express-zod-api";
 import {
-  Routing,
   defaultEndpointsFactory as api,
   createConfig,
   createServer,

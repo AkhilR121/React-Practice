@@ -53,6 +53,7 @@ export function* enumerate<T>(
 
 export function* reverse<T>(arr: readonly T[]): IterableIterator<T> {
   for (let i = arr.length - 1; i >= 0; i--) {
-    yield arr[i];
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    yield arr[i]!;
   }
 }

@@ -1,7 +1,7 @@
 import {
   QueryClient,
   QueryClientProvider,
-  QueryFunctionContext,
+  type QueryFunctionContext,
 } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { FullPageLoader } from "./Loading";

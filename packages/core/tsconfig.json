@@ -1,4 +1,8 @@
 {
-  "extends": "@ti/tsconfig/base.json",
-  "include": ["src", "tests", "__previewjs__"]
+  "extends": ["@tsconfig/strictest/tsconfig", "@tsconfig/esm/tsconfig"],
+  "compilerOptions": {
+    "target": "es2022",
+    "moduleResolution": "node"
+  },
+  "include": ["src", "tests"]
 }
