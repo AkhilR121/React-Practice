@@ -543,6 +543,9 @@ importers:
       framer-motion:
         specifier: 10.12.2
         version: 10.12.2(react-dom@18.2.0)(react@18.2.0)
+      immer:
+        specifier: 9.0.21
+        version: 9.0.21
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -558,6 +561,9 @@ importers:
       tslib:
         specifier: 2.5.0
         version: 2.5.0
+      use-immer:
+        specifier: 0.9.0
+        version: 0.9.0(immer@9.0.21)(react@18.2.0)
       wretch:
         specifier: 2.5.2
         version: 2.5.2
