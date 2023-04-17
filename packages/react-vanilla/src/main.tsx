@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom/client";
 import invariant from "tiny-invariant";
+import { App } from "./App";
 
-const root = document.getElementById("root");
-invariant(root, "root element not found");
+const rootEl = document.getElementById("root");
+invariant(rootEl, "root element not found");
 
-const App = () => <h1>Hello World</h1>;
-
-ReactDOM.createRoot(root).render(<App />);
+const root = ReactDOM.createRoot(rootEl);
+root.render(<App />);
