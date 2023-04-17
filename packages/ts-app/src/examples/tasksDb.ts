@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import produce from "immer";
+import { produce } from "immer";
 import _ from "remeda";
 
 type User = Readonly<{
