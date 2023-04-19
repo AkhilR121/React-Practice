@@ -4,6 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "target": "es2022",
+    "noUncheckedIndexedAccess": false,
     "baseUrl": ".",
     "paths": {
       "@lib": ["packages/src/lib"]

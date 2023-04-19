@@ -613,6 +613,9 @@ importers:
 
   packages/ts-app:
     dependencies:
+      '@ti/core':
+        specifier: workspace:*
+        version: link:../core
       immer:
         specifier: 10.0.0
         version: 10.0.0
