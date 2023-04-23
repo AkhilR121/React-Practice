@@ -3,9 +3,6 @@ import { Suspense } from "react";
 import { ErrorBoundary, type ErrorBoundaryProps } from "react-error-boundary";
 import { Toaster } from "react-hot-toast";
 import { SWRConfig } from "swr";
-import invariant from "tiny-invariant";
-const rootEl = document.getElementById("root");
-invariant(rootEl, "root element not found");
 
 const ErrorFallback: ErrorBoundaryProps["FallbackComponent"] = ({ error }) => (
   <Heading size="3xl" color="red.700">
