@@ -8,14 +8,14 @@
       "name": "Edge Launch",
       "request": "launch",
       "type": "msedge",
-      "url": "http://localhost:5173",
+      "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
     },
     {
       "type": "chrome",
       "request": "launch",
       "name": "Chrome Launch",
-      "url": "http://localhost:5173",
+      "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
     }
   ]
