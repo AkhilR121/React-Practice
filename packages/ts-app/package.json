@@ -6,10 +6,6 @@
   "scripts": {
     "lint": "eslint --fix --cache --ext .ts,.tsx src",
     "dev": "vite --open --port 3000",
-    "test:dev": "vitest",
-    "test": "vitest run --passWithNoTests",
-    "cov": "vitest run --coverage",
-    "cov:dev": "vitest watch --coverage",
     "types": "tsc --noEmit -p .",
     "format": "pnpm prettier --write --ignore-unknown .",
     "types:dev": "tsc --noEmit -p . --watch",
