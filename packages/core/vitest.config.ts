@@ -6,6 +6,6 @@ export default defineConfig({
       provider: "c8",
       reporter: ["lcov", "text"],
     },
-    includeSource: ["src/**/*.{tsx,ts}"],
+    includeSource: ["src/**/*.ts"],
   },
 });

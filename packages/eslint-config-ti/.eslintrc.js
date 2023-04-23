@@ -1,9 +1,9 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: "latest",
   },
 
   env: {
     es6: true,
   },
-}
+};

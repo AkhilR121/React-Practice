@@ -1,5 +1,5 @@
-import invariant from "tiny-invariant";
 import { pipe, range, reduce, snoc } from "@ti/core";
+import invariant from "tiny-invariant";
 
 export function equals<T>(fst: Iterable<T>, snd: Iterable<T>): boolean {
   const fiter = fst[Symbol.iterator]();

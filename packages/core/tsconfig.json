@@ -4,5 +4,5 @@
     "target": "es2022",
     "moduleResolution": "node"
   },
-  "include": ["src", "tests"]
+  "include": ["src"]
 }

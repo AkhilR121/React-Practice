@@ -9,5 +9,5 @@
     "module": "ESNext",
     "moduleResolution": "node"
   },
-  "include": ["src", "tests"]
+  "include": ["src"]
 }

@@ -4,10 +4,10 @@
   "private": true,
   "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint --fix --cache --ext .ts,.tsx src",
+    "clean": "rimraf .turbo node_modules dist",
+    "lint": "eslint --fix --max-warnings=0 --cache src --ext .ts",
     "dev": "vite --open --port 3000",
     "types": "tsc --noEmit -p .",
-    "format": "pnpm prettier --write --ignore-unknown .",
     "types:dev": "tsc --noEmit -p . --watch",
     "cd": "turbo types lint test"
   },
@@ -26,14 +26,12 @@
     "@tsconfig/esm": "1.0.3",
     "@tsconfig/strictest": "2.0.1",
     "@types/node": "18.16.0",
-    "@vitest/coverage-c8": "0.30.1",
     "eslint": "8.39.0",
     "eslint-config-ti": "workspace:*",
     "prettier": "2.8.8",
     "turbo": "1.9.3",
     "typescript": "5.0.4",
     "vite": "4.3.1",
-    "vite-plugin-checker": "0.5.6",
-    "vitest": "0.30.1"
+    "vite-plugin-checker": "0.5.6"
   }
 }

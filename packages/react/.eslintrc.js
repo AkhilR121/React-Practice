@@ -3,5 +3,5 @@ module.exports = {
   parserOptions: {
     tsconfigRootDir: __dirname,
   },
-  extends: ['ti'],
-}
+  extends: ["ti"],
+};

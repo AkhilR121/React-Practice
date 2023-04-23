@@ -20,12 +20,6 @@ module.exports = {
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
     // "@typescript-eslint/prefer-readonly-parameter-types": "warn",
-    "@typescript-eslint/no-unsafe-return": "off",
-    "@typescript-eslint/no-unsafe-argument": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
     "@typescript-eslint/consistent-type-exports": "warn",
     "@typescript-eslint/no-confusing-void-expression": "warn",
@@ -34,7 +28,6 @@ module.exports = {
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "warn",
     "@typescript-eslint/no-require-imports": "warn",
     "@typescript-eslint/no-non-null-assertion": "warn",
-    "@typescript-eslint/no-unnecessary-condition": "warn",
     "@typescript-eslint/prefer-as-const": "warn",
     "@typescript-eslint/prefer-for-of": "warn",
     "@typescript-eslint/prefer-includes": "warn",
@@ -56,6 +49,17 @@ module.exports = {
 
     "no-console": "warn",
     "prettier/prettier": "warn",
+
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-unnecessary-condition": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
 
     eqeqeq: "error",
   },

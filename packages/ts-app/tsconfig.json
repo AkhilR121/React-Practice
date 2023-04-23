@@ -5,8 +5,7 @@
     "moduleResolution": "node",
     "target": "es2022",
     "noUncheckedIndexedAccess": false,
-
-    "types": ["node", "vitest/importMeta"]
+    "types": ["node"]
   },
   "include": ["src", "tests"],
   "exclude": ["node_modules", "dist"]

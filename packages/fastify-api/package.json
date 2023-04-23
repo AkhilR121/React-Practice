@@ -4,10 +4,10 @@
   "description": "This project was bootstrapped with Fastify-CLI.",
   "main": "src/server.ts",
   "scripts": {
+    "clean": "rimraf .turbo node_modules dist",
     "dev": "tsx src/server.ts",
-    "lint": "eslint --fix --cache --ext .ts,.tsx src",
+    "lint": "eslint --fix --max-warnings=0 --cache src --ext .ts",
     "types": "tsc --noEmit -p .",
-    "format": "pnpm prettier --write --ignore-unknown .",
     "types:dev": "tsc --noEmit -p . --watch",
     "cd": "turbo types lint"
   },

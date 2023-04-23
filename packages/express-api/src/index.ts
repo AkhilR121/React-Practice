@@ -7,7 +7,7 @@ import {
 import { z } from "zod";
 
 const config = createConfig({
-  server: { listen: 8090 },
+  server: { listen: 8080 },
   cors: true,
   logger: { level: "debug", color: true },
 });

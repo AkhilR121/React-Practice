@@ -17,7 +17,6 @@
     "types:dev": "tsc --noEmit -p . --watch",
     "types": "tsc --noEmit -p .",
     "lint": "eslint --fix --max-warnings=0 --cache src --ext .ts,.tsx",
-    "lint:dev": "cross-env TIMING=1 pnpm lint --quiet --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {

@@ -2,7 +2,7 @@
   "extends": ["@tsconfig/vite-react/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
     "checkJs": false,
-    "types": ["node", "vitest/importMeta"]
+    "types": ["node"]
   },
 
   "include": ["src", "tests", "__previewjs__/Wrapper.tsx", "vite.config.ts"],
