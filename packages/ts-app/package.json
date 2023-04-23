@@ -9,7 +9,8 @@
     "dev": "vite --open --port 3000",
     "types": "tsc --noEmit -p .",
     "types:dev": "tsc --noEmit -p . --watch",
-    "cd": "turbo types lint test"
+    "cd": "turbo types lint test",
+    "html": "parcel 'pages/*.html' --lazy"
   },
   "dependencies": {
     "@ti/core": "workspace:*",
@@ -27,6 +28,7 @@
     "@types/node": "18.16.0",
     "eslint": "8.39.0",
     "eslint-config-ti": "workspace:*",
+    "parcel": "^2.8.3",
     "prettier": "2.8.8",
     "turbo": "1.9.3",
     "typescript": "5.0.4",
