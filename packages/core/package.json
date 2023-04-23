@@ -10,8 +10,9 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "upd": "pnpm ncu -u",
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsup src/index.ts --format esm --watch --dts",
     "types:dev": "tsc --noEmit -p . --watch",
     "types": "tsc --noEmit -p .",
     "lint": "eslint --fix --max-warnings=0 --cache src --ext .ts,.tsx",

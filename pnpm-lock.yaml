@@ -5,7 +5,7 @@ importers:
   .:
     devDependencies:
       '@vitest/ui':
-        specifier: ^0.30.1
+        specifier: 0.30.1
         version: 0.30.1
       ndb:
         specifier: 1.1.5
@@ -447,7 +447,7 @@ importers:
         specifier: 2.0.1
         version: 2.0.1
       '@tsconfig/vite-react':
-        specifier: ^1.0.1
+        specifier: 1.0.1
         version: 1.0.1
       '@types/node':
         specifier: 18.16.0
@@ -534,7 +534,7 @@ importers:
         specifier: 4.0.4
         version: 4.0.4(react@18.2.0)
       react-hot-toast:
-        specifier: ^2.4.0
+        specifier: 2.4.0
         version: 2.4.0(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
       swr:
         specifier: 2.1.3

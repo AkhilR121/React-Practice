@@ -1,7 +1,7 @@
 {
   "name": "fullstack-training",
   "devDependencies": {
-    "@vitest/ui": "^0.30.1",
+    "@vitest/ui": "0.30.1",
     "ndb": "1.1.5",
     "turbo": "1.9.3",
     "typescript": "5.0.4",
@@ -16,6 +16,7 @@
     "test:dev": "pnpm vitest",
     "test:ui": "vitest --ui",
     "clean": "pnpm turbo clean",
-    "cd": "pnpm turbo types lint && pnpm test"
+    "build:libs": "turbo run build --filter=core",
+    "cd": "pnpm build:libs && pnpm turbo types lint && pnpm test"
   }
 }
