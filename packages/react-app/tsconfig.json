@@ -1,10 +1,6 @@
 {
   "extends": ["@tsconfig/vite-react/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@lib": ["packages/src/lib"]
-    },
     "checkJs": false,
     "types": ["node", "vitest/importMeta"]
   },
