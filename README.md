@@ -88,12 +88,6 @@ pnpm dev
 
 **Open [http://localhost:3000](http://localhost:3000)**
 
-To run tests and watch for changes:
-
-```bash
-pnpm test:dev
-```
-
 To type check your code:
 
 ```bash
@@ -127,8 +121,11 @@ pnpm types:dev
    have no test failures. Run the following command to check for test failures.
 
    ```bash
+   cd fullstack-training
    pnpm test
    ```
+
+   **Note**: _You can run tests, only at the root of the project. All tests from all projects will be run._
 
 6. Make sure you have no typescript errors. You can check type errors with the
    following command. Only use `any` as a last resort. Run the following command to check for type errors.
