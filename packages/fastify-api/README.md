@@ -7,7 +7,7 @@ In the project directory, you can run:
 ### `pnpm dev`
 
 To start the app in dev mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 ### `pnpm start`
 

@@ -30,7 +30,7 @@ app.addHook("onClose", async (_, done) => {
 });
 
 // Start listening.
-app.listen({ port: Number(process.env.PORT) || 3000 }, err => {
+app.listen({ port: Number(process.env.PORT) || 8080 }, err => {
   if (err) {
     app.log.error(err);
     process.exit(1);
