@@ -4,7 +4,6 @@
   "description": "express zod api app",
   "main": "index.js",
   "scripts": {
-    "upd": "pnpm ncu -u",
     "clean": "rimraf .turbo node_modules dist",
     "types": "npx tsc -p .",
     "types:dev": "tsc --noEmit -p . --watch",
@@ -12,17 +11,17 @@
   },
   "dependencies": {
     "express": "4.18.2",
-    "express-zod-api": "10.1.3",
+    "express-zod-api": "10.3.2",
     "tiny-invariant": "1.3.1",
     "tiny-warning": "1.0.3",
     "zod": "3.21.4"
   },
   "devDependencies": {
-    "@tsconfig/esm": "1.0.2",
+    "@tsconfig/esm": "1.0.3",
     "@tsconfig/node-lts": "18.12.1",
-    "@tsconfig/strictest": "2.0.0",
-    "@types/node": "18.15.11",
-    "prettier": "2.8.7",
+    "@tsconfig/strictest": "2.0.1",
+    "@types/node": "18.16.0",
+    "prettier": "2.8.8",
     "tsx": "3.12.6",
     "typescript": "5.0.4"
   }

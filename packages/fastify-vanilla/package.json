@@ -11,19 +11,19 @@
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
-    "@fastify/type-provider-typebox": "3.0.0",
-    "@sinclair/typebox": "0.27.8",
+    "@fastify/type-provider-typebox": "3.1.0",
+    "@sinclair/typebox": "0.28.5",
     "fastify": "4.15.0"
   },
   "devDependencies": {
-    "eslint-config-ti": "workspace:*",
-    "@tsconfig/esm": "1.0.2",
+    "@tsconfig/esm": "1.0.3",
     "@tsconfig/node-lts": "18.12.1",
-    "@tsconfig/node18": "1.0.1",
-    "@tsconfig/strictest": "2.0.0",
-    "@types/node": "18.15.11",
-    "eslint": "8.38.0",
-    "prettier": "2.8.7",
+    "@tsconfig/node18": "2.0.0",
+    "@tsconfig/strictest": "2.0.1",
+    "@types/node": "18.16.0",
+    "eslint": "8.39.0",
+    "eslint-config-ti": "workspace:*",
+    "prettier": "2.8.8",
     "tsx": "3.12.6",
     "typescript": "5.0.4"
   }
