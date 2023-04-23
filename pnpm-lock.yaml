@@ -38,6 +38,9 @@ importers:
         specifier: 3.21.4
         version: 3.21.4
     devDependencies:
+      '@total-typescript/ts-reset':
+        specifier: 0.4.2
+        version: 0.4.2
       '@tsconfig/esm':
         specifier: 1.0.3
         version: 1.0.3
@@ -607,9 +610,6 @@ importers:
       '@faker-js/faker':
         specifier: 7.6.0
         version: 7.6.0
-      '@total-typescript/ts-reset':
-        specifier: 0.4.2
-        version: 0.4.2
       '@tsconfig/esm':
         specifier: 1.0.3
         version: 1.0.3
