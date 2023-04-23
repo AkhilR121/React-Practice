@@ -132,3 +132,4 @@ dist
 training.md
 *.excalidraw
 .turbo
+.sqlite.db
