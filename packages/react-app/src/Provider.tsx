@@ -4,6 +4,7 @@ import {
   type QueryFunctionContext,
 } from "@tanstack/react-query";
 import { Suspense } from "react";
+import { ErrorBoundary, type ErrorBoundaryProps } from "react-error-boundary";
 import { FullPageLoader } from "./Loading";
 
 async function fetcher({ queryKey }: QueryFunctionContext<any>) {
@@ -31,10 +32,17 @@ const queryClient = new QueryClient({
   },
 });
 
+const ErrorFallback: ErrorBoundaryProps["FallbackComponent"] = ({ error }) => (
+  <div className="text-3xl">{error.message}</div>
+);
 export const Provider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Suspense fallback={<FullPageLoader />}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </Suspense>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Suspense fallback={<FullPageLoader />}>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </Suspense>
+    </ErrorBoundary>
   );
 };
