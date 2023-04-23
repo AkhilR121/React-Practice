@@ -25,12 +25,18 @@ Run the following command(if using powershell, run as administrator):
 pnpm env use --global latest
 ```
 
-### Install Editor
+### Install visual studio code editor
 
 On Windows, install `visual studio code` with the following `winget` command:
 
 ```powershell
 winget install --id Microsoft.VisualStudioCode
+```
+
+On Ubuntu [download deb](https://code.visualstudio.com/download) file. Install using the following command
+
+```bash
+sudo dpkg -i <deb-file-name>.deb
 ```
 
 ### Install google chrome
@@ -55,7 +61,7 @@ pnpm install
 Build libraries
 
 ```bash
-   pnpm build:libs
+pnpm build:libs
 ```
 
 Make sure there are no problems
