@@ -48,7 +48,7 @@ Install [Google Chrome](https://www.google.com/chrome/). Install [react develope
 Clone the repository:
 
 ```bash
-git clone https://pervezfunctor/fullstack-training.git --branch=monorepo
+git clone git@github.com:pervezfunctor/fullstack-training.git --branch=monorepo
 cd fullstack-training
 ```
 
