@@ -145,13 +145,10 @@ pnpm types:dev
 10. Prefer using higher order functions like `map`, `filter`, `reduce`
     over for loops.
 
-11. Prefer using higher order functions like `map`, `filter`, `reduce`
-    over for loops.
+11. Prefer for-of loop to iterate over iterables including arrays and sets.
 
-12. Prefer for-of loop to iterate over iterables including arrays and sets.
+12. Use for-of(over Object.keys) instead of for-in loop.
 
-13. Use for-of(over Object.keys) instead of for-in loop.
+13. Prefer readonly arrays and readonly objects
 
-14. Prefer readonly arrays and readonly objects
-
-15. Almost always specify return types for functions.
+14. Almost always specify return types for functions.
