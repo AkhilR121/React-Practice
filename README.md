@@ -4,13 +4,13 @@
 
 ### Install `pnpm`
 
-On Windows use PowerShell as Administrator
+On Windows use PowerShell as Administrator.
 
 ```powershell
 iwr https://get.pnpm.io/install.ps1 -useb | iex
 ```
 
-On Ubuntu/WSL systems
+On Ubuntu/WSL systems:
 
 ```bash
 curl -fsSL https://get.pnpm.io/install.sh | sh - #or
@@ -33,7 +33,7 @@ On Windows, install `visual studio code` with the following `winget` command:
 winget install --id Microsoft.VisualStudioCode
 ```
 
-On Ubuntu [download deb](https://code.visualstudio.com/download) file. Install using the following command
+On Ubuntu [download deb](https://code.visualstudio.com/download) file. Install using the following command:
 
 ```bash
 sudo dpkg -i <deb-file-name>.deb
@@ -58,13 +58,13 @@ Install dependencies:
 pnpm install
 ```
 
-Build libraries
+Build libraries:
 
 ```bash
 pnpm build:libs
 ```
 
-Make sure there are no problems
+Make sure there are no problems.
 
 ```bash
 pnpm cd
@@ -100,7 +100,7 @@ pnpm types:dev
    branch every morning.
 
 2. Also make sure, as soon as you rebase your branch to run the following
-   command
+   command:
 
    ```bash
    pnpm install
@@ -149,6 +149,6 @@ pnpm types:dev
 
 12. Use for-of(over Object.keys) instead of for-in loop.
 
-13. Prefer readonly arrays and readonly objects
+13. Prefer readonly arrays and readonly objects.
 
 14. Almost always specify return types for functions.
