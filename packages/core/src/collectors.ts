@@ -1,4 +1,3 @@
-import invariant from "tiny-invariant";
 import { ireduce, snoc } from "./iter";
 import { plus } from "./operators";
 
@@ -18,7 +17,6 @@ export const max = (arr: Iterable<number>): number => {
 
 export const min = (arr: Iterable<number>): number => {
   const [first, rest] = snoc(arr);
-  invariant(first, "min: empty array");
 
   return ireduce(rest, Math.min, first);
 };
