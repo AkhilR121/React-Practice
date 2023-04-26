@@ -4,8 +4,8 @@ export function iterator<T>(arr: Iterable<T>): Iterator<T> {
   return arr[Symbol.iterator]();
 }
 
-export function toIterable<T>(list: Iterator<T>): Iterable<T> {
-  return { [Symbol.iterator]: () => list };
+export function toIterable<T>(iterator: Iterator<T>): Iterable<T> {
+  return { [Symbol.iterator]: () => iterator };
 }
 
 export const snoc = <T>(arr: Iterable<T>): [T, Iterable<T>] => {
@@ -27,7 +27,7 @@ export function* imap<T, U>(
 
 export function* ifilter<T>(
   arr: Iterable<T>,
-  pred: (v: T) => boolean
+  pred: (x: T) => boolean
 ): IterableIterator<T> {
   for (const e of arr) {
     if (pred(e)) {
@@ -63,9 +63,9 @@ export function* flatten<T>(
   }
 }
 
-export function ievery<T>(arr: Iterable<T>, f: (v: T) => boolean): boolean {
+export function ievery<T>(arr: Iterable<T>, pred: (v: T) => boolean): boolean {
   for (const e of arr) {
-    if (!f(e)) {
+    if (!pred(e)) {
       return false;
     }
   }
@@ -73,9 +73,9 @@ export function ievery<T>(arr: Iterable<T>, f: (v: T) => boolean): boolean {
   return true;
 }
 
-export function isome<T>(arr: Iterable<T>, f: (v: T) => boolean): boolean {
+export function isome<T>(arr: Iterable<T>, pred: (v: T) => boolean): boolean {
   for (const e of arr) {
-    if (f(e)) {
+    if (pred(e)) {
       return true;
     }
   }

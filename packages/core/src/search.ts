@@ -6,10 +6,10 @@ export function iincludes<T>(arr: Iterable<T>, value: T): boolean {
 
 export function ifind<T>(
   arr: Iterable<T>,
-  f: (x: T) => boolean
+  pred: (x: T) => boolean
 ): T | undefined {
   for (const e of arr) {
-    if (f(e)) {
+    if (pred(e)) {
       return e;
     }
   }
@@ -17,10 +17,13 @@ export function ifind<T>(
   return undefined;
 }
 
-export function ifindIndex<T>(arr: Iterable<T>, f: (x: T) => boolean): number {
+export function ifindIndex<T>(
+  arr: Iterable<T>,
+  pred: (x: T) => boolean
+): number {
   let i = 0;
   for (const e of arr) {
-    if (f(e)) {
+    if (pred(e)) {
       return i;
     }
     i += 1;

@@ -2,9 +2,9 @@ import invariant from "tiny-invariant";
 import { ireduce, snoc } from "./iter";
 import { plus } from "./operators";
 
-export function ieach<T>(arr: Iterable<T>, f: (x: T) => void): void {
+export function ieach<T>(arr: Iterable<T>, impureFn: (x: T) => void): void {
   for (const e of arr) {
-    f(e);
+    impureFn(e);
   }
 }
 

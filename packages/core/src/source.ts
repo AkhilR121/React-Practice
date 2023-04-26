@@ -36,6 +36,7 @@ export function* repeat<T>(n: number, x: T): IterableIterator<T> {
 
 export function* repeatedly<T>(n: number, f: () => T): IterableIterator<T> {
   invariant(n >= 0, "n must be >= 0");
+
   for (let i = 0; i < n; i += 1) {
     yield f();
   }
@@ -52,7 +53,7 @@ export function* enumerate<T>(
 }
 
 export function* reverse<T>(arr: readonly T[]): IterableIterator<T> {
-  for (let i = arr.length - 1; i >= 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i -= 1) {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     yield arr[i]!;
   }
