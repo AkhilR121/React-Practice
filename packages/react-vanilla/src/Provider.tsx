@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { ChakraProvider, Heading } from "@chakra-ui/react";
 import { Suspense } from "react";
 import { ErrorBoundary, type ErrorBoundaryProps } from "react-error-boundary";
 import { Toaster } from "react-hot-toast";
@@ -17,12 +17,14 @@ export type ProviderProps = Readonly<{
 }>;
 
 export const Provider = ({ children }: ProviderProps) => (
-  <ErrorBoundary FallbackComponent={ErrorFallback}>
-    <Suspense fallback={SuspenseFallback}>
-      <SWRConfig value={{ suspense: true }}>
-        {children}
-        <Toaster />
-      </SWRConfig>
-    </Suspense>
-  </ErrorBoundary>
+  <ChakraProvider>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Suspense fallback={SuspenseFallback}>
+        <SWRConfig value={{ suspense: true }}>
+          {children}
+          <Toaster />
+        </SWRConfig>
+      </Suspense>
+    </ErrorBoundary>
+  </ChakraProvider>
 );
