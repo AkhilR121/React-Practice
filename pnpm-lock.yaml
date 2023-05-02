@@ -586,7 +586,7 @@ importers:
         specifier: workspace:*
         version: link:../eslint-config-ti
       parcel:
-        specifier: ^2.8.3
+        specifier: 2.8.3
         version: 2.8.3
       prettier:
         specifier: 2.8.8
