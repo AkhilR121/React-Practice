@@ -12,7 +12,7 @@ export const insert = <T>(arr: T[], index: number, ...items: T[]): T[] => [
   ...arr.slice(index),
 ];
 
-export const remove = <T>(arr: T[], index: number, count: number = 1): T[] => [
+export const remove = <T>(arr: T[], index: number, count = 1): T[] => [
   ...arr.slice(0, index),
   ...arr.slice(index + count),
 ];

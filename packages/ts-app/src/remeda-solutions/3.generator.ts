@@ -5,6 +5,7 @@ export function equals<T>(fst: Iterable<T>, snd: Iterable<T>): boolean {
   const fiter = fst[Symbol.iterator]();
   const siter = snd[Symbol.iterator]();
 
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     const fnext = fiter.next();
     const snext = siter.next();

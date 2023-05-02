@@ -76,10 +76,7 @@ export const createTasks = (
 const users = createUsers(5);
 let tasks = createTasks(Array.from(users.values()), { maxTasksPerUser: 10 });
 
-const username = checked(
-  [uint],
-  (id: number) => notNil(users.get(id)).name
-);
+const username = checked([uint], (id: number) => notNil(users.get(id)).name);
 
 export type CompletedTodoListResult = Iterable<{
   username: string;
@@ -100,18 +97,15 @@ export const getCompletedTodoListFor = (
     }))
   );
 
-export const setCompletedAboveDeadline = checked(
-  [uint],
-  (userId): void => {
-    tasks = produce(tasks, draft => {
-      for (const task of draft.values()) {
-        if (task.userId === userId && task.deadline < new Date()) {
-          task.completed = true;
-        }
+export const setCompletedAboveDeadline = checked([uint], (userId): void => {
+  tasks = produce(tasks, draft => {
+    for (const task of draft.values()) {
+      if (task.userId === userId && task.deadline < new Date()) {
+        task.completed = true;
       }
-    });
-  }
-);
+    }
+  });
+});
 
 export type MostIncompleteUsersResult = Array<{
   username: string;
