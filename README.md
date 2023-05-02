@@ -96,10 +96,10 @@ pnpm types:dev
 
 ## Guidelines
 
-1. Always make sure you rebase your branch with the latest changes from the main
+1. Always make sure you merge your branch with the latest changes from the main
    branch every morning.
 
-2. Also make sure, as soon as you rebase your branch to run the following
+2. Also make sure, as soon as you merge your branch to run the following
    command:
 
    ```bash
