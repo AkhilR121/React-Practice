@@ -33,6 +33,13 @@
 1. [Learning Web Design](https://www.amazon.com/Learning-Web-Design-Beginners-JavaScript/dp/1491960205)
 2. [HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189)
 
+## Tailwind
+
+1. [Modern CSS with Tailwind](https://www.amazon.com/Modern-CSS-Tailwind-Noel-Rappin-ebook/dp/B0BPYY88K4)
+2. [Design with Tailwind CSS Masterclass](https://egghead.io/courses/design-with-tailwind-css-masterclass-f0db)
+3. [Craft Scalable custom made interfaces with Tailwind](https://egghead.io/courses/craft-scalable-custom-made-interfaces-with-tailwind-css-8dfee898)
+4. [buildui](https://buildui.com)
+
 ## SQL
 
 1. [T-SQL Fundamentals](https://www.amazon.com/T-SQL-Fundamentals-Developer-Reference-Ben-Gan/dp/0138102104)
