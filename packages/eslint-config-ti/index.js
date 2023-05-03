@@ -19,6 +19,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
+    "@typescript-eslint/unbound-method": "off",
     // "@typescript-eslint/prefer-readonly-parameter-types": "warn",
     "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
     "@typescript-eslint/consistent-type-exports": "warn",
