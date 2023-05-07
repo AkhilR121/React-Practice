@@ -13,11 +13,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/react": "2.6.0",
-    "@emotion/react": "11.10.8",
-    "@emotion/styled": "11.10.8",
+    "@chakra-ui/react": "2.6.1",
+    "@emotion/react": "11.11.0",
+    "@emotion/styled": "11.11.0",
     "@ti/core": "workspace:*",
-    "framer-motion": "10.12.5",
+    "framer-motion": "10.12.8",
     "immer": "10.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -33,13 +33,13 @@
   "devDependencies": {
     "@tsconfig/strictest": "2.0.1",
     "@tsconfig/vite-react": "1.0.1",
-    "@types/node": "18.16.3",
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.1",
+    "@types/node": "20.1.0",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
     "@vitejs/plugin-react-swc": "3.3.0",
     "eslint-config-ti": "workspace:*",
     "json-server": "0.17.3",
     "typescript": "5.0.4",
-    "vite": "4.3.3"
+    "vite": "4.3.5"
   }
 }
