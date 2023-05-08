@@ -133,3 +133,4 @@ training.md
 *.excalidraw
 .turbo
 .sqlite.db
+test-results/
