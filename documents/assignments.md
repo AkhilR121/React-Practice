@@ -63,3 +63,5 @@
 1. [React Quick Start](https://react.dev/learn)
 2. [Thinking in React](https://react.dev/learn/thinking-in-react)
 3. [Tic-tac-toe](https://react.dev/learn/tutorial-tic-tac-toe)
+4. [React with Typescript](https://www.totaltypescript.com/tutorials/react-with-typescript)
+5. [Describing the UI](https://react.dev/learn/describing-the-ui)
