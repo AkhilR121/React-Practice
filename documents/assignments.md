@@ -57,3 +57,9 @@
 ## 10. Legacy Javascript
 
 1. [Javascript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
+
+## 11. React
+
+1. [React Quick Start](https://react.dev/learn)
+2. [Thinking in React](https://react.dev/learn/thinking-in-react)
+3. [Tic-tac-toe](https://react.dev/learn/tutorial-tic-tac-toe)
