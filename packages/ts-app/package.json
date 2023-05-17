@@ -22,17 +22,17 @@
     "zod": "3.21.4"
   },
   "devDependencies": {
-    "@faker-js/faker": "8.0.0",
+    "@faker-js/faker": "8.0.1",
     "@tsconfig/esm": "1.0.3",
     "@tsconfig/strictest": "2.0.1",
-    "@types/node": "20.1.4",
+    "@types/node": "20.1.7",
     "eslint": "8.40.0",
     "eslint-config-ti": "workspace:*",
     "parcel": "2.8.3",
     "prettier": "2.8.8",
-    "turbo": "1.9.4",
+    "turbo": "1.9.7",
     "typescript": "5.0.4",
-    "vite": "4.3.5",
+    "vite": "4.3.7",
     "vite-plugin-checker": "0.6.0"
   }
 }

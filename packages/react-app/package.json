@@ -14,7 +14,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@tanstack/react-query": "4.29.5",
+    "@tanstack/react-query": "4.29.7",
     "@ti/core": "workspace:*",
     "daisyui": "2.51.6",
     "dayjs": "1.11.7",
@@ -26,7 +26,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-error-boundary": "4.0.4",
-    "react-router-dom": "6.11.1",
+    "react-router-dom": "6.11.2",
     "remeda": "1.14.0",
     "sort-by": "1.2.0",
     "superjson": "1.12.3",
@@ -37,17 +37,17 @@
     "zod": "3.21.4"
   },
   "devDependencies": {
-    "@faker-js/faker": "8.0.0",
-    "@storybook/addon-essentials": "7.0.11",
-    "@storybook/addon-interactions": "7.0.11",
-    "@storybook/addon-links": "7.0.11",
-    "@storybook/blocks": "7.0.11",
-    "@storybook/react": "7.0.11",
-    "@storybook/react-vite": "7.0.11",
+    "@faker-js/faker": "8.0.1",
+    "@storybook/addon-essentials": "7.0.12",
+    "@storybook/addon-interactions": "7.0.12",
+    "@storybook/addon-links": "7.0.12",
+    "@storybook/blocks": "7.0.12",
+    "@storybook/react": "7.0.12",
+    "@storybook/react-vite": "7.0.12",
     "@storybook/testing-library": "0.1.0",
     "@tsconfig/strictest": "2.0.1",
     "@tsconfig/vite-react": "2.0.0",
-    "@types/node": "20.1.4",
+    "@types/node": "20.1.7",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "@vitejs/plugin-react-swc": "3.3.1",
@@ -58,13 +58,13 @@
     "msw": "1.2.1",
     "postcss": "8.4.23",
     "prettier": "2.8.8",
-    "prettier-plugin-tailwindcss": "0.2.8",
+    "prettier-plugin-tailwindcss": "0.3.0",
     "prop-types": "15.8.1",
     "rimraf": "5.0.0",
-    "storybook": "7.0.11",
+    "storybook": "7.0.12",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
-    "vite": "4.3.5"
+    "vite": "4.3.7"
   },
   "msw": {
     "workerDirectory": "public"
