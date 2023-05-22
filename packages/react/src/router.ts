@@ -143,7 +143,7 @@ export function remixLoaderQuery<
 >(
   queryClient: QueryClient,
   specs: Specs<Spec, ParamsSpec, SearchSpec>,
-  base: string = "/api"
+  base = "/api"
 ) {
   const query = (_: z.infer<ParamsSpec>, path: string) => {
     const queryKey = [base, path.split("/").filter(bool)];

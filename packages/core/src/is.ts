@@ -35,6 +35,6 @@ export function notNil<T>(x: T | null | undefined): T {
   return x;
 }
 
-export function isFunction(x: unknown): x is Function {
+export function isFunction(x: unknown): x is (...args: any) => any {
   return is(z.function(), x);
 }

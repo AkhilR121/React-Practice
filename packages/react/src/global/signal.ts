@@ -35,8 +35,10 @@ function action$<Value, Args extends unknown[], Result extends void>(
   fn: (get: Getter, draft: Draft<Value>, ...args: Args) => void
 ) {
   return atom(null, (get, set, ...args: Args) => {
-    const value = produce(get(signal), draft => fn(get, draft, ...args));
-    return set(signal, value);
+    const value = produce(get(signal), draft => {
+      fn(get, draft, ...args);
+    });
+    set(signal, value);
   });
 }
 

@@ -93,7 +93,7 @@ export function empty<T extends FieldSpec>(spec: T) {
 }
 
 // nesting and arrays not supported yet
-export type FormRawShape = { [k: string]: FieldSpec };
+export type FormRawShape = Record<string, FieldSpec>;
 
 export type FormSpec = z.ZodEffects<any> | z.AnyZodObject;
 

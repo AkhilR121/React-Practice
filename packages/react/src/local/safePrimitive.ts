@@ -43,9 +43,15 @@ export const useDateRange = primitive(dateRange());
 export function useToggle(value: boolean) {
   const [v, update] = useBoolean(value);
 
-  const toggle = React.useCallback(() => update(value => !value), [update]);
-  const set = React.useCallback(() => update(_ => true), [update]);
-  const reset = React.useCallback(() => update(_ => false), [update]);
+  const toggle = React.useCallback(() => {
+    update(value => !value);
+  }, [update]);
+  const set = React.useCallback(() => {
+    update(_ => true);
+  }, [update]);
+  const reset = React.useCallback(() => {
+    update(_ => false);
+  }, [update]);
 
   return [v, { set, reset, toggle }] as const;
 }

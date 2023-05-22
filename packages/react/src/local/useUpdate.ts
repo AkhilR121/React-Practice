@@ -12,7 +12,6 @@ export function useUpdate<T extends ShallowObject>(
 ) {
   const init = React.useMemo(
     () => (isFunction(initialState) ? initialState() : initialState),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
@@ -33,8 +32,9 @@ export function useUpdate<T extends ShallowObject>(
       handlers["update"] === undefined,
       "update is a reserved key for useUpdate"
     );
-    handlers["update"] = (fn: (update: T) => Partial<T>) =>
+    handlers["update"] = (fn: (update: T) => Partial<T>) => {
       set(s => ({ ...s, ...fn(s) }));
+    };
 
     return handlers;
   }, [init]);

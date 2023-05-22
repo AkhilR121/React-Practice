@@ -1,6 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import type { Draft } from "immer";
 import React from "react";
 import invariant from "tiny-invariant";
@@ -43,7 +40,7 @@ export function getReducer<State, Hs extends Handlers<State>>(
   return (state, action) => {
     const handler = handlers[action.type];
     invariant(handler, "Unknown action type");
-    return handler(state, "payload" in action ? action.payload : undefined);
+    handler(state, "payload" in action ? action.payload : undefined);
   };
 }
 

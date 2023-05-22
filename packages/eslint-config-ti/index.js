@@ -49,7 +49,8 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
 
-    "no-console": "warn",
+    "no-console": ["warn", { allow: ["warn", "error"] }],
+
     "prettier/prettier": "warn",
 
     "@typescript-eslint/no-floating-promises": "off",
