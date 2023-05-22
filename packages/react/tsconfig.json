@@ -1,4 +1,13 @@
 {
-  "extends": ["@tsconfig/strictest/tsconfig", "@tsconfig/esm/tsconfig"],
+  "extends": [
+    "@tsconfig/strictest/tsconfig",
+    "@tsconfig/esm/tsconfig",
+    "@tsconfig/esm/tsconfig"
+  ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "moduleResolution": "node"
+  },
   "include": ["src", "tests", "__previewjs__"]
 }

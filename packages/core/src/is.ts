@@ -34,3 +34,7 @@ export function notNil<T>(x: T | null | undefined): T {
   invariant(!isNil(x), "notNil: value is nil");
   return x;
 }
+
+export function isFunction(x: unknown): x is Function {
+  return is(z.function(), x);
+}
