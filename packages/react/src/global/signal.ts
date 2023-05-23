@@ -2,15 +2,23 @@ import { produce, type Draft } from "immer";
 import {
   atom,
   useAtom,
+  useAtomValue,
+  useSetAtom,
+  type Atom,
   type Getter,
   type PrimitiveAtom,
   type WritableAtom,
 } from "jotai";
 import { selectAtom } from "jotai/utils";
+import React from "react";
 import type { Read, Write } from "./types";
 
 export function signal<Value extends object>(initialValue: Value) {
   return atom(initialValue);
+}
+
+export function snapshot<Value extends object>(signal: PrimitiveAtom<Value>) {
+  return () => useAtomValue(signal);
 }
 
 export function signals<Value>() {
@@ -19,6 +27,11 @@ export function signals<Value>() {
 
 export function computed<Value>(read: Read<Value>) {
   return atom(read);
+}
+
+export function computedHook<Value>(read: Read<Value>) {
+  const atom = computed(read);
+  return () => useAtomValue(atom);
 }
 
 export const select = selectAtom;
@@ -30,7 +43,7 @@ export function derived<Value, Args extends unknown[], Result extends void>(
   return atom(read, write);
 }
 
-function action$<Value, Args extends unknown[], Result extends void>(
+export function action<Value, Args extends unknown[], Result extends void>(
   signal: WritableAtom<Value, any, Result>,
   fn: (get: Getter, draft: Draft<Value>, ...args: Args) => void
 ) {
@@ -38,15 +51,36 @@ function action$<Value, Args extends unknown[], Result extends void>(
     const value = produce(get(signal), draft => {
       fn(get, draft, ...args);
     });
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     set(signal, value);
   });
 }
 
-export function action<Value, Args extends unknown[], Result extends void>(
+export function actionHook<Value, Args extends unknown[], Result extends void>(
   signal: WritableAtom<Value, any, Result>,
   fn: (get: Getter, draft: Draft<Value>, ...args: Args) => void
 ) {
-  const actionAtom = action$(signal, fn);
+  const actionAtom = action(signal, fn);
 
   return () => useAtom(actionAtom);
+}
+
+export function useValue<Value>(
+  signal: Atom<Value> | Atom<Promise<Value>> | Atom<Value | Promise<Value>>
+) {
+  return useAtomValue(signal);
+}
+
+export const useAction = useSetAtom;
+
+export function useSignal<
+  Value,
+  Args extends unknown[],
+  Result extends void | Promise<void>
+>(atom: WritableAtom<Value, Args, Result>) {
+  return [useValue(atom), useAction(atom)];
+}
+
+export function useLocalSignal<Value extends object>(initialValue: Value) {
+  return useSignal(React.useMemo(() => signal(initialValue), []));
 }
