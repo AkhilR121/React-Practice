@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { SWRConfig } from "swr";
 
 const ErrorFallback: ErrorBoundaryProps["FallbackComponent"] = ({ error }) => (
-  <Heading size="3xl" color="red.700">
+  <Heading size="xl" color="red.700">
     {error.message}
   </Heading>
 );

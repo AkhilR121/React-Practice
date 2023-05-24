@@ -4,15 +4,14 @@ import {
   type QueryFunction,
 } from "@tanstack/react-query";
 
-// @TODO: this should be import.meta.env.DEV?
-const isProd = process.env["NODE_ENV"] === "production";
-
 export function createQueryClient(
   options: QueryClientConfig & {
+    isProd?: boolean;
     onError: (error: unknown) => void;
     queryFn: QueryFunction;
   }
 ) {
+  const isProd = options.isProd ?? false;
   return new QueryClient({
     ...options,
     defaultOptions: {

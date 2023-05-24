@@ -1,5 +1,5 @@
 {
-  "name": "@ti/client",
+  "name": "@ti/react",
   "version": "1.0.0",
   "description": "library for react apps",
   "main": "./dist/index.js",

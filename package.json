@@ -17,7 +17,7 @@
     "test:dev": "pnpm vitest",
     "test:ui": "vitest --ui",
     "clean": "pnpm turbo clean",
-    "build:libs": "turbo run build --filter=core",
+    "build:libs": "turbo run build --filter=core --filter=react",
     "cd": "pnpm build:libs && pnpm turbo types lint && pnpm test"
   }
 }
