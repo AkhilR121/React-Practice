@@ -2,8 +2,9 @@
   "name": "fullstack-training",
   "devDependencies": {
     "@vitest/ui": "0.31.1",
-    "ndb": "1.1.5",
     "turbo": "1.9.7",
+    "eslint": "8.41.0",
+    "prettier": "2.8.8",
     "typescript": "5.0.4",
     "vitest": "0.31.1"
   },
