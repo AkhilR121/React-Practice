@@ -1,6 +1,7 @@
-import { Button, HStack, VStack } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import React from "react";
 import { produce } from "immer";
+import "./Counter.css";
 
 type State = {
   count: number;
@@ -12,11 +13,15 @@ type Action = {
 
 function counterReducer(state: State, action: Action) {
   return action.type === "inc"
-    ? produce(state, draft => ({ count: draft.count + 1 }))
-    : produce(state, draft => ({ count: draft.count - 1 }));
+    ? produce(state, draft => {
+        draft.count += 1;
+      })
+    : produce(state, draft => {
+        draft.count -= 1;
+      });
 }
 
-export function Counter() {
+export function CounterView() {
   const [state, dispatch] = React.useReducer(counterReducer, { count: 0 });
 
   const incCount = () => {
@@ -28,14 +33,12 @@ export function Counter() {
   };
 
   return (
-    <VStack>
-      <HStack spacing="25px">
-        <div>{state.count}</div>
-        <VStack spacing="35px">
-          <Button onClick={incCount}>+</Button>
-          <Button onClick={decCount}>-</Button>
-        </VStack>
-      </HStack>
-    </VStack>
+    <div className="container flex-row">
+      <div className="display">{state.count}</div>
+      <div className="flex-col">
+        <Button onClick={incCount}>+</Button>
+        <Button onClick={decCount}>-</Button>
+      </div>
+    </div>
   );
 }

@@ -1,0 +1,20 @@
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.display {
+  width: 25px;
+}
+
+.container {
+  margin: 2rem auto;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
