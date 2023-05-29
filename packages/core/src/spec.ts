@@ -61,3 +61,9 @@ export function checkedReturn<
 >(specs: Args, ret: R, f: F) {
   return z.function(z.tuple(specs), ret).implement(f);
 }
+
+export const toInt = (s: unknown): number => cast(z.coerce.number().int(), s);
+export const toNum = (s: unknown): number => cast(z.coerce.number(), s);
+export const toStr = (s: unknown): string => cast(z.coerce.string(), s);
+export const toBool = (s: unknown): boolean => cast(z.coerce.boolean(), s);
+export const toDate = (s: unknown): Date => cast(z.coerce.date(), s);
