@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react";
-import React from "react";
+import React, { Reducer } from "react";
 import { produce } from "immer";
 import "./Counter.css";
 
@@ -11,7 +11,10 @@ type Action = {
   type: "inc" | "dec";
 };
 
-function counterReducer(state: State, action: Action) {
+const counterReducer: Reducer<State, Action> = (
+  state: State,
+  action: Action
+): State => {
   return action.type === "inc"
     ? produce(state, draft => {
         draft.count += 1;
@@ -19,7 +22,7 @@ function counterReducer(state: State, action: Action) {
     : produce(state, draft => {
         draft.count -= 1;
       });
-}
+};
 
 export function CounterView() {
   const [state, dispatch] = React.useReducer(counterReducer, { count: 0 });
