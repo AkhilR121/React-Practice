@@ -3,10 +3,10 @@
 1. [The C Programming Language](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)
 
    Read this book for the programs. Programs in this book will teach you how to write beautiful code.
-   Download and install jetbrains clion and write all of the programs in the book.
+   Download and install [jetbrains clion](https://www.jetbrains.com/clion/) and write all of the programs in the book.
    Make sure you also implement as many exercises as possible. Exercises are as good as the book.
 
-2. [Learn Javscript by Building Games](https://www.youtube.com/watch?v=ec8vSKJuZTk)
+2. [Learn Javascript by Building Games](https://www.youtube.com/watch?v=ec8vSKJuZTk)
 
    Code won't be great here. But this will teach you DOM reasonably well.
 
