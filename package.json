@@ -1,12 +1,12 @@
 {
   "name": "fullstack-training",
   "devDependencies": {
-    "@vitest/ui": "0.31.1",
-    "turbo": "1.9.7",
+    "@vitest/ui": "0.31.3",
     "eslint": "8.41.0",
     "prettier": "2.8.8",
+    "turbo": "1.10.0",
     "typescript": "5.0.4",
-    "vitest": "0.31.1"
+    "vitest": "0.31.3"
   },
   "scripts": {
     "format": "pnpm prettier --write --ignore-unknown .",
