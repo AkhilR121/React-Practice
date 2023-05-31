@@ -1,6 +1,7 @@
+/* eslint-disable no-underscore-dangle */
+
 import React from "react";
 import { z } from "zod";
-import type { FieldSpec } from "../validator";
 import {
   boolean,
   date,
@@ -9,27 +10,36 @@ import {
   int,
   number,
   string,
+  type FieldSpec,
 } from "../validator";
 import { safeUpdateState } from "./safeState";
 
+// @TODO: if value doesn't satisfy spec, does nothing
 export function primitive<Spec extends FieldSpec>(spec: Spec) {
   const useState = safeUpdateState(z.object({ value: spec }));
 
   type Value = z.infer<Spec>;
 
   return function usePrimitiveState(initialValue?: Value) {
-    const [state, { setValue }] = useState({
+    const [state, { updateValue, setValue }] = useState({
       value: initialValue || defaultValue(spec),
     });
 
     const update = React.useCallback(
       (vfn: (_: Value) => Value) => {
-        setValue(vfn);
+        updateValue(vfn);
+      },
+      [updateValue]
+    );
+
+    const set = React.useCallback(
+      (v: Value) => {
+        setValue(v);
       },
       [setValue]
     );
 
-    return [state.value as Value, update] as const;
+    return [state.value as Value, update, set] as const;
   };
 }
 

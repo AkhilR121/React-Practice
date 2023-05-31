@@ -2,6 +2,7 @@ import { isFunction } from "@ti/core";
 import React from "react";
 import invariant from "tiny-invariant";
 import type { ShallowObject, UpdateHandlers } from "./types";
+
 // @TODO: create string utils
 export function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -25,6 +26,9 @@ export function useUpdate<T extends ShallowObject>(
         fn: (value: T[keyof T]) => T[keyof T]
       ) => {
         set(s => ({ ...s, [key]: fn((s as any)[key]) }));
+      };
+      handlers[`set${capitalize(key)}$`] = (v: T[keyof T]) => {
+        set(s => ({ ...s, [key]: v }));
       };
     }
 
