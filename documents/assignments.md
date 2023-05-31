@@ -65,3 +65,9 @@
 3. [Tic-tac-toe](https://react.dev/learn/tutorial-tic-tac-toe)
 4. [React with Typescript](https://www.totaltypescript.com/tutorials/react-with-typescript)
 5. [Describing the UI](https://react.dev/learn/describing-the-ui)
+
+## 12. Playwright
+
+1. [Playwright egghead course](https://egghead.io/courses/use-playwright-to-test-and-automate-web-applications-74b97e59)
+2. [Playwright's UI mode](https://www.youtube.com/watch?v=d0u6XhXknzU)
+3. [Playwright in vscode](https://youtu.be/Xz6lhEzgI5I)
