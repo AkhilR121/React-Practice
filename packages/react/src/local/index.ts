@@ -1,3 +1,4 @@
+export * from "./localState";
 export * from "./provider";
 export * from "./safePrimitive";
 export * from "./safeState";

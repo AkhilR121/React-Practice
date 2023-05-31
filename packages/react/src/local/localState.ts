@@ -124,7 +124,7 @@ export function useEventHandlers<
     const result = {} as any;
     for (const type of Object.keys(handlers)) {
       result[type] = (...args: any[]) => {
-        handlers[type](stateRef.current, actions, propsRef.current, ...args);
+        handlers[type]?.(stateRef.current, actions, propsRef.current, ...args);
       };
     }
     return result;

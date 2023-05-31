@@ -3,7 +3,7 @@ import { produce } from "immer";
 import { useSetAtom } from "jotai";
 import { atomWithReducer } from "jotai/utils";
 import type { Handlers } from "../local";
-import { getReducer } from "../local";
+import { getReducer } from "../local/localState";
 
 export function signalWithReducer<State, Action>(
   initial: State,
@@ -14,7 +14,7 @@ export function signalWithReducer<State, Action>(
   return atomWithReducer(initial, r);
 }
 
-export function slice<State, Hs extends Handlers<State>>(
+export function slice<State extends Hs, Hs extends Handlers<State>>(
   initial: State,
   slices: Hs
 ) {
