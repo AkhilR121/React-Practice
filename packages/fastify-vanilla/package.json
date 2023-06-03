@@ -22,11 +22,11 @@
     "@tsconfig/node18": "2.0.1",
     "@tsconfig/strictest": "2.0.1",
     "@types/node": "20.2.5",
-    "eslint": "8.41.0",
+    "eslint": "8.42.0",
     "eslint-config-ti": "workspace:*",
     "pino-pretty": "10.0.0",
     "prettier": "2.8.8",
     "tsx": "3.12.7",
-    "typescript": "5.0.4"
+    "typescript": "5.1.3"
   }
 }
