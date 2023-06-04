@@ -133,3 +133,11 @@
 1. [The Rust Programming Language](https://www.amazon.com/Rust-Programming-Language-2nd/dp/1718503105)
 2. [Rust for Rustaceans](https://www.amazon.com/Rust-Rustaceans-Programming-Experienced-Developers/dp/1718501854)
 3. [Rust in Action](https://www.amazon.com/Rust-Action-Tim-McNamera/dp/1617294551)
+
+## Data Visualization
+
+1. [D3 Gallery](https://observablehq.com/@d3/gallery)
+2. [Fullstack D3](https://www.newline.co/fullstack-d3)
+3. There are lot of excellent resources on D3 which go into a lot of depth. But I think the above resources are sufficient to get started.
+4. [Fundamentals of Data Visualization](https://www.amazon.com/Fundamentals-Data-Visualization-Informative-Compelling/dp/1492031089)
+5. [Storytelling with data](https://www.amazon.com/Storytelling-Data-Visualization-Business-Professionals/dp/1119002257)

@@ -71,3 +71,16 @@
 1. [Playwright egghead course](https://egghead.io/courses/use-playwright-to-test-and-automate-web-applications-74b97e59)
 2. [Playwright's UI mode](https://www.youtube.com/watch?v=d0u6XhXknzU)
 3. [Playwright in vscode](https://youtu.be/Xz6lhEzgI5I)
+
+## 13. Data Visualization
+
+1. [](https://www.amazon.com/Interactive-Data-Visualization-Web-Introduction/dp/1491921285)
+2. [A Beginners Guide to SVG](https://youtube.com/playlist?list=PL4-IK0AVhVjP0EeV513_b30lhGRTfMbYd)
+3. [D3 For the Impatient](https://www.amazon.com/D3-Impatient-Interactive-Programmers-Scientists/dp/1492046779) // or
+4. [egghead - Build interactive Javascript charts with d3](https://egghead.io/courses/build-interactive-javascript-charts-with-d3-v4)
+5. [Create a bar chart with D3](https://egghead.io/courses/create-a-bar-chart-with-react-and-d3-0c18265f) // optional
+
+## 14. Animation
+
+1. [Animating react components with framer motion](https://egghead.io/courses/animating-react-components-with-framer-motion-acecb152)
+2. []()
