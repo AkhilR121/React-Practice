@@ -1,7 +1,7 @@
-import { Button } from "@chakra-ui/react";
 import React, { Reducer } from "react";
 import { produce } from "immer";
 import "./Counter.css";
+import { Button } from "@chakra-ui/react";
 
 type State = {
   count: number;
@@ -24,14 +24,14 @@ const counterReducer: Reducer<State, Action> = (
       });
 };
 
-export function CounterView() {
+export function CounterView(): JSX.Element {
   const [state, dispatch] = React.useReducer(counterReducer, { count: 0 });
 
-  const incCount = () => {
+  const incCount = (): void => {
     dispatch({ type: "inc" });
   };
 
-  const decCount = () => {
+  const decCount = (): void => {
     dispatch({ type: "dec" });
   };
 
