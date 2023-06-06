@@ -1,5 +1,5 @@
-import { Example } from "./Example";
-
 export function App() {
-  return <Example />;
+  return (
+    <h1 className="m-2 text-center text-4xl font-semibold">Hello World</h1>
+  );
 }
