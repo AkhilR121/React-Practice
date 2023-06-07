@@ -7,5 +7,6 @@ export default defineConfig({
       reporter: ["lcov", "text"],
     },
     includeSource: ["src/**/*.ts"],
+    exclude: ["src/spec.ts", "node_modules"],
   },
 });
