@@ -1,5 +1,5 @@
-import { Heading } from "@chakra-ui/react";
+import { CounterView } from "./examples/counter/CounterView";
 
 export const App = () => {
-  return <Heading>Hello, World!</Heading>;
+  return <CounterView count={100} onInc={console.log} onDec={console.log} />;
 };

@@ -1,5 +1,3 @@
-import { Button, Text, VStack } from "@chakra-ui/react";
-
 export type CounterViewProps = {
   readonly count: number;
   onInc(): void;
@@ -8,12 +6,14 @@ export type CounterViewProps = {
 
 export const CounterView = ({ count, onInc, onDec }: CounterViewProps) => {
   return (
-    <VStack>
-      <Button onClick={onInc} colorScheme="blue">
+    <div className="m-4 flex w-24 flex-col">
+      <button className=" bg-blue-800 p-2 text-gray-200" onClick={onInc}>
         Increment
-      </Button>
-      <Text>{count}</Text>
-      <Button onClick={onDec}>Decrement</Button>
-    </VStack>
+      </button>
+      <div className="m-1 text-center text-2xl">{count}</div>
+      <button className=" bg-blue-800 p-2 text-gray-200" onClick={onDec}>
+        Decrement
+      </button>
+    </div>
   );
 };
