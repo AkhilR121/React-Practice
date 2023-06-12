@@ -1,49 +1,65 @@
-1. What does current function do in immer? Is it okay to use this function in production? Explain.
-   Solution: The current function will produces us the mutated value/data of a draft(Array/object). It produces the snapshot of current state of the draft.
-   Example:
-   const obj = {
-   x: 0
-   }
-   const result = produce(obj, draft => {
-   draft.x = 1 //Output: x: 1
-   const curr = current(draft)
-   console.log(curr.x); //Output x: 1
-   })
-   It is okay to use this current function in production because objects created by current is same as the produce. Also, used for debugging.
+1.  What does current function do in immer? Is it okay to use this function in production? Explain.
 
-2. What does original function do in immer? How is it different from current? Can this be used in production? Explain.
-   Solution:
-   A) Original function is will produces the value of original object but not from draft object i.e value before mutation by the draft.
-   Example:-
-   const obj = {
-   x: 0
-   }
-   const result = produce(obj, draft => {
-   draft.x = 1 //Output: x: 1
-   const original = original(draft)
-   console.log(original.x); //Output x: 0
-   })
-3. import { produce } from 'immer'
+    > Solution: The current function will produces us the mutated value/data of a draft(Array/object). It produces the snapshot of current state of the draft.
 
-const todosArray = [
-{ id: 'id1', done: false, body: 'Take out the trash' },
-{ id: 'id2', done: false, body: 'Check Email' },
-]
+    > Example:
 
-// add
-const addedTodosArray = produce(todosArray, draft => {
-draft.push({ id: 'id3', done: false, body: 'Buy bananas' })
-})
+    ```ts
+    const obj = {
+      x: 0,
+    };
+    const result = produce(obj, draft => {
+      draft.x = 1; //Output: x: 1
+      const curr = current(draft);
+      console.log(curr.x); //Output x: 1
+    });
+    ```
+
+    > It is not okay to use this current() function in production because this will introduce mutation in the code. Also, it is an expensive operation.
+
+2.  What does original function do in immer? How is it different from current? Can this be used in production? Explain.
+
+    > Solution:
+    > A) Original function is will returns the original state values which is passed to produce but not from draft object. It always points to the original state values
+    > Example:-
+
+    ```ts
+    const obj = {
+      //Original State
+      x: 0, //Original State value x: 0
+    };
+    const result = produce(obj, draft => {
+      draft.x = 1; //Output: x: 1
+      const original = original(draft);
+      console.log(original.x); //Output x: 0 (Initial/Original Value)
+    });
+    ```
+
+3.  `````ts
+            import { produce } from "immer";
+            const todosArray = [
+              { id: "id1", done: false, body: "Take out the trash" },
+              { id: "id2", done: false, body: "Check Email" },
+            ];
+            // add
+            const addedTodosArray = produce(todosArray, draft => {
+              draft.push({ id: "id3", done: false, body: "Buy bananas" });
+            });
+            ```
+        ````
+    `````
 
 Explain if the above code perform better than the following code, assuming todosArray is very large?
 
+```ts
 const addedTodosArray = [
-...todosArray,
-{ id: 'id3', done: false, body: 'Buy bananas' },
-]
-Solution:
-A). The above code will perform better than the following code because addedTodoArray is not immutable. There occurring a "mutation" because there creating a new array and spreading todoArray into addedTodosArray.
-B). todosArray will perform well because there we creating a draft/duplicate copy of original array by using the immer by that we can manipulate array also there is not effect in original array if mutation occurs.
+  ...todosArray,
+  { id: "id3", done: false, body: "Buy bananas" },
+];
+```
+
+> Solution:
+> A). The above code will perform better than the following code. Because below code effects to a "mutation" by creating a shallow array and copying todoArray into addedTodosArray which does not perform well.
 
 4. Write a counter using useImmerReducer hook.
 
@@ -84,7 +100,7 @@ export function Counter() {
 
 type Action = { type: "inc_count" } | { type: "dec_count" } | { type: "reset" };
 
-function reducer(draft: { count: number }, action: Action): any {
+function reducer(draft: { count: number }, action: Action): { count: number } {
   switch (action.type) {
     case "inc_count": {
       return {
@@ -100,6 +116,7 @@ function reducer(draft: { count: number }, action: Action): any {
 }
 ```
 
+```ts
 5. const obj = {
    foo: { bar: 100 },
    baz: { qux: 200 },
@@ -117,52 +134,75 @@ console.log(result.baz.qux)
 
 console.log(obj.foo === result.foo)
 console.log(obj.baz === result.baz)
+```
 
 What will be the result of the above code? Explain.
 
-Solution:
-100
-200
-100
-400
-true
-false
+> Solution:
+> 100
+> 200
+> 100
+> 400
+> true
+> false
 
-Explanation:-
-A) There is a difference between "obj.baz.qux" value and "result.baz.qux" because obj.bass.quz value get console directed from original object where as the result.baz.qux value is the mutated value by using immer.
-B) Here the original object is not get disturbed by the mutation because here we create a draft/duplicate "obj" and we mutated that draft object. This is main advantage of using immer
-C) By using immer we can mutate any object or array without disturbing the original obj/array.
+> Explanation:-
+> A) obj.bass.quz value get console directly from original object where as the result.baz.qux value is the mutated value by using immer.
+> B) Here the original object is not get disturbed by the mutation because here we create a draft/duplicate "obj" and we mutated that draft object.
+> C) By using immer we can mutate any object or array using produce without disturbing the original obj/array in future.
 
 6. What are branded types? Create a branded type for email.
 
+   > Solution:
+   > Branded type can be desirable to simulate nominal typing inside TypeScript. It is used to enforce assignments which are validated by parse functions only. It will throw a zod-error for schemas which are not validated by parse functions.
+
+   > Example:-
+
+```ts
+const emailSchema = z.object({ email: z.string().email() }).brand<"Email">();
+type Email = z.infer<typeof emailSchema>;
+const emailValidation = (email: Email) => {
+  console.log(email);
+};
+
+// this works by parsing the email
+const email = Email.parse({ email: "akhil@gmail.com.com" });
+emailValidation(email);
+
+// without parsing this doesn't
+emailValidation({ email: "akhil@gmail.com" });
+```
+
 7. When should you use safeParse vs parse (zod spec)?
-   Solution: In zod safeparse() method will parse the values without throwing an error instead it will returns the zod-type which having the success property with boolean type. If "success: false" parsing failed else if "success: true" parsing data is done successfully.
-   Where parse() method will throw an error.
-   Example:-
-   const Schema = z.string();
-   Schema.parse("ReactJS") //parse the data successfully.
-   Schema.parse(9) //Throw an error the 12 is not a string.
+
+> Solution: In zod safeparse() method will parse the values without throwing an error instead it will returns the object which having the success(true or false) property with boolean type and data.
+> Where parse() method will throw an Zod-error.
+> Example:-
+> const Schema = z.string();
+> Schema.parse("ReactJS") //parse the data successfully.
+> Schema.parse(9) //Throw an error the 12 is not a string.
 
 8. Create a zod type for Signup form with emailid, password and confirmPassword fields. Make sure you check that password and confirmPassword are equal.
-   Solution:
+   > Solution:
 
-   ```ts
-   const emailSchema = z.object({
-     email: z.string(),
-   });
-   const passwordSchema = z
-     .object({
-       password: z.string(),
-       confirmPassword: z.string(),
-     })
-     .refine(pass => pass.password === pass.confirmPassword, {
-       message: "Password and confirmPassword is not matching",
-       path: ["confirm"],
-     });
-   ```
+```ts
+const emailSchema = z.object({
+  email: z.string(),
+});
+const passwordSchema = z
+  .object({
+    password: z.string(),
+    confirmPassword: z.string(),
+  })
+  .refine(data => data.password === data.confirmPassword, {
+    message: "Password and confirmPassword is not matching",
+    path: ["confirmPassword"],
+  });
+```
 
-9. Why do we need refine method when it doesn't change typescript type? Explain with an example.
-   Solution: refine method does not get triggered until all the fields in the object is passed in. It will also check the given condition is satisfied or not. For example password and confirmPassword.
+9.  Why do we need refine method when it doesn't change typescript type? Explain with an example.
+
+    > Solution: refine() method does not get triggered until all the fields in the object is passed in. It will also check the given condition is satisfied or not. It does not change the types it is used to create custom validation schemas. Example is password and confirmPassword validation for refine method which checks the condition (data.password === data.confirmPassword) and throw a error message.
 
 10. Create a zod type to represent the following type:
 
@@ -174,7 +214,7 @@ type Action =
   | { type: "RESET" };
 ```
 
-Solution:
+> Solution:
 
 ```ts
 import { z } from "zod";
@@ -187,5 +227,5 @@ const setCount = z.object({
 });
 const reset = z.object({ type: z.literal("RESET") });
 
-const Action = z.union([inc, dec, setCount, reset]);
+const Action = z.discriminatedUnion([inc, dec, setCount, reset]);
 ```
