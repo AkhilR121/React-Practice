@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 type TodoAppProps = {
@@ -8,25 +9,28 @@ export function AddTask({ handleClickAdd }: TodoAppProps) {
   const [text, setText] = useState("");
 
   return (
-    <div className="my-5 flex items-center gap-4">
+    <div className="my-5 flex items-center justify-center">
       <input
-        className="w-[90%] border-b-2 border-black p-4 outline-none"
+        className="w-[80%] rounded-l-full p-4 caret-pink-500 shadow-xl outline-none"
         type="text"
-        placeholder="Enter TodoList"
+        placeholder="Add List"
         value={text}
         onChange={e => {
           setText(e.target.value);
         }}
       />
-      <button
-        className="rounded-full bg-green-600 p-2 px-4 pb-3 text-3xl font-bold text-green-950"
-        onClick={() => {
-          handleClickAdd(text);
-          setText("");
-        }}
-      >
-        +
-      </button>
+      <AnimatePresence>
+        <motion.button
+          whileTap={{ scale: 1.1 }}
+          className="rounded-r-full bg-green-700 p-3 shadow-2xl"
+          onClick={() => {
+            handleClickAdd(text);
+            setText("");
+          }}
+        >
+          <i className="bi bi-plus-lg text-[21px]"></i>
+        </motion.button>
+      </AnimatePresence>
     </div>
   );
 }
