@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { TodoApp } from "./TodoApp/todo-app";
 import { Counter } from "./counter/Counter";
-import { NumberShuffle } from "./number-shuffle/number-shuffle";
+import { DataGridApp } from "./data-grid/dataGridApp";
 import { ShoppingCartApp } from "./shopping-cart/shoppingCart";
 
 export const App = () => {
@@ -10,8 +10,8 @@ export const App = () => {
       <Routes>
         <Route path="/counter" element={<Counter />}></Route>
         <Route path="/TodoApp" element={<TodoApp />}></Route>
-        <Route path="/number-shuffle" element={<NumberShuffle />}></Route>
         <Route path="/shopping-cart" element={<ShoppingCartApp />}></Route>
+        <Route path="/data-grid" element={<DataGridApp />}></Route>
       </Routes>
     </>
   );
