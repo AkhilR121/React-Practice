@@ -11,110 +11,106 @@ import {
 // #1 Dashboard
 export function Dashboard() {
   return (
-    <>
-      <div className="fixed w-[100%]">
-        {/* Header */}
-        <header className="relative flex h-[4.4rem] justify-between bg-[#591CA6] p-5">
-          <div className="absolute top-11 ml-12 flex rounded-full border-2 border-black text-base text-white [&>*]:px-14 [&>*]:py-3">
-            <h6 className="flex items-center gap-2 rounded-l-full bg-[#44317D]">
-              Transaction
-              <SVGLoadingIcon />
-            </h6>
-            <h6 className="border-l-2 border-black bg-[#272042]">
-              Total Calls
-            </h6>
-            <h6 className="rounded-r-full border-l-2 border-black bg-[#272042]">
-              Fulfillments
-            </h6>
+    <div className="flex h-screen w-screen flex-col">
+      {/* Header */}
+      <header className="relative flex h-[4.4rem] justify-between bg-[#591CA6] p-5">
+        <div className="absolute top-11 ml-12 flex rounded-full border-2 border-black text-base text-white [&>*]:px-14 [&>*]:py-3">
+          <h6 className="flex items-center gap-2 rounded-l-full bg-[#44317D]">
+            Transaction
+            <SVGLoadingIcon />
+          </h6>
+          <h6 className="border-l-2 border-black bg-[#272042]">Total Calls</h6>
+          <h6 className="rounded-r-full border-l-2 border-black bg-[#272042]">
+            Fulfillments
+          </h6>
+        </div>
+        <div className="absolute right-2 flex items-center gap-3 pr-12 text-lg font-semibold tracking-wide text-[#FFFFFF]">
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 83 83"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M73.3816 39.8789H79.7578C81.5485 39.8789 83 41.3304 83 43.1211C83 44.9118 81.5485 46.3633 79.7578 46.3633H73.3816C71.5909 46.3633 70.1394 44.9118 70.1394 43.1211C70.1394 41.3304 71.5909 39.8789 73.3816 39.8789ZM3.24219 46.3633H9.61844C11.4091 46.3633 12.8606 44.9118 12.8606 43.1211C12.8606 41.3304 11.4091 39.8789 9.61844 39.8789H3.24219C1.45153 39.8789 0 41.3304 0 43.1211C0 44.9118 1.45153 46.3633 3.24219 46.3633ZM41.5 14.4817C43.2907 14.4817 44.7422 13.0302 44.7422 11.2395V4.86328C44.7422 3.07262 43.2907 1.62109 41.5 1.62109C39.7093 1.62109 38.2578 3.07262 38.2578 4.86328V11.2395C38.2578 13.0302 39.7093 14.4817 41.5 14.4817ZM16.6637 22.8701C17.9296 24.136 19.9827 24.1363 21.249 22.8701C22.5152 21.6038 22.5152 19.5509 21.249 18.2848L16.7404 13.7761C15.4742 12.5098 13.4212 12.5098 12.1551 13.7761C10.889 15.0423 10.8889 17.0952 12.1551 18.3613L16.6637 22.8701ZM66.3363 22.8701L70.845 18.3613C72.1113 17.0951 72.1113 15.0421 70.845 13.7761C69.5788 12.51 67.5258 12.5098 66.2598 13.7761L61.751 18.2848C60.4848 19.551 60.4848 21.604 61.751 22.8701C63.0169 24.136 65.0701 24.1363 66.3363 22.8701ZM83 62.25C83 64.0407 81.5485 65.4922 79.7578 65.4922C75.97 65.4922 4.02501 65.4922 3.24219 65.4922C1.45153 65.4922 0 64.0407 0 62.25C0 60.4593 1.45153 59.0078 3.24219 59.0078H25.7271C21.6379 54.9476 19.1018 49.3252 19.1018 43.1211C19.1018 30.7706 29.1495 20.7229 41.5 20.7229C53.8505 20.7229 63.8982 30.7706 63.8982 43.1211C63.8982 49.3252 61.3621 54.9476 57.2729 59.0078H79.7578C81.5485 59.0078 83 60.4593 83 62.25ZM40.5829 59.0078H42.4172C50.767 58.531 57.414 51.5881 57.414 43.1211C57.414 34.3461 50.2751 27.2073 41.5002 27.2073C32.7252 27.2073 25.5862 34.3461 25.5862 43.1211C25.5862 51.5881 32.2332 58.531 40.5829 59.0078ZM67.0052 74.8945H15.9948C14.2042 74.8945 12.7527 76.3461 12.7527 78.1367C12.7527 79.9274 14.2042 81.3789 15.9948 81.3789H67.0052C68.7958 81.3789 70.2473 79.9274 70.2473 78.1367C70.2473 76.3461 68.7958 74.8945 67.0052 74.8945Z"
+              fill="white"
+            />
+          </svg>
+          <div>
+            Good Morning | 28 <sup>o</sup>C
           </div>
-          <div className="absolute right-2 flex items-center gap-3 pr-12 text-lg font-semibold tracking-wide text-[#FFFFFF]">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 83 83"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M73.3816 39.8789H79.7578C81.5485 39.8789 83 41.3304 83 43.1211C83 44.9118 81.5485 46.3633 79.7578 46.3633H73.3816C71.5909 46.3633 70.1394 44.9118 70.1394 43.1211C70.1394 41.3304 71.5909 39.8789 73.3816 39.8789ZM3.24219 46.3633H9.61844C11.4091 46.3633 12.8606 44.9118 12.8606 43.1211C12.8606 41.3304 11.4091 39.8789 9.61844 39.8789H3.24219C1.45153 39.8789 0 41.3304 0 43.1211C0 44.9118 1.45153 46.3633 3.24219 46.3633ZM41.5 14.4817C43.2907 14.4817 44.7422 13.0302 44.7422 11.2395V4.86328C44.7422 3.07262 43.2907 1.62109 41.5 1.62109C39.7093 1.62109 38.2578 3.07262 38.2578 4.86328V11.2395C38.2578 13.0302 39.7093 14.4817 41.5 14.4817ZM16.6637 22.8701C17.9296 24.136 19.9827 24.1363 21.249 22.8701C22.5152 21.6038 22.5152 19.5509 21.249 18.2848L16.7404 13.7761C15.4742 12.5098 13.4212 12.5098 12.1551 13.7761C10.889 15.0423 10.8889 17.0952 12.1551 18.3613L16.6637 22.8701ZM66.3363 22.8701L70.845 18.3613C72.1113 17.0951 72.1113 15.0421 70.845 13.7761C69.5788 12.51 67.5258 12.5098 66.2598 13.7761L61.751 18.2848C60.4848 19.551 60.4848 21.604 61.751 22.8701C63.0169 24.136 65.0701 24.1363 66.3363 22.8701ZM83 62.25C83 64.0407 81.5485 65.4922 79.7578 65.4922C75.97 65.4922 4.02501 65.4922 3.24219 65.4922C1.45153 65.4922 0 64.0407 0 62.25C0 60.4593 1.45153 59.0078 3.24219 59.0078H25.7271C21.6379 54.9476 19.1018 49.3252 19.1018 43.1211C19.1018 30.7706 29.1495 20.7229 41.5 20.7229C53.8505 20.7229 63.8982 30.7706 63.8982 43.1211C63.8982 49.3252 61.3621 54.9476 57.2729 59.0078H79.7578C81.5485 59.0078 83 60.4593 83 62.25ZM40.5829 59.0078H42.4172C50.767 58.531 57.414 51.5881 57.414 43.1211C57.414 34.3461 50.2751 27.2073 41.5002 27.2073C32.7252 27.2073 25.5862 34.3461 25.5862 43.1211C25.5862 51.5881 32.2332 58.531 40.5829 59.0078ZM67.0052 74.8945H15.9948C14.2042 74.8945 12.7527 76.3461 12.7527 78.1367C12.7527 79.9274 14.2042 81.3789 15.9948 81.3789H67.0052C68.7958 81.3789 70.2473 79.9274 70.2473 78.1367C70.2473 76.3461 68.7958 74.8945 67.0052 74.8945Z"
-                fill="white"
-              />
-            </svg>
-            <div>
-              Good Morning | 28 <sup>o</sup>C
-            </div>
-          </div>
-        </header>
+        </div>
+      </header>
 
-        {/* Main */}
-        <main className="bg-[rgb(64,22,115)] pt-5 tracking-wider">
-          <div className="flex justify-center gap-8 p-10 pt-20 text-[#ffffff]">
-            <div className="relative rounded-xl bg-[#4D388D] p-5 pt-8">
-              <div className="absolute -top-7 rounded-full bg-[#ffffff] p-3 text-black">
-                <SVGIconOne />
-              </div>
-              <p className="text-lg">EZ Tag Transaction</p>
-              <p className="text-3xl font-bold">34234</p>
-              <FirstGraph />
+      {/* Main */}
+      <main className="my-auto flex flex-1 flex-col items-center justify-center bg-[rgb(64,22,115)] pt-5 tracking-wider">
+        <div className="flex justify-center gap-8 p-10 pt-20 text-[#ffffff]">
+          <div className="relative rounded-xl bg-[#4D388D] p-5 pt-8">
+            <div className="absolute -top-7 rounded-full bg-[#ffffff] p-3 text-black">
+              <SVGIconOne />
             </div>
-
-            <div className="relative rounded-xl bg-[#4D388D] p-5 pt-8">
-              <div className="absolute -top-7 rounded-full bg-[#ffffff] p-3 text-black">
-                <SVGIconTwo />
-              </div>
-              <p className="text-lg">LP Transactions</p>
-              <p className="text-3xl font-bold">12769</p>
-              <SecondGraph />
-            </div>
-
-            <div className="relative rounded-xl bg-[#4D388D] p-5 pt-8">
-              <div className="absolute -top-7 rounded-full bg-[#ffffff] p-3 text-black">
-                <SVGIconThree />
-              </div>
-              <p className="text-lg">Paid Transactions</p>
-              <p className="text-3xl font-bold">21313</p>
-              <ThirdGraph />
-            </div>
+            <p className="text-lg">EZ Tag Transaction</p>
+            <p className="text-3xl font-bold">34234</p>
+            <FirstGraph />
           </div>
 
-          <div className="flex gap-2 pb-12">
-            <div className="ml-20 w-[59.5rem]">
-              <div className="mb-2 flex items-center gap-3">
-                <SVGIconFour />
-                <h5 className="text-xl font-bold text-[#FFE512]">
-                  HCTRA Initiative
-                </h5>
-              </div>
-              <p className="text-lg tracking-wide text-white">
-                The HCTRA Opportunity Career Academy a Initiative created to
-                provide unique education and employment opportunities within
-                HCTRA for residents across Harris County.
-              </p>
+          <div className="relative rounded-xl bg-[#4D388D] p-5 pt-8">
+            <div className="absolute -top-7 rounded-full bg-[#ffffff] p-3 text-black">
+              <SVGIconTwo />
             </div>
-            <div>
-              <div className="flex items-center gap-3">
-                <SVGIconFive />
-                <h5 className="text-xl font-bold text-[#FFE512]">Fun Fact</h5>
-              </div>
-              <p className="pr-10 text-lg tracking-wider text-white">
-                Stop Signs Have 8 Sides Because It's A Cheap Option
-              </p>
-            </div>
+            <p className="text-lg">LP Transactions</p>
+            <p className="text-3xl font-bold">12769</p>
+            <SecondGraph />
           </div>
-        </main>
 
-        {/* Footer */}
-        <footer className="mx-14 flex items-center justify-between bg-[#FFFFFF]">
-          <div className="m-5 flex items-center">
-            <div>
-              <SVGIconSix />
+          <div className="relative rounded-xl bg-[#4D388D] p-5 pt-8">
+            <div className="absolute -top-7 rounded-full bg-[#ffffff] p-3 text-black">
+              <SVGIconThree />
             </div>
-            <h5 className="text-2xl font-bold text-[#662D91]">HCTRA</h5>
+            <p className="text-lg">Paid Transactions</p>
+            <p className="text-3xl font-bold">21313</p>
+            <ThirdGraph />
           </div>
-          <p className="m-5 text-[#662D91]">www.hctra.org</p>
-        </footer>
-      </div>
-    </>
+        </div>
+
+        <div className="flex gap-2 pb-12">
+          <div className="ml-20 w-[59.5rem]">
+            <div className="mb-2 flex items-center gap-3">
+              <SVGIconFour />
+              <h5 className="text-xl font-bold text-[#FFE512]">
+                HCTRA Initiative
+              </h5>
+            </div>
+            <p className="text-lg tracking-wide text-white">
+              The HCTRA Opportunity Career Academy a Initiative created to
+              provide unique education and employment opportunities within HCTRA
+              for residents across Harris County.
+            </p>
+          </div>
+          <div>
+            <div className="flex items-center gap-3">
+              <SVGIconFive />
+              <h5 className="text-xl font-bold text-[#FFE512]">Fun Fact</h5>
+            </div>
+            <p className="pr-10 text-lg tracking-wider text-white">
+              Stop Signs Have 8 Sides Because It's A Cheap Option
+            </p>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="flex max-h-20 items-center justify-between border-2 border-black bg-[#FFFFFF]">
+        <div className="m-5 flex items-center">
+          <div>
+            <SVGIconSix />
+          </div>
+          <h5 className="text-2xl font-bold text-[#662D91]">HCTRA</h5>
+        </div>
+        <p className="m-5 text-[#662D91]">www.hctra.org</p>
+      </footer>
+    </div>
   );
 }
 
