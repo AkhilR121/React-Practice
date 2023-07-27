@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { useImmer } from "use-immer";
 
 export function useMultiStepForm(steps: ReactElement[]) {
-  const [currStep, setCurrStep] = useImmer(1);
+  const [currStep, setCurrStep] = useImmer(0);
 
   function next() {
     setCurrStep(i => {

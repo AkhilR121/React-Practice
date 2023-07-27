@@ -1,69 +1,99 @@
-type UserLocation = {
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
-};
-type UserAddressProps = UserLocation & {
-  updateFields: (fields: Partial<UserLocation>) => void;
-};
-export function UserAddress({
-  street,
-  city,
-  state,
-  zip,
-  updateFields,
-}: UserAddressProps) {
+import { motion } from "framer-motion";
+import { Draft } from "immer";
+import { useAtomValue, useSetAtom } from "jotai";
+import { useImmerReducer } from "use-immer";
+import { Action, UserLocation, addressAtom } from "./GlobalState";
+
+export function UserAddress() {
+  const userAddressAtom = useAtomValue(addressAtom);
+  const setUserAtom = useSetAtom(addressAtom);
+  const [address, dispatch] = useImmerReducer(reducer, userAddressAtom);
+
   return (
-    <div className="flex flex-col">
-      <div>
+    <motion.div
+      initial={{ x: 200, opacity: 0 }}
+      animate={{ x: 0, opacity: [0.2, 0.4, 0.6, 0.8, 1] }}
+      transition={{ duration: 0.4 }}
+      className="flex flex-col gap-3 text-xl font-semibold"
+    >
+      <h1 className="mb-3 text-center text-3xl font-bold underline">
+        Personal Details
+      </h1>
+      <div className="flex items-center gap-5">
         <label>Street: </label>
         <input
-          className="border-2 border-black"
-          value={street}
+          className="w-[25rem] border-b-2 border-black bg-gray-200 p-3 outline-none"
+          value={address.street}
           onChange={e => {
-            updateFields({ street: e.target.value });
+            dispatch({ type: "street", street: e.target.value, setUserAtom });
           }}
           type="text"
           required
         />
       </div>
-      <div>
+      <div className="flex items-center gap-9">
         <label>City: </label>
         <input
-          className="border-2 border-black"
-          value={city}
+          className="w-[25rem] border-b-2 border-black bg-gray-200 p-3 outline-none"
+          value={address.city}
           onChange={e => {
-            updateFields({ city: e.target.value });
+            dispatch({ type: "city", city: e.target.value, setUserAtom });
           }}
           type="text"
           required
         />
       </div>
-      <div>
+      <div className="flex items-center gap-7">
         <label>State: </label>
         <input
-          className="border-2 border-black"
-          value={state}
+          className="w-[25rem] border-b-2 border-black bg-gray-200 p-3 outline-none"
+          value={address.state}
           onChange={e => {
-            updateFields({ state: e.target.value });
+            dispatch({ type: "state", state: e.target.value, setUserAtom });
           }}
           type="text"
           required
         />
       </div>
-      <div>
+      <div className="flex items-center gap-11">
         <label>Zip: </label>
         <input
-          className="border-2 border-black"
-          value={zip}
+          className="w-[25rem] border-b-2 border-black bg-gray-200 p-3 outline-none"
+          value={address.zip}
           onChange={e => {
-            updateFields({ zip: e.target.value });
+            dispatch({ type: "zip", zip: e.target.value, setUserAtom });
           }}
           type="number"
           required
         />
       </div>
-    </div>
+    </motion.div>
   );
+}
+
+function reducer(draft: Draft<UserLocation>, action: Action) {
+  switch (action.type) {
+    case "street": {
+      draft.street = action.street;
+      action.setUserAtom({ ...draft });
+      break;
+    }
+    case "city": {
+      draft.city = action.city;
+      action.setUserAtom({ ...draft });
+
+      break;
+    }
+    case "state": {
+      draft.state = action.state;
+      action.setUserAtom({ ...draft });
+
+      break;
+    }
+    case "zip": {
+      draft.zip = action.zip;
+      action.setUserAtom({ ...draft });
+      break;
+    }
+  }
 }

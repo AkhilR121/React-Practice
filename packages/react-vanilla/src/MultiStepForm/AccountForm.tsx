@@ -1,26 +1,32 @@
-type UserAccount = {
-  email: string;
-  password: string;
-};
+import { motion } from "framer-motion";
+import { Draft } from "immer";
+import { useAtomValue, useSetAtom } from "jotai";
+import { useImmerReducer } from "use-immer";
+import { Action, UserAccount, accountAtom } from "./GlobalState";
 
-type UserAccountProps = UserAccount & {
-  updateFields: (fields: Partial<UserAccount>) => void;
-};
+export function AccountForm() {
+  const userAccountAtom = useAtomValue(accountAtom);
+  const setUserAtom = useSetAtom(accountAtom);
+  const [state, dispatch] = useImmerReducer(reducer, userAccountAtom);
 
-export function AccountForm({
-  email,
-  password,
-  updateFields,
-}: UserAccountProps) {
   return (
-    <div className="flex flex-col">
-      <div>
+    <motion.div
+      initial={{ x: 200, opacity: 0 }}
+      animate={{ x: 0, opacity: [0.2, 0.4, 0.6, 0.8, 1] }}
+      transition={{ duration: 0.4 }}
+      className="flex flex-col gap-3 text-xl font-semibold"
+    >
+      <h1 className="mb-4 text-center text-3xl font-bold underline">
+        Account Details
+      </h1>
+
+      <div className="flex items-center gap-10">
         <label>Email: </label>
         <input
-          className="border-2 border-black"
-          value={email}
+          className="w-[25rem] border-b-2 border-black bg-gray-200 p-3 outline-none"
+          value={state.email}
           onChange={e => {
-            updateFields({ email: e.target.value });
+            dispatch({ type: "email", email: e.target.value, setUserAtom });
           }}
           type="email"
           required
@@ -29,15 +35,33 @@ export function AccountForm({
       <div>
         <label>Password: </label>
         <input
-          className="border-2 border-black"
-          value={password}
+          className="w-[25rem] border-b-2 border-black bg-gray-200 p-3 outline-none"
+          value={state.password}
           onChange={e => {
-            updateFields({ password: e.target.value });
+            dispatch({
+              type: "password",
+              password: e.target.value,
+              setUserAtom,
+            });
           }}
           type="password"
           required
         />
       </div>
-    </div>
+    </motion.div>
   );
+}
+
+function reducer(draft: Draft<UserAccount>, action: Action) {
+  switch (action.type) {
+    case "email": {
+      draft.email = action.email;
+      action.setUserAtom({ ...draft });
+      break;
+    }
+    case "password": {
+      draft.password = action.password;
+      action.setUserAtom({ ...draft });
+    }
+  }
 }
