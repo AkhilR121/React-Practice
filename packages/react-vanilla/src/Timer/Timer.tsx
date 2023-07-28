@@ -2,20 +2,29 @@ import { InitialState } from "./TimerApp";
 
 export function Timer({ state }: { state: InitialState[] }) {
   return (
-    <div className="flex items-center gap-5 text-6xl">
+    <div className="flex items-center gap-5 font-['Inter'] font-extralight text-gray-900">
       {state.map(s => {
         return (
-          <div key={s.hours} className="flex gap-5">
-            <div className="bg-gray-400 p-3">
-              {s.hours < 10 ? "0" + s.hours : s.hours}
+          <div key={s.hours} className="flex items-center gap-5">
+            <div className="flex w-44 flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-2xl">
+              <div className="text-8xl">
+                {s.hours < 10 ? "0" + s.hours : s.hours}
+              </div>
+              <p className="text-lg">Hours</p>
             </div>
             <span>:</span>
-            <div className="bg-gray-400 p-3">
-              {s.minutes < 10 ? "0" + s.minutes : s.minutes}
+            <div className="flex w-44 flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-2xl">
+              <div className="text-8xl">
+                {s.minutes < 10 ? "0" + s.minutes : s.minutes}
+              </div>
+              <p className="text-lg">Minutes</p>
             </div>
             <span>:</span>
-            <div className="bg-gray-400 p-3">
-              {s.seconds < 10 ? "0" + s.seconds : s.seconds}
+            <div className="flex w-44 flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-2xl">
+              <div className="text-8xl">
+                {s.seconds < 10 ? "0" + s.seconds : s.seconds}
+              </div>
+              <p className="text-lg">Seconds</p>
             </div>
           </div>
         );

@@ -32,11 +32,11 @@ export function TimerApp() {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-5">
+    <div className="flex h-screen flex-col items-center justify-center gap-5 bg-[#DFE19F]">
       <div>
         <Timer state={state} />
       </div>
-      <div className="flex gap-5">
+      <div className="m-10 flex gap-10">
         <div>
           <StartStopTimer start={startTimer} stop={stopTimer} />
         </div>
