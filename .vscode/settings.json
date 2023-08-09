@@ -40,5 +40,6 @@
   },
 
   "coverage-gutters.coverageReportFileName": "coverage/**/lcov.info",
-  "testing.automaticallyOpenPeekView": "never"
+  "testing.automaticallyOpenPeekView": "never",
+  "cSpell.words": ["Btns", "clsx", "HCTRA", "Salarydec", "signup", "tfooter"]
 }
