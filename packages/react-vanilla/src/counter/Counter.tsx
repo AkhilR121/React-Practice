@@ -1,7 +1,6 @@
 // import { useReducer } from "react";
 import clsx from "clsx";
 import { useImmerReducer } from "use-immer";
-import "./counter.css";
 
 export function Counter() {
   const [state, dispatch] = useImmerReducer(reducer, { count: 0 });
