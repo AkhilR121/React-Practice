@@ -2,7 +2,10 @@
   "extends": ["@tsconfig/vite-react/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
     "checkJs": false,
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    }
   },
 
   "include": ["src", "tests", "__previewjs__/Wrapper.tsx", "vite.config.ts"],
