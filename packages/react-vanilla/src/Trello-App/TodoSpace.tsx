@@ -2,9 +2,10 @@ import { Draft } from "immer";
 import { useSetAtom } from "jotai";
 import { useState } from "react";
 import { useImmer } from "use-immer";
-import { InitialState, cardTitle } from "./GlobalState";
+import { cardTitle } from "./GlobalState";
 import { Action } from "./TrelloApp";
 import { AddIcon, CancelIcon, OptionIcon } from "./TrelloIcons";
+import { InitialState } from "./types";
 
 export function TodoCard({
   state,
@@ -18,23 +19,25 @@ export function TodoCard({
   return (
     <div className="flex flex-col">
       <ToDoNavbar />
-      <div className="flex">
-        {state.map(card => {
-          return (
-            <div
-              className="m-3 flex w-64 flex-col rounded-2xl bg-[#101204] p-2 font-semibold text-[#85919D]"
-              key={card.title}
-              draggable
-            >
-              <CardHeader card={card} />
-              <CardMain />
-              <CardFooter />
-            </div>
-          );
-        })}
-      </div>
-      <div className="p-5">
-        <AddCardBtn setInitialAtom={setInitialAtom} dispatch={dispatch} />
+      <div className="flex items-start justify-start gap-3">
+        <div className="flex">
+          {state.map(card => {
+            return (
+              <div
+                className="m-3 flex w-64 flex-col rounded-2xl bg-[#101204] p-2 font-semibold text-[#85919D]"
+                key={card.title}
+                draggable
+              >
+                <CardHeader card={card} />
+                <CardMain />
+                <CardFooter />
+              </div>
+            );
+          })}
+        </div>
+        <div className="p-5">
+          <AddCardBtn setInitialAtom={setInitialAtom} dispatch={dispatch} />
+        </div>
       </div>
     </div>
   );
