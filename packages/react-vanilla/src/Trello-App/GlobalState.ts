@@ -1,10 +1,5 @@
 import { atom } from "jotai";
-
-export type InitialState = Readonly<{
-  id: number;
-  title: string;
-  done: boolean;
-}>;
+import { InitialState } from "./types";
 
 const initialState: InitialState[] = [
   {
