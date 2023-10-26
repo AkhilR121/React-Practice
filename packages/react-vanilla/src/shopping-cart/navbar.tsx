@@ -1,32 +1,20 @@
+import { Link } from "react-router-dom";
+
 export function Navbar() {
+  const navOptions: string[] = ["Men", "Women", "Kids", "Furniture", "Sale"];
   return (
     <>
       <div className="flex w-[100%] items-center justify-between bg-[rgb(241,39,97)] shadow-2xl">
-        <div>
-          <div className="px-3 font-serif text-2xl font-semibold text-black">
-            Shopping App
-          </div>
+        <div className="px-3 font-serif text-2xl font-semibold text-black">
+          Shopping App
         </div>
         <div className="flex items-center gap-8">
-          <div className="">
-            <ul className="flex cursor-pointer gap-5 font-serif text-lg font-medium [&>*]:border-b-4 [&>*]:border-black [&>*]:px-2 [&>*]:py-4 hover:[&>*]:bg-pink-900">
-              <li className="transition delay-100 duration-200 ease-in-out hover:border-white hover:text-white">
-                Men
-              </li>
-              <li className="transition delay-100 duration-200 ease-in-out hover:border-white hover:text-white">
-                Women
-              </li>
-              <li className="transition delay-100 duration-200 ease-in-out hover:border-white hover:text-white">
-                Kids
-              </li>
-              <li className="transition delay-100 duration-200 ease-in-out hover:border-white hover:text-white">
-                Furniture
-              </li>
-              <li className="transition delay-100 duration-200 ease-in-out hover:border-white hover:text-white">
-                Sale
-              </li>
-            </ul>
-          </div>
+          <ul className="flex cursor-pointer gap-5 font-serif text-lg font-medium [&>*]:border-b-4 [&>*]:border-black [&>*]:px-2 [&>*]:py-4 hover:[&>*]:bg-pink-900">
+            {navOptions.map((option, i) => {
+              return <NavbarOptions key={i} option={option} />;
+            })}
+          </ul>
+
           <div className="relative">
             <i className="bi bi-search absolute right-0 p-3 text-xl"></i>
             <input
@@ -37,10 +25,29 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="cursor-pointer pr-5 font-serif text-xl font-medium">
-          Login
+        <div className="gpa-3 flex items-center">
+          <Link
+            to={"/cart"}
+            className="cursor-pointer pr-5 font-serif text-xl font-medium"
+          >
+            Cart
+          </Link>
+          <Link
+            to={"/login"}
+            className="cursor-pointer pr-5 font-serif text-xl font-medium"
+          >
+            Login
+          </Link>
         </div>
       </div>
     </>
+  );
+}
+
+function NavbarOptions({ option }: { option: string }) {
+  return (
+    <li className="transition delay-100 duration-200 ease-in-out hover:border-white hover:text-white">
+      {option}
+    </li>
   );
 }
