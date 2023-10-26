@@ -20,6 +20,7 @@ export function Root(): JSX.Element {
         {routeObj.map(route => {
           return (
             <Link
+              key={route}
               className="rounded-md border-[1px] border-white to-black/70 p-3 text-center text-xl font-semibold capitalize text-white transition-all duration-200 ease-in-out hover:scale-110 hover:bg-white hover:text-black hover:shadow-xl"
               to={route}
             >
