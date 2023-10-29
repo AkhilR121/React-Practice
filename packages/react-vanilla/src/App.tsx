@@ -22,6 +22,8 @@ import { TodoApp } from "./TodoApp/todo-app";
 import { TrelloApp } from "./Trello-App/TrelloApp";
 import { Counter } from "./counter/Counter";
 import { DataGridApp } from "./data-grid/dataGridApp";
+import { Login } from "./shopping-cart/Login";
+import { Cart } from "./shopping-cart/cart";
 import { ShoppingCartApp } from "./shopping-cart/shoppingCart";
 
 const router = createBrowserRouter([
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
   {
     path: "/shoppingCart",
     element: <ShoppingCartApp />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 
   // Error Page

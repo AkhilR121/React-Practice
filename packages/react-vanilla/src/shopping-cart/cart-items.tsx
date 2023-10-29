@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
-import { Product } from "./fakerData";
+import { ItemsList } from "./fakerData";
 import { Quantity } from "./quantity";
 import { Action, State } from "./shoppingCart";
 
@@ -9,7 +9,7 @@ export function CartItems({
   dispatch,
   state,
 }: {
-  products: Product[];
+  products: ItemsList[];
   dispatch: React.Dispatch<Action>;
   state: State;
 }) {
@@ -23,7 +23,7 @@ export function CartItems({
         <span className="font-bold">
           {state
             .map(ci => {
-              const product = products.find(p => p.id === ci.id) as Product;
+              const product = products.find(p => p.id === ci.id) as ItemsList;
               return product.price * ci.quantity;
             })
             .reduce((a, b) => a + b, 0)}
@@ -52,7 +52,7 @@ export function CartItems({
 
       {state.map(item => (
         <CartItem
-          product={products.find(p => p.id === item.id) as Product}
+          product={products.find(p => p.id === item.id) as ItemsList}
           quantity={item.quantity}
           dispatch={dispatch}
         />
@@ -69,11 +69,11 @@ function CartItem({
   quantity,
   dispatch,
 }: {
-  product: Product;
+  product: ItemsList;
   quantity: number;
   dispatch: React.Dispatch<Action>;
 }) {
-  const { id, image, item_name, price } = product;
+  const { id, image, title, price } = product;
   function handleDecQuantity() {
     dispatch({ type: "dec_item", id });
   }
@@ -87,7 +87,7 @@ function CartItem({
     >
       <img src={image} className="h-28 w-28 rounded-full" alt="Image" />
       <p className="mx-auto w-52 leading-4">
-        {item_name} <br />
+        {title} <br />
         <span className="text-xs font-normal text-gray-500">
           Eligible for FREE Shipping
         </span>

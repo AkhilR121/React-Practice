@@ -1,29 +1,35 @@
+import { useQuery } from "@tanstack/react-query";
 import { Draft } from "immer";
 import { useState } from "react";
 import { useImmerReducer } from "use-immer";
 import { CartItems } from "./cart-items";
-import { fakeProducts } from "./fakerData";
 import { Navbar } from "./navbar";
 import { ShoppingItems } from "./shoppingItems";
 
+async function apiCall() {
+  return await fetch("https://fakestoreapi.com/products").then(res =>
+    res.json()
+  );
+}
+
 export function ShoppingCartApp() {
-  const [products] = useState(() => fakeProducts);
+  const { data, isLoading } = useQuery({
+    queryKey: ["shop-list"],
+    queryFn: () => apiCall(),
+  });
+  console.log(data);
+
+  const [products] = useState(data);
   const [cartState, dispatch] = useImmerReducer<State, Action>(reducer, []);
 
   return (
-    <>
-      <div>
-        <Navbar />
-        <div className="flex">
-          <ShoppingItems items={products} dispatch={dispatch} />
-          <CartItems
-            products={products}
-            state={cartState}
-            dispatch={dispatch}
-          />
-        </div>
+    <div>
+      <Navbar />
+      <div className="flex">
+        <ShoppingItems items={products} dispatch={dispatch} />
+        <CartItems products={products} state={cartState} dispatch={dispatch} />
       </div>
-    </>
+    </div>
   );
 }
 

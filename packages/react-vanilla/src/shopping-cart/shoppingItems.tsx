@@ -1,14 +1,14 @@
-import { Product } from "./fakerData";
+import { ItemsList } from "./fakerData";
 import { Action } from "./shoppingCart";
 
 export function ShoppingItems({
   items,
   dispatch,
 }: {
-  items: Product[];
+  items: ItemsList[];
   dispatch: React.Dispatch<Action>;
 }) {
-  function handleAddToCart(item: Product) {
+  function handleAddToCart(item: ItemsList) {
     dispatch({ type: "add_item", id: item.id });
   }
 
@@ -23,7 +23,7 @@ export function ShoppingItems({
             >
               <div className="relative">
                 <div className="absolute bottom-0.5 m-2 rounded-sm bg-white/70 p-1 text-xs font-bold shadow-xl ">
-                  {item.rating}
+                  {item.rating.rate ? item.rating.rate : item.rating}
                   <i className="bi bi-star-fill pl-1 text-[rgb(241,39,97)]"></i>{" "}
                   | {Math.floor(Math.random() * 1000)}
                 </div>
@@ -35,7 +35,7 @@ export function ShoppingItems({
               </div>
               <div className="flex grow flex-col p-3">
                 <p className="py-1 text-lg font-bold tracking-wide">
-                  {item.item_name}
+                  {item.title}
                 </p>
                 <p className="grow text-xs text-gray-600">{item.description}</p>
                 <div className="py-3 text-sm font-bold">
