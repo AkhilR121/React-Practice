@@ -2,9 +2,10 @@ import { Draft } from "immer";
 import { useSetAtom } from "jotai";
 import { useState } from "react";
 import { useImmer } from "use-immer";
-import { InitialState, cardTitle } from "./GlobalState";
+import { cardTitle } from "./GlobalState";
 import { Action } from "./TrelloApp";
 import { AddIcon, CancelIcon, OptionIcon } from "./TrelloIcons";
+import { InitialState } from "./types";
 
 export function TodoCard({
   state,
@@ -16,47 +17,33 @@ export function TodoCard({
   const setInitialAtom = useSetAtom(cardTitle);
 
   return (
-    <div className="flex">
-      {/* <div className="navbar">Navbar</div> */}
-      <div className="flex">
-        {state.map(card => {
-          return (
-            <div
-              className="m-3 flex w-64 flex-col rounded-2xl bg-[#101204] p-2 font-semibold text-[#85919D]"
-              key={card.title}
-              draggable
-            >
-              <header className="flex justify-between px-1">
-                <h1 className="">{card.title}</h1>
-                <button className="rounded-md p-2 hover:bg-gray-700">
-                  <OptionIcon />
-                </button>
-              </header>
-
-              <main className="m-1 my-2 flex rounded-md bg-gray-700 p-2 text-sm">
-                First Todo
-              </main>
-
-              <footer>
-                <div className="flex justify-between px-2">
-                  <button className="flex items-center gap-2 p-1">
-                    <AddIcon />
-                    <h4>Add a card</h4>
-                  </button>
-                </div>
-              </footer>
-            </div>
-          );
-        })}
-      </div>
-      <div className="p-5">
-        <AddCard setInitialAtom={setInitialAtom} dispatch={dispatch} />
+    <div className="flex flex-col">
+      <ToDoNavbar />
+      <div className="flex items-start justify-start gap-3">
+        <div className="flex">
+          {state.map(card => {
+            return (
+              <div
+                className="m-3 flex w-64 flex-col rounded-2xl bg-[#101204] p-2 font-semibold text-[#85919D]"
+                key={card.title}
+                draggable
+              >
+                <CardHeader card={card} />
+                <CardMain />
+                <CardFooter />
+              </div>
+            );
+          })}
+        </div>
+        <div className="p-5">
+          <AddCardBtn setInitialAtom={setInitialAtom} dispatch={dispatch} />
+        </div>
       </div>
     </div>
   );
 }
 
-export function AddCard({
+export function AddCardBtn({
   setInitialAtom,
   dispatch,
 }: {
@@ -66,7 +53,7 @@ export function AddCard({
   const [isEditing, setIsEditing] = useState(true);
 
   return (
-    <div>
+    <>
       {isEditing ? (
         <div
           onClick={() => {
@@ -78,25 +65,24 @@ export function AddCard({
           <p>Add another list</p>
         </div>
       ) : (
-        <AddTitleCard
+        <AddCardInput
           dispatch={dispatch}
           setIsEditing={setIsEditing}
           isEditing={isEditing}
           setInitialAtom={setInitialAtom}
         />
       )}
-    </div>
+    </>
   );
 }
 
-export function AddTitleCard({
+export function AddCardInput({
   dispatch,
   setIsEditing,
   isEditing,
   setInitialAtom,
 }: {
   setInitialAtom: (draft: Draft<InitialState[]>) => void;
-
   dispatch: React.Dispatch<Action>;
   setIsEditing: (isEditing: boolean) => void;
   isEditing: boolean;
@@ -141,5 +127,38 @@ export function AddTitleCard({
         </button>
       </div>
     </div>
+  );
+}
+
+export function ToDoNavbar() {
+  return <>Navbar</>;
+}
+export function CardHeader({ card }: { card: InitialState }) {
+  return (
+    <header className="flex justify-between px-1">
+      <h1 className="">{card.title}</h1>
+      <button className="rounded-md p-2 hover:bg-gray-700">
+        <OptionIcon />
+      </button>
+    </header>
+  );
+}
+
+export function CardMain() {
+  return (
+    <main className="m-1 my-2 flex rounded-md bg-gray-700 p-2 text-sm">
+      First Todo
+    </main>
+  );
+}
+
+export function CardFooter() {
+  return (
+    <footer className="flex justify-between px-2">
+      <button className="flex items-center gap-2 p-1">
+        <AddIcon />
+        <h4>Add a card</h4>
+      </button>
+    </footer>
   );
 }
