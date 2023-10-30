@@ -1,3 +1,5 @@
+import { MinusIcon, PlusIcon } from "./shopping-icons";
+
 export function Quantity({
   quantity,
   onInc,
@@ -17,7 +19,7 @@ export function Quantity({
           }}
           className="rounded-full bg-slate-600 px-2"
         >
-          <i className="bi bi-dash text-white"></i>
+          <MinusIcon />
         </button>
         <div className={"text-xl font-medium"}>{quantity}</div>
         <button
@@ -27,7 +29,7 @@ export function Quantity({
           }}
           className="rounded-full  bg-slate-600 px-2"
         >
-          <i className="bi bi-plus text-white"></i>
+          <PlusIcon />
         </button>
       </div>
     </>

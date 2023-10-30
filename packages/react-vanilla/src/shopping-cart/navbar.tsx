@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SearchIcon } from "./shopping-icons";
 
 export function Navbar() {
   const navOptions: string[] = ["Men", "Women", "Kids", "Furniture", "Sale"];
@@ -16,9 +17,9 @@ export function Navbar() {
           </ul>
 
           <div className="relative">
-            <i className="bi bi-search absolute right-0 p-3 text-xl"></i>
+            <SearchIcon />
             <input
-              className="w-96 border-b-2 border-black bg-transparent p-2 px-4 font-serif text-lg font-medium placeholder-slate-700 focus:border-white focus:outline-none"
+              className="w-96 border-b-2 border-black bg-transparent p-2 px-6 font-serif text-lg font-medium placeholder-slate-700 focus:border-white focus:outline-none"
               type="text"
               placeholder="Search Products"
             />

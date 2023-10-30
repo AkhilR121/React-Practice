@@ -1,4 +1,5 @@
 import { ItemsList } from "./fakerData";
+import { StarIcon } from "./shopping-icons";
 import { Action } from "./shoppingCart";
 
 export function ShoppingItems({
@@ -22,10 +23,9 @@ export function ShoppingItems({
               key={item.id}
             >
               <div className="relative">
-                <div className="absolute bottom-0.5 m-2 rounded-sm bg-white/70 p-1 text-xs font-bold shadow-xl ">
+                <div className="absolute bottom-0.5 m-2 flex items-center gap-1 rounded-sm bg-white/70 p-1 text-xs font-bold shadow-xl ">
                   {item.rating.rate ? item.rating.rate : item.rating}
-                  <i className="bi bi-star-fill pl-1 text-[rgb(241,39,97)]"></i>{" "}
-                  | {Math.floor(Math.random() * 1000)}
+                  <StarIcon /> | {Math.floor(Math.random() * 1000)}
                 </div>
                 <img
                   src={item.image}
