@@ -4,7 +4,7 @@ export function Root(): JSX.Element {
   const routeObj: string[] = [
     "counter",
     "trello",
-    "ShoppingCart",
+    "shoppingCart",
     "TodoApp",
     "DataGridApp",
     "TimerApp",
