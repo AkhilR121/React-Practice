@@ -11,12 +11,14 @@ const POSTS: PostType[] = [
 ];
 
 export function RQuery() {
+  async function apiCall() {
+    return await fetch("https://fakestoreapi.com/products").then(res =>
+      res.json()
+    );
+  }
   const postsQuery = useQuery({
     queryKey: ["posts"],
-    queryFn: () =>
-      wait(1000).then(() => {
-        return [...POSTS];
-      }),
+    queryFn: () => apiCall(),
   });
 
   if (postsQuery.isLoading) return <h1>Loading...</h1>;
@@ -24,8 +26,11 @@ export function RQuery() {
 
   return (
     <>
-      {postsQuery.data.map(post => (
-        <div key={post.id}>{post.title}</div>
+      {postsQuery.data.map((post: any) => (
+        <>
+          <div key={post.id}>{post.title}</div>
+          <img src={post.image} alt="" />
+        </>
       ))}
     </>
   );
