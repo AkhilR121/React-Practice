@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import { useState } from "react";
+import { Action } from "./cart";
 import { ItemsList } from "./fakerData";
 import { Quantity } from "./quantity";
-import { Action, State } from "./shoppingCart";
+import { State } from "./shoppingCart";
 
 export function CartItems({
   products,
