@@ -14,7 +14,7 @@ export function ShoppingItems({
 
   return (
     <>
-      <div className="scrollbar-hide mt-10 grid h-[85vh] w-[50%] grid-cols-2 gap-10 overflow-y-scroll p-5">
+      <div className="scrollbar-hide mt-10 grid h-[85vh] w-full grid-cols-4 gap-10 overflow-y-scroll p-5">
         {items.map(item => {
           return (
             <div
