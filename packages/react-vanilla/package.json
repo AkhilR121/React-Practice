@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@arcgis/core": "^4.28.6",
     "@tanstack/react-query": "4.29.12",
     "@tanstack/react-query-devtools": "^4.32.0",
     "@ti/core": "workspace:*",

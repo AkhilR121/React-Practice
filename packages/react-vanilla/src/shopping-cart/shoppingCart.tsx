@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Draft } from "immer";
 import { useImmerReducer } from "use-immer";
-import { apiCall, fakeProducts } from "./fakerData";
+import { apiCall } from "./fakerData";
 import { Navbar } from "./navbar";
 import { ShoppingItems } from "./shoppingItems";
 
@@ -9,7 +9,7 @@ export function ShoppingCartApp() {
   const data = useQuery({
     queryKey: ["shop-list"],
     queryFn: () => apiCall(),
-    initialData: () => fakeProducts,
+    initialData: () => [],
   });
   const [cartState, dispatch] = useImmerReducer<State, Action>(reducer, []);
   console.log("App Comp", cartState);

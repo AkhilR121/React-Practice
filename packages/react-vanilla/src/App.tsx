@@ -14,6 +14,7 @@
 // );
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import { ArcGisPractice } from "./ArcGis-Practice/ArcgisPractice";
 import { ErrorPage } from "./ErrorComp/ErrorPage";
 import { MultiStepForm } from "./MultiStepForm/MultiStepForm";
 import { Root } from "./RootComp/Root";
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/ArcGis",
+    element: <ArcGisPractice />,
   },
 
   // Error Page

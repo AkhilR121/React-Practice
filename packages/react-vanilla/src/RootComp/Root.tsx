@@ -10,6 +10,7 @@ export function Root(): JSX.Element {
     "TimerApp",
     "RQuery",
     "MultiStepForm",
+    "ArcGis",
   ];
   return (
     <div className="h-screen w-full bg-gradient-to-br from-purple-600 to-fuchsia-400">
